@@ -1,3 +1,4 @@
+//This Program finds the longest SubString in a String
 import java.util.LinkedHashMap;
 
 public class LongestSubstring{
