@@ -1,5 +1,4 @@
 public class NobleInteger{
-
     public static void main (String args[]){
         int[] arr = {10,20,3,40,2}
         int res = NobleInteger(arr);
@@ -10,7 +9,7 @@ public class NobleInteger{
             System.out.println("no noble integer found");
         }
     }
-    
+
     public static NobleInteger(int arr[]){
         Arrays.sort(arr);
         int n = arr.length;
@@ -22,7 +21,7 @@ public class NobleInteger{
                 return arr[i];
             }
         }
-        
+
         if(arr[n-1] == 0){
             return arr[n-1];
         }
