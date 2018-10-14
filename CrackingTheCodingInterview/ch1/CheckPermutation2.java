@@ -12,12 +12,9 @@ public class CheckPermuation {
 		char[] s_array = s.toCharArray();
 		for (char c : s_array) { // count number of each char in s.
 			letters[c]++; 
-          System.out.println(letters[c]);
-
 		}
 
 		for (int i = 0; i < t.length(); i++) {
-          System.out.println(t.charAt(i));
           	letters[t.charAt(i)]-- ;
 		    if (letters[t.charAt(i)] < 0) {
 		    	return false;
