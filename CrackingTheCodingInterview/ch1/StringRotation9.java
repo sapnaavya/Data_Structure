@@ -1,4 +1,5 @@
-public class Question {
+package ch1;
+public class StringRotation9 {
 
 	public static boolean isSubstring(String big, String small) {
 		if (big.indexOf(small) >= 0) {
