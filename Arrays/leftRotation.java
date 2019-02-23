@@ -16,13 +16,12 @@ public class Solution {
     }
     
     public static void leftRotation(int[] array, int d, int n){
-    int i, temp;
+        int i, temp;
         temp = array[0];
-        for(i=0;i<n-1;i++){
+        for(i=0;i<n-1;i++) {
             array[i] = array[i+1];
         }
-        array[i] = temp;
-        
+        array[i] = temp;  
     }
 
     public static void main(String[] args) {
