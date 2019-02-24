@@ -54,6 +54,21 @@ public class BitwiseOperator {
         return sum;
     }
 
+    public static int divide(int x, int y) {
+        int result = 0;
+        int power = 32;
+        long yPower = (long)y << power;
+        while(x >= y) {
+            while (yPower > x) {
+                yPower >>>= 1;
+                --power;
+            }
+            result = (result + 1) << power;
+            x -= yPower;
+        }
+        return result;
+    }
+
     private static long add(long a, long b) {
         while(b != 0) {
            long carry = (a&b);
@@ -61,6 +76,32 @@ public class BitwiseOperator {
            b = carry << 1; 
         }
         return a;
+    }
+
+    public static long reverse(int x) {
+        long result = 0;
+        while(x > 0) {
+            result = result * 10 + (x % 10);
+            x /= 10;
+        }
+        return result;
+    }
+
+    public static boolean isPallindrome(int x) {
+        if(x <= 0) {
+            return x == 0;
+        }
+        int numDigit = (int)(Math.floor(Math.log10(x))) + 1;
+        int msdMask = (int)Math.pow(10, numDigit - 1);
+        for(int i = 0; i < (numDigit / 2); ++i) {
+            if(x / msdMask != x % 10) {
+                return false;
+            }
+            x /= msdMask; //Remove least significant digit
+            x %= 10;      //Remove most significant digit
+            msdMask /= 100;
+        }
+        return true;
     }
 
    public static void main(String args[]) {
@@ -90,6 +131,23 @@ public class BitwiseOperator {
         long num1 = sc.nextLong();
         long num2 = sc.nextLong();
         long num3 = multiply(num1, num2);
-        System.out.println("Multiplication is:" + num3);    
+        System.out.println("Multiplication is:" + num3);   
+        
+        //Divide two integer numbers
+        System.out.println("Enter two number to divide");
+        int divNum1 = sc.nextInt();
+        int divNum2 = sc.nextInt();
+        int resultDiv = divide(divNum1, divNum2);
+        System.out.println("Quotient is:" + resultDiv);
+
+        //Reverse an integer
+        System.out.println("Enter the integer number to reverse");
+        int reverseInt = sc.nextInt();
+        System.out.println("the reversed digit is " + reverse(reverseInt));
+
+        //Check if a number is pallindrome or not
+        System.out.println("Enter the integer number to check if it is a pallindrome or not");
+        int palInt = sc.nextInt();
+        System.out.println(isPallindrome(palInt));
     }
 }
