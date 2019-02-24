@@ -104,8 +104,27 @@ public class BitwiseOperator {
         return true;
     }
 
+    //Computer power 
+    public static double power(double x, int y) {
+        double result = 1.0;
+        long power = y;
+        if(y < 0) {
+            power = -power;
+            x = 1.0 / x;
+        }
+        while(power != 0) {
+            if((power & 1) != 0) {
+                result *= x;
+            }
+            x *= x;
+            power >>>= 1;
+        }
+        return result;
+    }
+
    public static void main(String args[]) {
         Scanner sc = new Scanner (System.in);
+
         //Calculate number of 1's bits in a non negative integer
         System.out.println("Enter the non negetive integer");
         int num = sc.nextInt();
@@ -149,5 +168,12 @@ public class BitwiseOperator {
         System.out.println("Enter the integer number to check if it is a pallindrome or not");
         int palInt = sc.nextInt();
         System.out.println(isPallindrome(palInt));
+
+        //Compute power of x and y
+        System.out.println("Enter double value and integer to calculate power");
+        double x = sc.nextDouble();
+        int y = sc.nextInt();
+        double result = power(x,y);
+        System.out.println("Power is: " + result);   
     }
 }
