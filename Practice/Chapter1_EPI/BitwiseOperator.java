@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class BitwiseOperator {
    public static short countBits(int num) {
        short count = 0;
@@ -123,8 +124,8 @@ public class BitwiseOperator {
     }
 
    public static void main(String args[]) {
+       
         Scanner sc = new Scanner (System.in);
-
         //Calculate number of 1's bits in a non negative integer
         System.out.println("Enter the non negetive integer");
         int num = sc.nextInt();
@@ -174,6 +175,6 @@ public class BitwiseOperator {
         double x = sc.nextDouble();
         int y = sc.nextInt();
         double result = power(x,y);
-        System.out.println("Power is: " + result);   
+        System.out.println("Power is: " + result); 
     }
 }
