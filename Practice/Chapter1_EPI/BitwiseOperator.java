@@ -19,8 +19,16 @@ public class BitwiseOperator {
         if(x == 0) {
             return 0;
         }
+        
+        // while(x != 0) {
+        //     result ^= (x&1);
+        //     x >>>= 1;
+        // }
+
         while(x != 0) {
-            result ^= (x&1);
+            if((x & 1) != 0 ) {
+                result ^= 1;
+            }
             x >>>= 1;
         }
         return result;
