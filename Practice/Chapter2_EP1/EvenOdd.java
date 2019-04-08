@@ -22,7 +22,7 @@ public class EvenOdd {
             list.add(sc.nextInt());
         }
         list= evenOddArranges(list);
-        for(int i=0; i< list.size(); i++) {
+        for(int i=0; i<list.size(); i++) {
             System.out.print(list.get(i));
         }
         sc.close();
