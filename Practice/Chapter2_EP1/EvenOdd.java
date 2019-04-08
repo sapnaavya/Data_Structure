@@ -21,7 +21,7 @@ public class EvenOdd {
         for(int i=0; i<size; i++) {
             list.add(sc.nextInt());
         }
-        list= evenOddArranges(list);
+        list = evenOddArranges(list);
         for(int i=0; i<list.size(); i++) {
             System.out.print(list.get(i));
         }
