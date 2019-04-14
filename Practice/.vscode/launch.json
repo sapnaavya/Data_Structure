@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - EvenOdd",
+            "request": "launch",
+            "mainClass": "EvenOdd"
+        }
+    ]
+}
