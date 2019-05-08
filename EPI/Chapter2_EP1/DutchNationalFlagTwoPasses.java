@@ -12,16 +12,16 @@ public class DutchNationalFlagTwoPasses {
         // First pass: group elements smaller than pivot.
         int smaller = 0;
         for (int i = 0; i < A.size(); ++i) {
-        if (A.get(i).ordinal() < pivot.ordinal()) {
-            Collections.swap(A, smaller++, i);
-        }
+            if (A.get(i).ordinal() < pivot.ordinal()) {
+                Collections.swap(A, smaller++, i);
+            }
         }
         // Second pass: group elements larger than pivot.
         int larger = A.size() - 1;
         for (int i = A.size() - 1; i >= 0; --i) {
-        if (A.get(i).ordinal() > pivot.ordinal()) {
-            Collections.swap(A, larger--, i);
-        }
+            if (A.get(i).ordinal() > pivot.ordinal()) {
+                Collections.swap(A, larger--, i);
+            }
         }
     }
 
@@ -37,30 +37,30 @@ public class DutchNationalFlagTwoPasses {
   public static void main(String[] args) {
         Random gen = new Random();
         for (int times = 0; times < 2; ++times) {
-        int n;
-        if (args.length == 1) {
-            n = Integer.parseInt(args[0]);
-        } else {
-            n = gen.nextInt(100) + 1;
-        }
-        List<Color> A = randArray(n);
-        int pivotIndex = gen.nextInt(n);
-        Color pivot = A.get(pivotIndex);
-        dutchFlagPartition(pivotIndex, A);
-        int i = 0;
-        while (i < n && A.get(i).ordinal() < pivot.ordinal()) {
-            System.out.print(A.get(i) + " ");
-            ++i;
-        }
-        while (i < n && A.get(i) == pivot) {
-            System.out.print(A.get(i) + " ");
-            ++i;
-        }
-        while (i < n && A.get(i).ordinal() > pivot.ordinal()) {
-            System.out.print(A.get(i) + " ");
-            ++i;
-        }
-        System.out.println();
+            int n;
+            if (args.length == 1) {
+                n = Integer.parseInt(args[0]);
+            } else {
+                n = gen.nextInt(100) + 1;
+            }
+            List<Color> A = randArray(n);
+            int pivotIndex = gen.nextInt(n);
+            Color pivot = A.get(pivotIndex);
+            dutchFlagPartition(pivotIndex, A);
+            int i = 0;
+            while (i < n && A.get(i).ordinal() < pivot.ordinal()) {
+                System.out.print(A.get(i) + " ");
+                ++i;
+            }
+            while (i < n && A.get(i) == pivot) {
+                System.out.print(A.get(i) + " ");
+                ++i;
+            }
+            while (i < n && A.get(i).ordinal() > pivot.ordinal()) {
+                System.out.print(A.get(i) + " ");
+                ++i;
+            }
+            System.out.println();
         }
     }
 }

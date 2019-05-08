@@ -13,9 +13,9 @@ public class BitwiseOperator {
         }
         return count;
     }
-
+    // Time Complexity is O(x) where x is word sizeaa
     public static short computeParityBruteForce(long x){
-        short result = 0;
+        short result = 0; 
         if(x == 0) {
             return 0;
         }
@@ -34,6 +34,7 @@ public class BitwiseOperator {
         return result;
     }
 
+    //Time Complexity O(k) where k is the number of bit set to 1
     public static short computeParityOptimized(long x) {
         short result = 0;
         while(x != 0) {
@@ -43,6 +44,7 @@ public class BitwiseOperator {
         return result;
     }
 
+    //Time Complexity is O(1) i.e independent of word size
     public static long swapBits(long num, int i, int j) {
         if (((num >>> i) & 1) != ((num >>> j) & 1)) {
             long bitMask = (1L << i) | (1L << j );
@@ -116,11 +118,14 @@ public class BitwiseOperator {
     //Computer power 
     public static double power(double x, int y) {
         double result = 1.0;
-        long power = y;
+       // long power = y;
+
         if(y < 0) {
-            power = -power;
+            //power = -power;
+            y = (-1) * y;
             x = 1.0 / x;
         }
+        /*
         while(power != 0) {
             if((power & 1) != 0) {
                 result *= x;
@@ -128,12 +133,21 @@ public class BitwiseOperator {
             x *= x;
             power >>>= 1;
         }
+        */
+        while(y != 0) {
+            if( (y & 1) != 0) {
+                result *= x;
+            }
+            x *= x;
+            y >>>= 1;
+        }
         return result;
     }
 
    public static void main(String args[]) {
        
         Scanner sc = new Scanner (System.in);
+        
         //Calculate number of 1's bits in a non negative integer
         System.out.println("Enter the non negetive integer");
         int num = sc.nextInt();
@@ -179,10 +193,11 @@ public class BitwiseOperator {
         System.out.println(isPallindrome(palInt));
 
         //Compute power of x and y
-        System.out.println("Enter double value and integer to calculate power");
-        double x = sc.nextDouble();
-        int y = sc.nextInt();
-        double result = power(x,y);
-        System.out.println("Power is: " + result); 
+        
+        // System.out.println("Enter double value and integer to calculate power");
+        // double x = sc.nextDouble();
+        // int y = sc.nextInt();
+        // double result = power(x,y);
+        // System.out.println("Power is: " + result); 
     }
 }
