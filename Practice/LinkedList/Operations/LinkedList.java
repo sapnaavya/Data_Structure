@@ -1,3 +1,5 @@
+import java.util.Stack;
+
 public class LinkedList {
     Node head;
     class Node {
@@ -54,16 +56,19 @@ public class LinkedList {
     //Main Method
     public static void main(String args[]) {
         LinkedList llist = new LinkedList();
-        llist.insertFront(4);
+        llist.insertFront(1);
         llist.insertFront(5);
         llist.insertFront(6);
         llist.insertFront(4);
-        llist.insertFront(7);
-        llist.insertFront(8);
-        llist.insertFront(10);
+        //llist.insertFront(7);
+        //llist.insertFront(8);
+        //llist.insertFront(10);
         llist.print();
 
-       deleteAtPosition(llist, 20);
+       deleteAtPosition(llist, 0);
+       //llist.print();
+
+       reverseList(llist);
        llist.print();
     }
 }
