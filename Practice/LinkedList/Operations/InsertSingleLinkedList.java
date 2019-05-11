@@ -1,4 +1,4 @@
-// Linked List Class 
+
 class InsertSingleLinkedList
 { 
     Node head;  // head of list 
