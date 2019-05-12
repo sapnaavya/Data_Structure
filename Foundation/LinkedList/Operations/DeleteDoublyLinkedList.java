@@ -1,4 +1,6 @@
 
+/* A Java program with main method to delete nodes in the doubly linked list */
+
 public class DeleteDoublyLinkedList {
     static Node head;
     class Node {

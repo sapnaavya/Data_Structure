@@ -1,4 +1,5 @@
 
+/* A Java program with main method to delete nodes in the singly linked list */
 public class DeleteSinglyLinkedList {
     Node head;
     class Node {

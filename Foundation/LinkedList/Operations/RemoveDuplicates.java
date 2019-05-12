@@ -1,3 +1,5 @@
+/* A java preogram to remove duplicate in unsorted linked list */
+
 import java.util.*;
 
 public class RemoveDuplicates {

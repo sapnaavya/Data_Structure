@@ -1,4 +1,6 @@
 
+/* A java program to reverse a linked list using stacks and bruteforce method */
+
 import java.util.*;
 
 public class ReverseList {

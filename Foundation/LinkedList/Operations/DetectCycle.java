@@ -1,4 +1,5 @@
-import java.awt.HeadlessException;
+
+/* A java program to detect cycle in the linked list Basically, check if we have same node address */
 import java.util.*;
 
 public class DetectCycle {

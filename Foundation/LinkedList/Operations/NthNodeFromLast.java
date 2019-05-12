@@ -1,4 +1,4 @@
-import com.sun.org.apache.bcel.internal.generic.LLOAD;
+/* A java program to remove nth node from the last as length of the list is unknown */
 
 public class NthNodeFromLast {
     static Node head;
