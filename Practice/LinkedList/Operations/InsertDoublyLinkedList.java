@@ -40,6 +40,10 @@ public class InsertDoublyLinkedList {
         while(i < position) {
             prevNode = currentNode;
             currentNode = currentNode.next;
+            if(currentNode == null) {
+                System.out.println("reached the end of list");
+                break;
+            }
             i++;
         }
         prevNode.next = newNode;
