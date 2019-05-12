@@ -1,6 +1,5 @@
-import java.util.Stack;
 
-public class LinkedList {
+public class DeleteSinglyLinkedList {
     Node head;
     class Node {
         int data;
@@ -26,10 +25,10 @@ public class LinkedList {
     }
 
     //Delete at specific position in the list
-    public static LinkedList deleteAtPosition(LinkedList list, int index) {
+    public static DeleteSinglyLinkedList deleteAtPosition(DeleteSinglyLinkedList list, int index) {
         Node currentNode = list.head;
         Node prev = null;
-        //Case 0: when index is 0
+        // Case 0: when index is 0
         if(index == 0 && currentNode != null) {
             list.head = currentNode.next;
             System.out.println( index + " " + "position element deleted");
@@ -47,28 +46,29 @@ public class LinkedList {
             counter++;
             currentNode = currentNode.next;
         }
-
-        prev.next  = currentNode.next;
-        System.out.println(index + " " + "position element deleted");
+        if(currentNode.next != null){
+            prev.next  = currentNode.next;
+            System.out.println(index + " " + "position element deleted");
+        }
+        else{
+            prev.next = null;
+        }
         return list;
     }
 
     //Main Method
     public static void main(String args[]) {
-        LinkedList llist = new LinkedList();
+        DeleteSinglyLinkedList llist = new DeleteSinglyLinkedList();
         llist.insertFront(1);
         llist.insertFront(5);
         llist.insertFront(6);
         llist.insertFront(4);
-        //llist.insertFront(7);
-        //llist.insertFront(8);
-        //llist.insertFront(10);
+        llist.insertFront(7);
+        llist.insertFront(8);
+        llist.insertFront(10);
         llist.print();
 
-       deleteAtPosition(llist, 0);
-       //llist.print();
-
-       reverseList(llist);
+       deleteAtPosition(llist, 2);
        llist.print();
     }
 }
