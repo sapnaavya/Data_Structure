@@ -1,4 +1,4 @@
-import java.util.Hashtable;
+import java.util.*;
 
 public class RemoveDuplicates {
     static class Node{
@@ -26,7 +26,7 @@ public class RemoveDuplicates {
     }
 
     //Remove Duplicate from the list - Using HashTables
-    public static void removeDuplicates(Node head) {
+    public static void removeDuplicatesUsingBuffer(Node head) {
         Hashtable<Integer, Integer> hashTable = new Hashtable<>();
         Node current = head;
         int i = 0;
@@ -45,6 +45,26 @@ public class RemoveDuplicates {
         }
     }
 
+    //Remove duplicate using brute force method
+    public static void deleteDupsBruteForce(Node head) {
+        if(head == null) {
+            return;
+        }
+        Node current = head;
+        while(current != null) {
+            Node runner = current;
+            while(runner.next != null) {
+                if(current.data == runner.next.data) {
+                    runner.next = runner.next.next;
+                }
+                else {
+                    runner = runner.next;
+                }
+            }
+            current = current.next;
+        }
+    }
+
     //Main method
     public static void main(String args[]) {
         RemoveDuplicates llist = new RemoveDuplicates();
@@ -55,7 +75,11 @@ public class RemoveDuplicates {
         llist.insertFront(15);
         llist.printList(head);
         
-        removeDuplicates(head);
+        removeDuplicatesUsingBuffer(head);
+        llist.printList(head);
+
+        llist.insertFront(15);
+        deleteDupsBruteForce(head);
         llist.printList(head);
     }
 }
