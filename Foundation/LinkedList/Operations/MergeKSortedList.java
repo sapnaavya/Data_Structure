@@ -83,30 +83,43 @@ public class MergeKSortedList {
     //Main method
     public static void main(String args[]) {
         //No of linkedlist and no of elements in each list
-        int k = 2;
+        int k = 4;
         
         MergeKSortedList llist = new MergeKSortedList();
         List<ArrayList<Integer>> list = new ArrayList<ArrayList<Integer>>();
         ArrayList<Integer> list1 = new ArrayList<Integer>(); 
+        list1.add(20); 
+        list1.add(16);  
+        list1.add(15); 
         list1.add(12); 
-        list1.add(4);  
-        list1.add(3); 
-        list1.add(2); 
         ArrayList<Integer> list2 = new ArrayList<Integer>(); 
-        list2.add(13); 
-        list2.add(12); 
+        list2.add(19); 
         list2.add(11); 
-        list2.add(10);
+        list2.add(9); 
+        list2.add(7);
+
+        ArrayList<Integer> list3 = new ArrayList<Integer>(); 
+        list3.add(13); 
+        list3.add(9);  
+        list3.add(8); 
+        list3.add(8); 
+
+        ArrayList<Integer> list4 = new ArrayList<Integer>(); 
+        list4.add(6); 
+        list4.add(5);  
+        list4.add(4); 
+        list4.add(3);
 
         list.add(list1);
         list.add(list2);
+        list.add(list3);
+        list.add(list4);
         for(int i=0; i<k; i++){
             llist.insertinList(i,list.get(i));
             llist.printListIndexwise(i);
         }
 
         Node mergeList = llist.mergeKSortedList(head);
-        System.out.println("finished successfully");
         printMergeList(mergeList);
 
     }
