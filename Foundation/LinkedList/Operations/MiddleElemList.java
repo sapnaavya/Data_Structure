@@ -1,4 +1,8 @@
-/* Code to find middle element of the linkedlist in the single pass */
+/* Code to find middle element of the linkedlist in the single pass -
+    The idea is to take two pointers - Slow and fast
+    if slow takes one leap and fast takes two leap.
+    So, by the time, fast pointer will reach in the end ; slow will be in the middle of the list 
+ */
 
 public class MiddleElemList {
     class Node {
