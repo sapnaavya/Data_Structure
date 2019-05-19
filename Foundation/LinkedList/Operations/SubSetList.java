@@ -1,3 +1,14 @@
+/* Code to check if linkedlist2 is a subset of linkedlist1 assuming continguous traversal 
+ Assumptions:
+    SubsetList function return instance that holds the starting and end index in superset list when subset list match with superList
+        If both list are null  
+            -> retun null;
+        If one of the superset (list1) is null 
+            -> return null;
+        If subset is null but superset holds value. Considering the fact that null could be subset of any superset 
+            -> return superset;
+
+*/
 
 public class SubSetList {
 
@@ -25,15 +36,6 @@ public class SubSetList {
             endIndex = endPointer;
         }
     }
-
-    /* This function return instance that holds the starting and end index in superset list when subset list match with superList
-        If both list are null  
-            -> retun null;
-        if one of the superset (list1) is null 
-            -> return null;
-        if subset is null but superset holds value. Considering the fact that null could be subset of any superset 
-            -> return superset;
-    */
 
     public static ResultantPointer SubsetList(Node list1, Node list2) {
         if(list1 == null &&  list2 == null) {
@@ -70,15 +72,13 @@ public class SubSetList {
                 s = list1;
                 continue;
             }
-
             if(list1.next != null) { 
                 list1 = list1.next; 
                 s = list1;
             }
             else{
                return new ResultantPointer(null, null);
-            }
-            
+            }   
         }
         return new ResultantPointer(null, null);
     }
