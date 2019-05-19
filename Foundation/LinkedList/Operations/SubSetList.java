@@ -1,6 +1,7 @@
-/* Code to check if linkedlist2 is a subset of linkedlist1 assuming continguous traversal */
 
 public class SubSetList {
+
+    Node head;
     static class Node {
         int data;
         Node next;
@@ -8,80 +9,132 @@ public class SubSetList {
             this.data =  data;
             next = null;
         }
-    }
+    } 
     
-    Node head;
+    //Created new class to hold starting and end index where subset linkedlist match in the superset linkedlist
+    static class ResultantPointer {
+        public Node startIndex;
+        public Node endIndex;
+        ResultantPointer(Node superset) {
+            startIndex = superset;
+            endIndex = null;
+        }
 
-    public static boolean isSubset(Node list1, Node list2) {
-        if(list1 == null || list2 == null) {
-            System.out.println("in if block");
-            return true;
+        ResultantPointer(Node startPointer, Node endPointer ) {
+            startIndex = startPointer;
+            endIndex = endPointer;
+        }
+    }
+
+    /* This function return instance that holds the starting and end index in superset list when subset list match with superList
+        If both list are null  
+            -> retun null;
+        if one of the superset (list1) is null 
+            -> return null;
+        if subset is null but superset holds value. Considering the fact that null could be subset of any superset 
+            -> return superset;
+    */
+
+    public static ResultantPointer SubsetList(Node list1, Node list2) {
+        if(list1 == null &&  list2 == null) {
+            return new ResultantPointer(null, null);
+        }
+
+        if(list1 == null) {
+            return new ResultantPointer(null, null); 
+        }
+
+        if (list2 == null) {
+            return new ResultantPointer(list1);
         }
         
         Node resetList2 = list2;
+        Node s = list1;
+        Node startPointer = null;
+        Node endPointer = null;
         while(list1 != null || list2 != null) {
-        /* if list. data is equal to list2.data, then increment only when both of the pointers are not null to avoid
-        Null pointer exception and continue. If any of the node's pointer points to null means we have reached to the end
-        So, return true as data match between both nodes */
-
             if(list1.data == list2.data) {
-                if(list2.next != null || list2.next != null) {
+                if(list1.next != null &&  list2.next != null) {
                     list1 = list1.next;
-                    list2 = list2.next;  
+                    list2 = list2.next; 
+                    startPointer = s; 
+                    endPointer = list1;
                     continue;        
                 }
                 else {
-                    return true;
+                    return new ResultantPointer(startPointer,endPointer);
                 }
             }
-            /* if data does not match between list1 and list2, check if list.next is not null and then increment 
-            the pointer; if list.next is null means we have traversed the whole list1 and could not found subset.
-            In that case, return false */
+            else if(list2 != resetList2 && list1.next != null) {
+                list2 = resetList2;
+                s = list1;
+                continue;
+            }
 
-            if(list1.next != null) {
-                list1 = list1.next;
+            if(list1.next != null) { 
+                list1 = list1.next; 
+                s = list1;
             }
             else{
-                return false;
+               return new ResultantPointer(null, null);
             }
-            //Reset list to reset list2 in the hope of finding subset list ahead
-            if(list2 != resetList2) {
-                System.out.println("in the loop");
-                list2 = resetList2;
-            }
+            
         }
-        return false;
+        return new ResultantPointer(null, null);
     }
 
     public void printList(Node node) {
-        System.out.println("in print");
         while(node != null) {
-            System.out.println(node.data);
+            System.out.print(node.data + " ");
             node = node.next;
         }
+        System.out.print("\n");
     }
+
     //main method
     public static void main(String args[]) {
         SubSetList list1 = new SubSetList();
         SubSetList list2 = new SubSetList();
+       
         list1.head = new Node(4);
-        list1.head.next = new Node(8);
-        list1.head.next.next = new Node(12);
-        list1.head.next.next.next = new Node(16);
-        list1.head.next.next.next.next = new Node(20);
-        list1.head.next.next.next.next.next = new Node(20);
-        list1.head.next.next.next.next.next.next = new Node(24);
-        //list1.printList(list1.head);
+        list1.head.next = new Node(2);
+        list1.head.next.next = new Node(8);
+        list1.head.next.next.next = new Node(4);
+        list1.head.next.next.next.next = new Node(1);
+        list1.head.next.next.next.next.next = new Node(4);
+        list1.head.next.next.next.next.next.next = new Node(1);
+        list1.head.next.next.next.next.next.next.next = new Node(2);
+        list1.head.next.next.next.next.next.next.next.next = new Node(5);
+        list1.printList(list1.head);
 
         list2.head = new Node(4);
-        list2.head.next = new Node(8);
-        list2.head.next.next = new Node(12);
-        //list2.head.next.next.next = new Node(16);
-        //list2.head.next.next.next.next = new Node(20);
+        list2.head.next = new Node(1);
+        list2.head.next.next = new Node(4);
+        list2.head.next.next.next = new Node(1);
+        list2.head.next.next.next.next = new Node(2);
         list2.printList(list2.head);
+        
+        //SubSetList nullList = new SubSetList();
+        //nullList.head = null;
+        //ResultantPointer resultantPointer = SubsetList(list1.head, list3.head);
 
-
-        boolean middleElem = isSubset(list1.head, list2.head);
-        System.out.println("is subset" + middleElem);
+        ResultantPointer resultantPointer = SubsetList(list1.head, list2.head);
+        if(resultantPointer.startIndex != null && resultantPointer.endIndex != null) {
+            System.out.println("Matched elements in superset list");
+            while(resultantPointer.startIndex != resultantPointer.endIndex) {
+                System.out.println(resultantPointer.startIndex.data);
+                resultantPointer.startIndex = resultantPointer.startIndex.next; 
+            }
+            System.out.println(resultantPointer.startIndex.data);
+        } 
+        else if(resultantPointer.startIndex != null) {
+            System.out.println("subset linked list is null.Thus, returning list1");
+            while(resultantPointer.startIndex != null) {
+                System.out.println(resultantPointer.startIndex.data);
+                resultantPointer.startIndex = resultantPointer.startIndex.next; 
+            }
+        } else{
+            System.out.println("Either list1 is null or no subset found");
+        }
     }
 }

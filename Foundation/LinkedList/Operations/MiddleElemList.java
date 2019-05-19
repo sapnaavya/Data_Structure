@@ -1,8 +1,10 @@
-/* Code to find middle element of the linkedlist in the single pass -
+/* Code to find middle node of the linkedlist and print its data in the single pass -
     The idea is to take two pointers - Slow and fast
     if slow takes one leap and fast takes two leap.
     So, by the time, fast pointer will reach in the end ; slow will be in the middle of the list 
- */
+    Assumption:
+    1. The linkedlist is designed to add only integers
+*/
 
 public class MiddleElemList {
     class Node {
@@ -13,7 +15,6 @@ public class MiddleElemList {
     static Node head;
 
     public void insertFront(int data) {
-        //Node node = head;
         Node newNode = new Node(data);
         newNode.next = head;
         head = newNode;
@@ -27,14 +28,14 @@ public class MiddleElemList {
         }
     }
 
-    public int middleELem(Node head) {
+    public Node middleELem(Node head) {
         Node node = head;
         if(node == null) {
-            return 0;
+            return null;
         }
 
         if(node.next == null) {
-            return node.data;
+            return node;
         }
 
         Node slow = head;
@@ -46,7 +47,7 @@ public class MiddleElemList {
                 fast = fast.next;
             }
         }
-        return slow.data;
+        return slow;
     }
     //main method
     public static void main(String args[]) {
@@ -56,9 +57,11 @@ public class MiddleElemList {
         list.insertFront(15);
         list.insertFront(20);
         list.insertFront(25);
-        //list.insertFront(30);
+        list.insertFront(30);
         list.printList();
-        int middleElem = list.middleELem(head);
-        System.out.println("midlle elem" + middleElem);
+        Node middleNode = list.middleELem(head);
+        if(middleNode != null){
+            System.out.println("Element in the middle node " + middleNode.data);
+        }
     }
 }
