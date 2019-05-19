@@ -1,3 +1,5 @@
+/* This code will check for pallindromic list using Stack and bruteforce method */
+
 import java.util.Stack;
 
 public class PallindromeList {
@@ -66,7 +68,6 @@ public class PallindromeList {
         if(l1 == null) {
             return null;
         }
-        //Node current = head;
         Node prev = null;
         while(l1 != null) {
             Node newNode =  new Node(l1.data);
