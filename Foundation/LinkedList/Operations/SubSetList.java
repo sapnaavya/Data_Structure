@@ -32,6 +32,7 @@ public class SubSetList {
         }
 
         ResultantPointer(Node startPointer, Node endPointer ) {
+            //System.out.print("data" + startPointer.data + endPointer.data);
             startIndex = startPointer;
             endIndex = endPointer;
         }
@@ -52,8 +53,8 @@ public class SubSetList {
         
         Node resetList2 = list2;
         Node s = list1;
-        Node startPointer = null;
-        Node endPointer = null;
+        Node startPointer = s;
+        Node endPointer = list1;
         while(list1 != null || list2 != null) {
             if(list1.data == list2.data) {
                 if(list1.next != null &&  list2.next != null) {
@@ -75,6 +76,8 @@ public class SubSetList {
             if(list1.next != null) { 
                 list1 = list1.next; 
                 s = list1;
+                startPointer = s;
+                endPointer = list1;
             }
             else{
                return new ResultantPointer(null, null);
@@ -96,22 +99,22 @@ public class SubSetList {
         SubSetList list1 = new SubSetList();
         SubSetList list2 = new SubSetList();
        
-        list1.head = new Node(4);
+        list1.head = new Node(1);
         list1.head.next = new Node(2);
-        list1.head.next.next = new Node(8);
-        list1.head.next.next.next = new Node(4);
-        list1.head.next.next.next.next = new Node(1);
-        list1.head.next.next.next.next.next = new Node(4);
-        list1.head.next.next.next.next.next.next = new Node(1);
-        list1.head.next.next.next.next.next.next.next = new Node(2);
-        list1.head.next.next.next.next.next.next.next.next = new Node(5);
+        // list1.head.next.next = new Node(8);
+        // list1.head.next.next.next = new Node(4);
+        // list1.head.next.next.next.next = new Node(1);
+        // list1.head.next.next.next.next.next = new Node(4);
+        // list1.head.next.next.next.next.next.next = new Node(1);
+        // list1.head.next.next.next.next.next.next.next = new Node(2);
+        // list1.head.next.next.next.next.next.next.next.next = new Node(5);
         list1.printList(list1.head);
 
-        list2.head = new Node(4);
-        list2.head.next = new Node(1);
-        list2.head.next.next = new Node(4);
-        list2.head.next.next.next = new Node(1);
-        list2.head.next.next.next.next = new Node(2);
+        list2.head = new Node(2);
+        // list2.head.next = new Node(8);
+        // list2.head.next.next = new Node(4);
+        // list2.head.next.next.next = new Node(1);
+        // list2.head.next.next.next.next = new Node(4);
         list2.printList(list2.head);
         
         //SubSetList nullList = new SubSetList();

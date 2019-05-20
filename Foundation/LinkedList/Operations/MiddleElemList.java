@@ -40,12 +40,9 @@ public class MiddleElemList {
 
         Node slow = head;
         Node fast = head;
-        while(fast.next!= null) {
-            fast = fast.next;
-            if(fast != null && fast.next !=null){
-                slow = slow.next;
-                fast = fast.next;
-            }
+        while(fast != null && fast.next!= null) {
+            slow = slow.next;
+            fast = fast.next.next;
         }
         return slow;
     }
