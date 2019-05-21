@@ -1,10 +1,10 @@
 static int height(Node root) {
       	// Write your code here.
-        if (root == null){
-        return -1;
+    if (null == root){
+        return 0;
     }
-    else{
-        return 1 + Math.max( height(root.left), height(root.right) );
-    }
-    }
+    int hLeftSub = heightOfTree(root.left);
+    int hRightSub = heightOfTree(root.right);
+    return Math.max(hLeftSub, hRightSub) + 1;
+}
 

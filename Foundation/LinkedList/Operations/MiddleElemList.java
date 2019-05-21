@@ -55,6 +55,8 @@ public class MiddleElemList {
         list.insertFront(20);
         list.insertFront(25);
         list.insertFront(30);
+        list.insertFront(35);
+        //list.insertFront(40);
         list.printList();
         Node middleNode = list.middleELem(head);
         if(middleNode != null){
