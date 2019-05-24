@@ -1,3 +1,4 @@
+import java.util.Stack;
 class Node{
     int data;
     Node left;
@@ -48,11 +49,34 @@ public class CountSumBoundaryNode  {
         if(root == null) {
             return;
         }
-        sumOfLeafNode(root.left);
+        
         if(root.left == null && root.right == null) {
             sum_of_boundary_nodes += root.data;
         }
+
+        sumOfLeafNode(root.left);
         sumOfLeafNode(root.right);
+    }
+
+    //sum of leaf node using stacks
+    public void sumOfLeafNodeUsingStacks(Node root) {
+        if(root == null) {
+            return;
+        }
+        Stack<Node> stack = new Stack<>();
+        stack.push(root);
+        while(!stack.isEmpty()) {
+            Node node = stack.pop();
+            if(node.left == null && node.right == null) {
+                sum_of_boundary_nodes += node.data;
+            }
+            if(node.right != null) {
+                stack.push(node.right);
+            }
+            if(node.left != null) {
+                stack.push(node.left);
+            }
+        } 
     }
 
     //helper function for all sums
@@ -67,7 +91,8 @@ public class CountSumBoundaryNode  {
         sumofRightBoundaryNode(root.right);
 
         //sum of leaf node
-        sumOfLeafNode(root);
+        //sumOfLeafNode(root);
+        sumOfLeafNodeUsingStacks(root);
 
         return sum_of_boundary_nodes;
     }

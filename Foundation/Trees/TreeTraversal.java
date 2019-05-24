@@ -1,6 +1,7 @@
 /* Code to do tree traversal (InOrder, PreOrder, PostOrder) in a recursive way */
 
-
+import java.util.Queue;
+import java.util.LinkedList;
 class Node 
 { 
     int data; 
@@ -19,6 +20,7 @@ public class TreeTraversal {
         root = null; 
     }
 
+    //preorder -> root -> left -> right
     public void preOrder(Node root) {
         if(root == null) {
             return ;
@@ -28,7 +30,7 @@ public class TreeTraversal {
         preOrder(root.right);
     }
     
-
+    //inorder -> left -> root -> right
     public void inOrder(Node root) {
         if(root == null) {
             return ;
@@ -38,6 +40,7 @@ public class TreeTraversal {
         inOrder(root.right);
     }
 
+    //postorder ->left ->right ->root
     public void postOrder(Node root) {
         if(root == null) {
             return ;
@@ -47,9 +50,29 @@ public class TreeTraversal {
         System.out.print(root.data);
     }
 
+    //level order traversal
+    public void levelOrder(Node root) {
+        if(root == null){
+            return;
+        }
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(root);
+        while(!queue.isEmpty()) {
+            Node top = queue.poll();
+            System.out.print(top.data);
+            if(top.left != null) {
+                queue.add(top.left);
+            }
+            if(top.right != null) {
+                queue.add(top.right);
+            }
+        }
+    }
+
     public void inOrder(){ inOrder(root); }
     public void preOrder(){ preOrder(root); }
     public void postOrder(){postOrder(root); }
+    public void levelOrder(){levelOrder(root); }
 
     //Main Method
     public static void main(String args[]) {
@@ -65,6 +88,8 @@ public class TreeTraversal {
         tree.postOrder();
         System.out.print("\n");
         tree.inOrder();
+        System.out.print("\n");
+        tree.levelOrder();
     }
 }
   
