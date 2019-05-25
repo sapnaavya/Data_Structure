@@ -117,10 +117,7 @@ public class DetectCycle {
         Node prev = null;
         Node current = node;
         Node next = null;
-        System.out.println("node is");
-        System.out.println(current == null);
         while(current != null) { 
-            System.out.println("in the loop");
             next = current.next;
             current.next = prev;
             prev = current;
@@ -132,15 +129,17 @@ public class DetectCycle {
     //Main method
     public static void main(String args[]) {
         DetectCycle llist = new DetectCycle();
+        llist.insertFront(3);
         llist.insertFront(5);
-        llist.insertFront(10);
-        llist.insertFront(15);
-        llist.insertFront(20);
-        llist.insertFront(25);
+        llist.insertFront(5);
+        llist.insertFront(7);
+        llist.insertFront(9);
+        llist.insertFront(8);
+        llist.insertFront(7);
         llist.printList(head);
     
         /*Create loop for testing */
-        llist.head.next.next = llist.head;
+        llist.head.next.next = llist.head.next;
         
         //checking for cycle using reverse
         boolean isCycleUsingReverse = llist.detectCycleUsingReverse(head);
