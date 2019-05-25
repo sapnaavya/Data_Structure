@@ -1,3 +1,4 @@
+/* This code deletes the binary tree in post order traversal */
 class Node{
     int data;
     Node left, right;
