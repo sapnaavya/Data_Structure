@@ -1,3 +1,5 @@
+// This code takes the inorder and preorder seuqence and build tree from the sequence and print inorder traversal of that tree
+
 class Node{
     char data;
     Node left, right;
@@ -6,6 +8,7 @@ class Node{
         left = right = null;
     }
 }
+
 public class BuildTreeInOrderTraversal{
     Node root;
     static int preIndex = 0;
@@ -59,7 +62,7 @@ public class BuildTreeInOrderTraversal{
         int len = in.length;
         Node root = tree.buildTree(in, pre, 0, len - 1);
 
-        
+
         //print inorder
         tree.inOrder(root);
     }

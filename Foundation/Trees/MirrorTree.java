@@ -1,3 +1,5 @@
+//This code create a mirror tree
+
 class Node 
 { 
     int data; 
@@ -17,7 +19,6 @@ public class MirrorTree {
         }
 
         Node temp;
-
         //Mirror subtree
         mirrorTree(root.left);
         mirrorTree(root.right);
