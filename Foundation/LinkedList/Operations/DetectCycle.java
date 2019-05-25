@@ -7,8 +7,6 @@
 */
 import java.util.*;
 
-import javax.swing.text.DefaultEditorKit.CutAction;
-
 public class DetectCycle {
     static class Node{
         int data;
