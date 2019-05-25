@@ -1,6 +1,13 @@
 
-/* A java program to detect cycle in the linked list Basically, check if we have same node address */
+/* A java program to detect cycle in the linked list Basically, check if we have same node address
+    This code tried to detect cycle in below three ways
+    -> Using Hashset
+    -> Using slow pointers and fast pointers
+    -> Using inplace reversal algorithm
+*/
 import java.util.*;
+
+import javax.swing.text.DefaultEditorKit.CutAction;
 
 public class DetectCycle {
     static class Node{
@@ -64,7 +71,7 @@ public class DetectCycle {
         return false; 
     }
 
-    //Detect and Remove loop
+    //Detect and Remove loop using slow pointers and fast pointers
     public boolean detectAndRemoveLoop(Node head) {
         if(head == null || head.next ==null) {
             return true;
@@ -91,6 +98,39 @@ public class DetectCycle {
         return false;
     }
 
+    //detect cycle using inplace reversal method
+    public boolean detectCycleUsingReverse(Node node) {
+        if(node == null) {
+            return true;
+        }
+        if(node.next == null) {
+            return false;
+        }
+        Node head1 = node;
+        Node reversedNode =  reverserInplace(node);
+        if(reversedNode == head1) {
+            return true;
+        }
+        return false;
+    }
+
+    //Reverse inplace linkedlist
+    private static Node reverserInplace(Node node) {
+        Node prev = null;
+        Node current = node;
+        Node next = null;
+        System.out.println("node is");
+        System.out.println(current == null);
+        while(current != null) { 
+            System.out.println("in the loop");
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+        return prev;
+    }
+
     //Main method
     public static void main(String args[]) {
         DetectCycle llist = new DetectCycle();
@@ -102,15 +142,23 @@ public class DetectCycle {
         llist.printList(head);
     
         /*Create loop for testing */
-        llist.head.next.next = llist.head; 
+        llist.head.next.next = llist.head;
+        
+        //checking for cycle using reverse
+        boolean isCycleUsingReverse = llist.detectCycleUsingReverse(head);
+        System.out.println("Cycle exists using inplace reverse: " + isCycleUsingReverse);
+
+        //checking for cycle using hashset
         boolean isloop = llist.detectLoopUsingHashSet(head);
-        System.out.println(isloop);
+        System.out.println("Cycle exists using hashset: " + isloop);
 
+        //checking for cycle using slow pointer and fast pointer
         boolean isloopCycle = llist.detectCycleUsingPointer(head);
-        System.out.println(isloopCycle);
+        System.out.println("cycle exist using two pointers: " + isloopCycle);
 
+        //detect cycle and break the cycle
         boolean detectandRemoveLoop = llist.detectAndRemoveLoop(head);
-        System.out.println(detectandRemoveLoop);
+        System.out.println("Cycle exists using Two Pointers Method and break the cycle: " + detectandRemoveLoop);
 
     }
 }
