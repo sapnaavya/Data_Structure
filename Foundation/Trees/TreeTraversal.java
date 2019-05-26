@@ -6,6 +6,9 @@
 import java.util.Queue;
 import java.util.LinkedList;
 import java.util.Stack;
+import java.util.TreeMap;
+import java.util.Vector;
+import java.util.Map.Entry; 
 class Node 
 { 
     int data; 
@@ -100,11 +103,46 @@ public class TreeTraversal {
             System.out.print(topElem.data + " ");
         }
     }
+
+    //Get Vertical order of each node for vertical traversal
+    public static void getVerticalOrder(Node root, TreeMap<Integer, Vector<Integer>> m, int hd) {
+        if(root == null) {
+            return;
+        }
+
+        Vector<Integer> get = m.get(hd);
+        if(get == null) {
+            get = new Vector();
+            get.add(root.data);
+        }
+        else {
+            get.add(root.data);
+        }
+        
+        m.put(hd, get);
+
+        //Store values in left subtree
+        getVerticalOrder(root.left, m, hd - 1);
+        //Store values in right subtree
+        getVerticalOrder(root.right, m, hd + 1);
+    }
+
+    //vertical order Traversal using Treemap and Vector
+    public void verticalOrderTraversalUsingTreeMap(Node root){
+        TreeMap<Integer, Vector<Integer>> map = new TreeMap<Integer, Vector<Integer>>();
+        int hd =0;
+        getVerticalOrder(root, map, hd);
+        for(Entry<Integer, Vector<Integer>> entry: map.entrySet()) {
+            System.out.println(entry.getValue()); 
+        }
+
+    }
     public void inOrder(){ inOrder(root); }
     public void preOrder(){ preOrder(root); }
     public void postOrder(){postOrder(root); }
     public void levelOrder(){levelOrder(root); }
     public void reverseLevelOrder(){reverseLevelOrder(root);}
+    public void verticalOrder() {verticalOrderTraversalUsingTreeMap(root);}
 
     //Main Method
     public static void main(String args[]) {
@@ -115,7 +153,7 @@ public class TreeTraversal {
         tree.root.left.left = new Node(4);
         tree.root.left.right = new Node(6);
         tree.root.left.left.left = new Node(7);
-        
+
         //preorder traversal
         tree.preOrder();
         System.out.print("\n");
@@ -134,6 +172,10 @@ public class TreeTraversal {
         
         //reverse leveorder traversal
         tree.reverseLevelOrder();
+        System.out.print("\n");
+
+        //vertical order traversal
+        tree.verticalOrder();
         System.out.print("\n");
     }
 }
