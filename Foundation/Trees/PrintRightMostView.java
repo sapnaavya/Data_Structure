@@ -2,6 +2,7 @@
  -> Using queues
  -> Using recursion 
 */
+
 import java.util.Queue;
 import java.util.LinkedList;
 
@@ -16,6 +17,7 @@ class Node {
 }
 public class PrintRightMostView {
     Node root;
+    static int maxLevel = 0;
 
     //Print right most view using Queues; when we have queue count as 1 that mean it is the rightmost element. So, we are printing that data
     public void printRightmostViewUsingQueues(Node root) {
@@ -45,6 +47,20 @@ public class PrintRightMostView {
 
     }
 
+    //print rightmost view of the tree using recursion
+    public void rightmostViewRecursion(Node root, int level) {
+        if(root == null) {
+            return;
+        }
+
+        if(maxLevel < level) {
+            System.out.print(root.data + " ");
+            maxLevel = level;
+        }
+        rightmostViewRecursion(root.right, level + 1);
+        rightmostViewRecursion(root.left, level + 1);
+    }
+
     //Print inorder of the tree
     public void inOrder(Node root) {
         if(root == null) {
@@ -69,6 +85,9 @@ public class PrintRightMostView {
 
         System.out.println("\n");
         tree.printRightmostViewUsingQueues(tree.root);
+
+        System.out.println("\n");
+        tree.rightmostViewRecursion(tree.root, 1);
 
     }
 }

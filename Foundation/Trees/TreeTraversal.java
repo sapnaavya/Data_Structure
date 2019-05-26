@@ -1,5 +1,14 @@
 /* Code to do tree traversal (InOrder, PreOrder, PostOrder, level order traversal and reverse level order traversal) in a recursive way
- -> For reverse level order traversal, we will poll elements from queue and push them to stack, once queue is empty,
+    
+    Traversal algorithm:
+    -> Inorder
+    -> Postorder
+    -> preorder
+    -> level order
+    -> reverse level order
+    -> vertical order 
+
+-> For reverse level order traversal, we will poll elements from queue and push them to stack, once queue is empty,
      we will pop out elements from the stacks and print them. They would be printes in reverse level order traversal
 */
 
@@ -130,7 +139,7 @@ public class TreeTraversal {
     //vertical order Traversal using Treemap and Vector
     public void verticalOrderTraversalUsingTreeMap(Node root){
         TreeMap<Integer, Vector<Integer>> map = new TreeMap<Integer, Vector<Integer>>();
-        int hd =0;
+        int hd = 0;
         getVerticalOrder(root, map, hd);
         for(Entry<Integer, Vector<Integer>> entry: map.entrySet()) {
             System.out.println(entry.getValue()); 
