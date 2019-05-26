@@ -18,8 +18,9 @@ class Node {
 }
 
 //Cousin nodes class
-public class CousinNodes {
+public class CheckCousinNodes {
     Node root;
+
     //Print inorder
     public void inOrder(Node root) {
         if(root == null) {
@@ -55,7 +56,6 @@ public class CousinNodes {
         }
 
         if((root.left ==  node1 && root.right == node2) || (root.right == node2 && root.left == node2)) {
-            System.out.println("data");
             return true;
         }
 
@@ -82,7 +82,7 @@ public class CousinNodes {
 
     //main method
     public static void main(String args[]) {
-        CousinNodes tree = new CousinNodes();
+        CheckCousinNodes tree = new CheckCousinNodes();
         tree.root = new Node(3); 
 		tree.root.left = new Node(2); 
 		tree.root.right = new Node(5); 
