@@ -1,3 +1,22 @@
+/* This code prints topmost and bottomost view of the tree
+    -> In this code, hd refers to horizontal distance
+
+    -> TreeMap stores key value pairs in sorted order and replace new value in the key, if we get the same key with new value
+    -> Here, TreeMap data structure has been used in storing the hd as keys and nodes as values
+    
+
+    Logic for bottomost:
+    -> if we find the hd, then we add that in the treemap. By the nature, treemap stores 
+    the key in a unique and sorted way. So, if if finds the hd(horizontal distance) as key again, it will replace the value w.r.t to that hd
+    and will take new value.
+
+    Logic for topmost:
+    -> we make sure that treemap only stores as key (hd) and ignore if we get the same key with diffrent value 
+    as we only want to store first key and its respected value. This entryset will end up printing
+    topmost view of the tree.
+    
+*/
+
 import java.util.TreeMap;
 import java.util.Map.Entry;
 import java.util.Queue;
