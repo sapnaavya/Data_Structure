@@ -1,8 +1,8 @@
 /* Code to print zig zag level traversal
  Logic: 
    1. Two stacks (currentstack and nextstack) and one boolean variable (leftToRight) have been used to keep track of movement from left to right or right to leaft
-   2. if leftToRight is true, we push left first and then right in order to print in zigZag shape
-   3. if leftToRight is false, we push right first and left later in order to print in zigZag shape 
+   2. if pushLeftToRight is true, we push left first and then right in order to print in zigZag shape
+   3. if pushLeftToRight is false, we push right first and left later in order to print in zigZag shape 
    4. when currentstack is empty, we move next stack to currentstack and change boolean variable leftToRight
 */
 import java.util.Stack;
@@ -25,12 +25,12 @@ public class ZigZagTraversal {
         Stack<Node> currentStack = new Stack<>();
         Stack<Node> nextStack = new Stack<>();
         currentStack.push(root);
-        boolean leftToRight = true;
+        boolean pushLeftToRight = true;
         while(!currentStack.isEmpty()) {
             Node temp = currentStack.pop();
             
             System.out.print(temp.data + " ");
-            if(leftToRight) {
+            if(pushLeftToRight) {
                 if(temp.left != null) {
                     nextStack.push(temp.left);
                 }
@@ -47,7 +47,7 @@ public class ZigZagTraversal {
             }
 
             if(currentStack.isEmpty()) {
-                leftToRight = !leftToRight;
+                pushLeftToRight = !pushLeftToRight;
                 Stack<Node> tempStack = currentStack;
                 currentStack = nextStack;
                 nextStack = tempStack;
