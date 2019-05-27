@@ -1,4 +1,12 @@
 
+/* This code prints the diameter of binary tree - i.e the number of nodes in the longest path
+    when calculating the diameter of binary tree, we need to check if that longest path goes thro root or not.
+    Since we can not ensure whether the longest path would pass thro root or not.. we will take the max of below:
+    a. If longest path passes thro root then lheight + rheight + 1
+    b. If longest path does not pass thro root then we have to separately calculate diameter of left subtree and diameter of right subtree
+    and take the maximum of(lheight + rheight + 1, math.max(ldiameter, rdiameter))
+
+    */
 class Node {
     int data;
     Node left;
