@@ -5,8 +5,7 @@
     a. If longest path passes thro root then lheight + rheight + 1
     b. If longest path does not pass thro root then we have to separately calculate diameter of left subtree and diameter of right subtree
     and take the maximum of(lheight + rheight + 1, math.max(ldiameter, rdiameter))
-
-    */
+*/
 class Node {
     int data;
     Node left;
