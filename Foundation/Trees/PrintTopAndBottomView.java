@@ -1,6 +1,7 @@
 /* This code prints topmost and bottomost view of the tree
     -> In this code, hd refers to horizontal distance
-
+    -> To print topmost and bottomost view, we have used the queue as using recurion result were coming wrong
+    
     -> TreeMap stores key value pairs in sorted order and replace new value in the key, if we get the same key with new value
     -> Here, TreeMap data structure has been used in storing the hd as keys and nodes as values
     
