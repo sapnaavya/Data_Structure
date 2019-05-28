@@ -1,3 +1,6 @@
+/*
+Assumption: We are assuming that no duplicates will be allowed as this code does not check for duplicates or equal to values
+*/
 public class FindLCABinarySearchTree {
     static class Node{
         int data;
