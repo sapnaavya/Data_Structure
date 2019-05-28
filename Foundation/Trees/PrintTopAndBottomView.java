@@ -1,7 +1,7 @@
 /* This code prints topmost and bottomost view of the tree
     -> In this code, hd refers to horizontal distance
     -> To print topmost and bottomost view, we have used the queue as using recurion result were coming wrong
-    
+
     -> TreeMap stores key value pairs in sorted order and replace new value in the key, if we get the same key with new value
     -> Here, TreeMap data structure has been used in storing the hd as keys and nodes as values
     
@@ -36,6 +36,7 @@ class Node {
 
 public class PrintTopAndBottomView {
     Node root;
+    
     //inorder traversal
     public void inorder(Node root) {
         if(root == null) {
@@ -87,6 +88,18 @@ public class PrintTopAndBottomView {
         }
     } 
 
+    public static void topMostRecur(Node root, TreeMap<Integer, Node> map, int hd) {
+        if(root == null) {
+            return;
+        }
+        if(!map.containsKey(hd)){
+            map.put(hd, root);
+        }
+
+        topMostRecur(root.left, map, hd - 1);
+        topMostRecur(root.right, map, hd + 1);
+    }
+
     //print topmost element in the tree
     public static void topmost(Node root, TreeMap<Integer, Node> map, int hd) {
         if(root == null) {
@@ -119,7 +132,8 @@ public class PrintTopAndBottomView {
     public void printTopmost(Node node) {
         TreeMap<Integer, Node> map = new TreeMap<>();
         int hd = 0;
-        topmost(node, map, hd);
+        //topmost(node, map, hd);
+        topMostRecur(node, map, hd);
 
         for(Entry<Integer, Node> entry: map.entrySet()) {
             System.out.print(entry.getValue().data + " ");

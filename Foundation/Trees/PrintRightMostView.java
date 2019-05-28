@@ -1,5 +1,9 @@
-/*This code prints the rightmost view of the tree in below ways:
- -> Using queues
+/*This code prints the rightmost view of the tree in below ways
+
+ -> Using queues .. using queues this problem has been solved in two ways:
+    1. One, when we add in the queue from left to right. At that time, we check for nodecount to become 1 as that mean we have reached to the rightmost
+    2. Two, we add elements in the queue from right to left and after coming out to size while loop, we take a peek that queue as it would be holding the rightmost element
+ 
  -> Using recursion 
 */
 
@@ -15,6 +19,7 @@ class Node {
         left = right = null;
     }
 }
+
 public class PrintRightMostView {
     Node root;
     static int maxLevel = 0;
@@ -72,6 +77,33 @@ public class PrintRightMostView {
         inOrder(root.right);
     }
 
+    //Print rightmostview of the tree
+    public void printRightmostViewrighttoLeft(Node root) {
+        if(root == null) {
+            return;
+        }
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(root);
+        
+        while(!queue.isEmpty()) {
+            int size = queue.size();
+            Node peekNode = queue.peek();
+            System.out.print(peekNode.data + " ");
+
+            while(size-- > 0) {
+                Node temp = queue.poll();
+                if(temp.right != null) {
+                    queue.add(temp.right);
+                }
+
+                if(temp.left != null) {
+                    queue.add(temp.left);
+                }
+            }
+
+        }
+    }
+    
     //main method
     public static void main(String args[]) {
         PrintRightMostView tree = new PrintRightMostView();
@@ -84,10 +116,16 @@ public class PrintRightMostView {
         tree.inOrder(tree.root);
 
         System.out.println("\n");
+        System.out.println("Using Queues");
         tree.printRightmostViewUsingQueues(tree.root);
 
         System.out.println("\n");
+        System.out.println("Using recursion");
         tree.rightmostViewRecursion(tree.root, 1);
+
+        System.out.println("\n");
+        System.out.println("Using Queues another way");
+        tree.printRightmostViewrighttoLeft(tree.root);
 
     }
 }
