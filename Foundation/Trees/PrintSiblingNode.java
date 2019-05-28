@@ -32,7 +32,7 @@ public class PrintSiblingNode {
             return null;
         }
         if(root.data == node1.data) {
-            System.out.print("Root does not have sibling");
+            System.out.print("node does not have sibling");
             return null;
         }
 
