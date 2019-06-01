@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - BSTOrNot",
+            "request": "launch",
+            "mainClass": "BSTOrNot",
+            "projectName": "rs_124_1ebd6f61"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - PrintRightMostView",
             "request": "launch",
             "mainClass": "PrintRightMostView",

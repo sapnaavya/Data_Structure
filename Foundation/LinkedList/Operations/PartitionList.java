@@ -39,22 +39,21 @@ public class PartitionList {
 
         Node start = head;
         Node tail = head;
-
+        Node temp = head;
         while(tail.next != null) {
             tail = tail.next;
         }
 
         while(start != null) {
-            if(start.data > x) {
-                Node temp =  start;
-                tail.next = start;
-                tail = start;
-                tail.next = null;
+            if(start.data > x) {   
+                tail.next = new Node(start.data);
+                tail = tail.next;
+                tail.next = null; 
 
-                //the problem is with below start where start is not getting updated pointer
-                //because temp.next is holding null but it is supposed to be holding start.next i.e. not null
-                
-                start = temp.next;
+                temp = start.next;
+                start.data =  temp.data;
+                start.next = temp;
+                head = start.next;
             } else {
                 start = start.next;
             }
