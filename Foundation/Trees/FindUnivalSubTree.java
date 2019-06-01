@@ -26,6 +26,7 @@ public class FindUnivalSubTree {
         if(node == null) {
             return true;
         }
+        
         //Recursively count left and right unival subtree
         boolean left =  countSingleRec(node.left, c);
         boolean right = countSingleRec(node.right, c);

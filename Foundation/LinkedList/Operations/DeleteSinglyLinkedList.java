@@ -47,7 +47,8 @@ public class DeleteSinglyLinkedList {
             counter++;
             currentNode = currentNode.next;
         }
-        if(currentNode.next != null){
+        if(currentNode.next != null){     // make sure to check for this if condition otherwise you will get null pointer exception
+
             prev.next  = currentNode.next;
             System.out.println(index + " " + "position element deleted");
         }

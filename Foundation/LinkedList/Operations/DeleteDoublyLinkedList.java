@@ -15,6 +15,7 @@ public class DeleteDoublyLinkedList {
         Node newNode = new Node(data);
         newNode.prev = null;
         newNode.next = head;
+        //check this if condition to avoid null pointer exception
         if(head != null) {
             head.prev = newNode;
         }
@@ -37,6 +38,7 @@ public class DeleteDoublyLinkedList {
         }
         Node nextNode = node.next;
         node.next = null;
+        //point head to the new next node
         head = nextNode;
     }
 

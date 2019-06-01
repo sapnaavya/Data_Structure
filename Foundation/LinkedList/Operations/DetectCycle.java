@@ -59,6 +59,7 @@ public class DetectCycle {
         }
         Node slowPointer = head;
         Node fastPointer = head;
+        //Remember this while loop Sapna
         while(slowPointer != null && fastPointer != null && fastPointer.next != null) {
             slowPointer = slowPointer.next;
             fastPointer = fastPointer.next.next;
@@ -66,6 +67,7 @@ public class DetectCycle {
                 return true;
             }
         }
+        
         return false; 
     }
 
@@ -74,8 +76,10 @@ public class DetectCycle {
         if(head == null || head.next ==null) {
             return true;
         }
+        
         Node slow = head;
         Node fast = head;
+
         while(slow != null && fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
@@ -83,6 +87,17 @@ public class DetectCycle {
                 break;
             }
         }
+
+        //Insted of using break, we can also do that if condition in while loop itself, see below code
+        // while(slow != null && fast != null && fast.next != null && slow != fast) {
+        //     slow = slow.next;
+        //     fast = fast.next.next;
+        //     // if(slow == fast) {
+        //     //     break;
+        //     // }
+        // }
+
+
         if(slow == fast) {
             slow = head;
             while(slow.next != fast.next) {

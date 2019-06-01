@@ -24,6 +24,7 @@ public class PrintAllAncessatorNode {
             System.out.print(node.data);
             return true;
         }
+        
         return false;
     }
     

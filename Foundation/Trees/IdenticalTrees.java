@@ -36,6 +36,7 @@ public class IdenticalTrees {
 
     //Check if two binary trees are identical - Using Iterative method
     public boolean isIdenticalIterative(Node root1, Node root2) {
+        
        // Return true if both trees are empty  
        if (root1 == null && root2 == null){
         //System.out.println("in the loop1");

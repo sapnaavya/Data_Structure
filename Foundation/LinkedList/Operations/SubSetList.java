@@ -32,7 +32,6 @@ public class SubSetList {
         }
 
         ResultantPointer(Node startPointer, Node endPointer ) {
-            //System.out.print("data" + startPointer.data + endPointer.data);
             startIndex = startPointer;
             endIndex = endPointer;
         }
@@ -57,17 +56,29 @@ public class SubSetList {
         Node endPointer = list1;
         while(list1 != null || list2 != null) {
             if(list1.data == list2.data) {
+
+                /* Note: We need to update startpointer and endpointer after we find that list1 data and list 2 is equal
+                   if we changed these pointers in if condition then startpointer and endpointer wont be updated when list1 next and list2 next is null 
+                   even though list1 data and list2 data is match, still pointers wont be updated as list1 next and lis2 next will be null 
+                   for example, 1,2 are in superset and 2 is in subset .. after finding the 2 and 2 is match.. we wont be able to retun right pointer in superset and superset and subset list next is null
+                   Thus, it is important to update them when we see we have a data match instead of going in if block
+                */
+                 
+                startPointer = s; 
+                endPointer = list1;
+
                 if(list1.next != null &&  list2.next != null) {
                     list1 = list1.next;
-                    list2 = list2.next; 
-                    startPointer = s; 
-                    endPointer = list1;
+                    list2 = list2.next;   
                     continue;        
                 }
                 else {
                     return new ResultantPointer(startPointer,endPointer);
                 }
             }
+
+            //make sure to reset the list2 first..before moving list1 to next pointer.. thus first else if and then if condition check
+            // also, make sure to update s pointer in both else if and if condition both
             else if(list2 != resetList2 && list1.next != null) {
                 list2 = resetList2;
                 s = list1;
@@ -76,8 +87,6 @@ public class SubSetList {
             if(list1.next != null) { 
                 list1 = list1.next; 
                 s = list1;
-                startPointer = s;
-                endPointer = list1;
             }
             else{
                return new ResultantPointer(null, null);
@@ -100,7 +109,7 @@ public class SubSetList {
         SubSetList list2 = new SubSetList();
        
         list1.head = new Node(1);
-        list1.head.next = new Node(2);
+        list1.head.next = new Node(3);
         // list1.head.next.next = new Node(8);
         // list1.head.next.next.next = new Node(4);
         // list1.head.next.next.next.next = new Node(1);
@@ -110,7 +119,7 @@ public class SubSetList {
         // list1.head.next.next.next.next.next.next.next.next = new Node(5);
         list1.printList(list1.head);
 
-        list2.head = new Node(2);
+        list2.head = new Node(3);
         // list2.head.next = new Node(8);
         // list2.head.next.next = new Node(4);
         // list2.head.next.next.next = new Node(1);

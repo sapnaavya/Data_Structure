@@ -13,6 +13,8 @@ public class InsertDoublyLinkedList {
         Node newNode = new Node(data);
         newNode.prev = null;
         newNode.next = head;
+
+        //check for this if condition otherwise we may get null pointer exception
         if(head != null) {
             head.prev = newNode;
         }
@@ -32,7 +34,7 @@ public class InsertDoublyLinkedList {
         newNode.next = emptyNode;
     }
 
-    //Insert node after a position
+    //Insert node after a position... always make sure to take prev node and curr node while searching for index
     public void insertAtPosition(int position, int data) {
         Node newNode = new Node(data);
         int i = 0;
@@ -41,10 +43,15 @@ public class InsertDoublyLinkedList {
         while(i < position) {
             prevNode = currentNode;
             currentNode = currentNode.next;
+            // this if condition is necessary to check if index is bigger then linkedlist lenght.. I
+            // if current node is null that mean we have traversed whole list and still could not found the index
             if(currentNode == null) {
                 System.out.println("reached the end of list");
                 break;
             }
+            //this break statment can be avoided if we add this if statement check in while loop itsef
+            // for example, while(i < position && currentNode != null) {
+            
             i++;
         }
         prevNode.next = newNode;
@@ -66,7 +73,7 @@ public class InsertDoublyLinkedList {
         newNode.prev = node1;
         newNode.next = nextNode;
         
-        //Check if new node is not the last node in the list
+        //Check if next pointer to node1 is not the last node in the list.. to avoid null pointer exception
         if (nextNode != null) {
             nextNode.prev = newNode;
         }
@@ -85,6 +92,7 @@ public class InsertDoublyLinkedList {
         currentNode.prev = newNode;
 
         //check if prev node is not null to avoid null pointer exception 
+        // if prev node is null that mean we are inserting node at the beginning
         if(prevNode != null){
             newNode.prev = prevNode;
             prevNode.next = newNode;

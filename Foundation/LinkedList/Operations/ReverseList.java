@@ -32,21 +32,26 @@ public class ReverseList {
             System.out.println("Linked list empty...");
             return head;
         }
+
         Stack<Node> stack = new Stack<Node>();
         Node ptr = head;
+
+        //make sure to traverse this till ptr.next is not null ... it can not be ptr != null (this make ptr points to null)
         while(ptr.next != null) {
             stack.push(ptr);
             ptr = ptr.next;
         }
 
+        //Assign ptr to head pointer so that you can access the list using head from the beginning as ptr pointer will keep on changing after every iteration in while loop
         head = ptr;
-        //System.out.println(ptr.data);
-        //System.out.println(head.data);
+    
         while(!stack.isEmpty()) {
             ptr.next = stack.peek();
             ptr = ptr.next;
             stack.pop();
         }
+
+        // make sure to point it to null as this will be last node
         ptr.next = null;
         return head;
     }

@@ -43,7 +43,8 @@ public class MergeKSortedList {
         });
 
        // push the head nodes of all the k lists in 'pq'
-        Node head = null, last=null;
+        Node head = null;
+        Node last = null;
         for(Node list: lists) {
             if(list != null) {
                 pq.offer(list);

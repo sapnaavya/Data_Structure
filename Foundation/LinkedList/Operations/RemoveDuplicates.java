@@ -33,6 +33,7 @@ public class RemoveDuplicates {
         Node current = head;
         int i = 0;
         Node prev = null;
+
         while(current != null) {
             if(hashTable.contains(current.data)) {
                 //Remove from the list as this is duplicate
@@ -44,14 +45,16 @@ public class RemoveDuplicates {
                 prev = current;
             }
             current = current.next;
+            
         }
     }
 
-    //Remove duplicate using brute force method
+    //Remove duplicate using brute force method - we need two while loop in this
     public static void deleteDupsBruteForce(Node head) {
         if(head == null) {
             return;
         }
+
         Node current = head;
         while(current != null) {
             Node runner = current;

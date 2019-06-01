@@ -1,0 +1,18 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - PrintRightMostView",
+            "request": "launch",
+            "mainClass": "PrintRightMostView",
+            "projectName": "rs_124_1ebd6f61"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - FindLCDBinaryTreeBruteForce",
+            "request": "launch",
+            "mainClass": "FindLCDBinaryTreeBruteForce",
+            "projectName": "rs_124_1ebd6f61"
+        }
+    ]
+}

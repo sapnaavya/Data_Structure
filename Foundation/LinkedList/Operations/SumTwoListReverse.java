@@ -13,6 +13,7 @@ public class SumTwoListReverse {
 
         //set next node 
         public void setNext(Node nextNode, Node prevNode) {
+            // if prevNode is null that mean we have reached the end of the list, so we return from here
             if(prevNode == null) {
                 return;
             }
@@ -35,13 +36,15 @@ public class SumTwoListReverse {
     public static void print(Node node) {
         //Node node = head;
         while(node != null) {
-            System.out.println(node.data + " ");
+            System.out.print(node.data + " ");
             node = node.next;
         }
     }
 
     //Sum of two linked list in reverse order
     public static Node sumofTwoList(Node l1, Node l2, int carry) {
+
+        //considering this is the last node .. so we have to make it as null
         if(l1 == null && l2 == null && carry == 0) {
             return null;
         }
@@ -55,10 +58,12 @@ public class SumTwoListReverse {
         }
 
         Node node = new Node(value%10);
+        
         if(l1 != null || l2 != null) {
             Node nextNode = sumofTwoList(l1 == null ? null: l1.next, l2 == null ? null : l2.next, value >= 10 ? 1: 0);
             node.setNext(nextNode, node);
         }
+
         return node;
     }
 
@@ -68,13 +73,13 @@ public class SumTwoListReverse {
         SumTwoListReverse list1 = new SumTwoListReverse();
         SumTwoListReverse list2 = new SumTwoListReverse();
     
-        list1.insertFront(5);
-        list1.insertFront(6);
-        list1.insertFront(7);
+        list1.insertFront(1);
+        list1.insertFront(2);
+        //list1.insertFront(7);
 
-        list2.insertFront(7);
+        list2.insertFront(1);
         list2.insertFront(2);
-        list2.insertFront(3);
+        //list2.insertFront(3);
 
         print(list1.head);
         print(list2.head);
