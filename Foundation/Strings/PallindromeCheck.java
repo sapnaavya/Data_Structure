@@ -3,6 +3,7 @@
     brute force approach would be create a String build object and reverse the content of the string and store it in a another string object.
     In this approach, we are checking first and last element of string
 */
+
 import java.util.Scanner;
 
 public class PallindromeCheck {
