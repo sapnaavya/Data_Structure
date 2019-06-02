@@ -3,7 +3,8 @@ import java.util.*;
 import java.text.*;
 import java.math.*;
 import java.util.regex.*;
-public class Solution {
+
+public class AnagramCrackingTheCode {
     public static int numberNeeded(String first, String second) {
         char[] a = first.toCharArray();
         char[] b = second.toCharArray();
@@ -17,7 +18,7 @@ public class Solution {
         }
         int ans = 0;
         for(int i=0; i<ac.length; i++){
-            ans += Math.abs(ac[i] - bc[i]);
+            ans += (ac[i] - bc[i]);
         }
         
       return ans;
