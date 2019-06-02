@@ -6,8 +6,9 @@
  3. Now, we subtract both the array from each other
  4. if we get 0 as the result then yes, both the strings are anagram of each other else else not anagram
 */
-import java.util.Scanner;
 
+import java.util.Scanner;
+//class to hold value of anagram strings
 class AnagramCheck {
     boolean isAnagram;
     AnagramCheck() {
@@ -19,6 +20,8 @@ class AnagramCheck {
 }
 
 public class AnagramStrings {
+
+    //function to check if two strings are anagram to each other
     public static AnagramCheck isAnagram(String str1, String str2) {
         if(str1 == null || str2 == null) {
             return new AnagramCheck();
