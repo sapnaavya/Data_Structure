@@ -17,6 +17,7 @@ public class RemoveOccurance {
         }
         return sb.toString();
     }
+    
     //main method
     public static void main(String args[]) {
         RemoveOccurance obj = new RemoveOccurance();
