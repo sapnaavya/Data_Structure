@@ -11,6 +11,7 @@ public class Solution {
 		for (char c : s.toCharArray()) {
 			if (c == '(' || c == '[' || c == '{') {
 				stack.push(c);
+				continue;
 			} else {
 				if (stack.isEmpty()) {
 					return false;
