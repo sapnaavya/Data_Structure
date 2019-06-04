@@ -1,7 +1,7 @@
 //This Program finds the longest SubString in a String
 import java.util.LinkedHashMap;
 
-public class LongestSubstring{
+public class LongestSubString{
   static void longestSbString(String inputString){
     char[] charArray = inputString.toCharArray();
     //Initialization

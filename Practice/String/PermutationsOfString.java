@@ -16,7 +16,7 @@ public class PermutationsOfString
         {
             for (int i = 0; i < input.length(); i++)
             {    
-                StringPermutation(permutation+input.charAt(i), input.substring(0, i)+input.substring(i+1, input.length()));
+                StringPermutation(permutation + input.charAt(i), input.substring(0, i) + input.substring(i + 1, input.length()));
             }
         }
     }
