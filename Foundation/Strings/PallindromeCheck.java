@@ -10,9 +10,8 @@ public class PallindromeCheck {
 
     //Check if a string is pallindrome or not
     public boolean isPallindrome(String str) {
-        if(str == null) {
-            return true;
-        }
+        if (str == null || str.isEmpty()) return false;
+
         int length = str.length();
         for(int i=0; i< length/2; i++) {
             char start = str.charAt(i);
@@ -23,6 +22,19 @@ public class PallindromeCheck {
         }
         return true;
     }
+
+    //Pallindrome check without storing string into character array
+    public static boolean pallindromCheck(String str) {
+        if (str == null || str.isEmpty()) return false;
+        int length = str.length();
+        for(int i=0; i< length/2; i++) {
+            if(str.charAt(i) != str.charAt(length - i -1)) {
+                return false;
+            }
+        }
+        return true;
+    }
+    
     //main method
     public static void main(String args[]) {
         PallindromeCheck palObj = new PallindromeCheck();
@@ -30,5 +42,9 @@ public class PallindromeCheck {
         String str = sc.nextLine();
         boolean isPal = palObj.isPallindrome(str);
         System.out.println(isPal);
+
+        boolean isPallindrome = pallindromCheck(str);
+        System.out.println(isPallindrome);
+        sc.close();
     }
 }

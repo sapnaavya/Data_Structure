@@ -1,4 +1,4 @@
-public class Solution{
+public class UniqueChars {
     public static boolean isUniqueChar(String str){
         if(str.length() > 128 ){
             return false;
@@ -18,7 +18,7 @@ public class Solution{
     public static void main(String args[]){
         String[] words = {"apple", "kito","potatos"};
         for(String word:words){
-            System.out.println(word + "" + isUniqueChar(word));
+            System.out.println(word + " " + isUniqueChar(word));
         } 
     }
 }
