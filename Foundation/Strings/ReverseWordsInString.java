@@ -1,3 +1,8 @@
+/**
+ This code reverses the words in a string using two approaches:
+  1. Using extra space 
+  2. Without using extra space
+*/
 import java.util.Scanner;
 
 public class ReverseWordsInString {
@@ -25,7 +30,6 @@ public class ReverseWordsInString {
             return;
         }
 
-        //char[] s = str.toCharArray();
         int i=0;
         for(int j=0; j<s.length; j++){
             if(s[j]==' '){
