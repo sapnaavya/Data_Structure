@@ -37,6 +37,8 @@ public class ReverseWordsInString {
                 i=j+1;
             }
         }
+        
+        //we wont be able to reverse last substring thus.. first, we need to reverse last substring before reversing the whole string
         reverse(s, i, s.length-1);
         reverse(s, 0, s.length-1);
     }
