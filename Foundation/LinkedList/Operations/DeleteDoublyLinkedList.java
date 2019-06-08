@@ -36,6 +36,7 @@ public class DeleteDoublyLinkedList {
             System.out.println("node is empty...");
             return;
         }
+
         Node nextNode = node.next;
         node.next = null;
         //point head to the new next node
@@ -73,6 +74,7 @@ public class DeleteDoublyLinkedList {
             System.out.println("No node to delete");
             return;
         }
+        
         //Check if position to delete is 0
         if(position == 0) {
             prevNode = currentNode.next;
@@ -80,6 +82,7 @@ public class DeleteDoublyLinkedList {
             head = prevNode;
             return;
         }
+
         //Travere to that postion
         while(i < position) {
             prevNode =  currentNode;

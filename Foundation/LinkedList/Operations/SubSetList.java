@@ -54,7 +54,7 @@ public class SubSetList {
         Node s = list1;
         Node startPointer = s;
         Node endPointer = list1;
-        while(list1 != null || list2 != null) {
+        while(list1 != null && list2 != null) {
             if(list1.data == list2.data) {
 
                 /* Note: We need to update startpointer and endpointer after we find that list1 data and list 2 is equal

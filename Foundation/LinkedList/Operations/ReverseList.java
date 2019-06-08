@@ -9,6 +9,7 @@ public class ReverseList {
         Node next;  
     } 
     static Node head = null;
+    
     //Push nodes
     static void push(int new_data) {  
         Node new_node = new Node();  
@@ -72,6 +73,7 @@ public class ReverseList {
             prev = current;
             current = next;
         }
+
         head = prev;
         return head;
     }
@@ -93,3 +95,4 @@ public class ReverseList {
     }
 }
 
+ 

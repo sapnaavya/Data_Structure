@@ -54,7 +54,7 @@ public class NthNodeFromLast {
         llist.insertFront(30);
         llist.printList(head);
 
-        Node nthElementfromLast = llist.nthElemFromLast(head,0);
+        Node nthElementfromLast = llist.nthElemFromLast(head,1);
         System.out.println("Nth element from the last: " + nthElementfromLast.data);
 
     }

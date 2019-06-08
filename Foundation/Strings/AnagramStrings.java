@@ -15,7 +15,6 @@
 
 import java.util.Scanner;
 import java.util.Arrays;
-
 //class to hold value of anagram strings
 class AnagramCheck {
     boolean isAnagram;

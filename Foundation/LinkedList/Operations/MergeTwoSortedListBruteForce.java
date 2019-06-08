@@ -26,7 +26,7 @@ public class MergeTwoSortedListBruteForce {
     }
 
     //Merge two unsorted linkedlist
-    public static Node mergeTwoUnsoredList(Node l1, Node l2) {
+    public static Node mergeTwoSoredList(Node l1, Node l2) {
         
         Node newList = new Node(0);
         Node head = newList;
