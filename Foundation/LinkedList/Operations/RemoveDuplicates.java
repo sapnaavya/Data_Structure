@@ -57,8 +57,8 @@ public class RemoveDuplicates {
 
         Node current = head;
         while(current != null) {
-            Node runner = current.next;
-            while(runner != null) {
+            Node runner = current;
+            while(runner.next != null) {
                 if(current.data == runner.data) {
                     runner.next = runner.next.next;
                 }
