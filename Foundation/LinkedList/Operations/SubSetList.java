@@ -49,6 +49,12 @@ public class SubSetList {
         if (list2 == null) {
             return new ResultantPointer(list1);
         }
+
+        if(list1.next == null && list2.next == null) {
+            if(list1.data == list2.data) {
+                return new ResultantPointer(list1);
+            }
+        }
         
         Node resetList2 = list2;
         Node s = list1;
@@ -79,6 +85,7 @@ public class SubSetList {
 
             //make sure to reset the list2 first..before moving list1 to next pointer.. thus first else if and then if condition check
             // also, make sure to update s pointer in both else if and if condition both
+            // example, list1 is 42425 and list2 is 425
             else if(list2 != resetList2 && list1.next != null) {
                 list2 = resetList2;
                 s = list1;

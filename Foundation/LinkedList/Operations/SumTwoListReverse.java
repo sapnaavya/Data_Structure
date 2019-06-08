@@ -1,5 +1,13 @@
 /* Code to sum to linkedlist.
-Assumption - Linkedlist are stored in reverse order such that 1's digit is at the head of the list */
+    Assumption - Linkedlist are stored in reverse order such that 1's digit is at the head of the list.
+
+    This is a bruteforce approach as this approach first reverse the list to get the 1's digit on the head
+    and then after getting the sum of two list it again reverses the resultant list because the result is store in reverse order
+
+    for example, we want to add 254 and 254..first, we will reverse the both lists. So, head points to 1's digith i.e. 4 and 4
+    4->5->2 and 4->5->2 So, resultant list would be 8->0->5. We need to reverse the list so that we can result like this 5->0->8
+
+*/
 
 public class SumTwoListReverse {
     Node head;
@@ -67,25 +75,44 @@ public class SumTwoListReverse {
         return node;
     }
 
+    //reverse a list
+    public static Node reverseNode(Node node) {
+        if(node == null) {
+            return null;
+        }
+
+        Node current = node;
+        Node prev = null;
+        Node next = null;
+        while(current != null) {
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+
+        return prev;
+    }
    
     //main method
     public static void main(String args[]) {
         SumTwoListReverse list1 = new SumTwoListReverse();
         SumTwoListReverse list2 = new SumTwoListReverse();
     
-        list1.insertFront(1);
         list1.insertFront(2);
-        //list1.insertFront(7);
+        list1.insertFront(5);
+        list1.insertFront(4);
 
-        list2.insertFront(1);
         list2.insertFront(2);
-        //list2.insertFront(3);
+        list2.insertFront(5);
+        list2.insertFront(4);
 
         print(list1.head);
         print(list2.head);
 
         int carry = 0;
         Node sumNode = sumofTwoList(list1.head, list2.head, carry);
+        sumNode = reverseNode(sumNode);
         print(sumNode);
     }
 }
