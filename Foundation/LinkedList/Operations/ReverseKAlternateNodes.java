@@ -2,7 +2,7 @@
   This method reverse k alternate node in the list using following approaches:
   Please make sure to revise reverse a linkedlist, reverse k nodes in the linkedlist before doing this problem.
 
-   Bruteforce approach: 
+     Bruteforce approach: 
         1)  Reverse first k nodes.
         2)  In the modified list head points to the kth node.  So change next 
         of head to (k+1)th node
@@ -151,8 +151,8 @@ public class ReverseKAlternateNodes {
         printList(head);
         int k = 2;
         System.out.print("\n");
-        //Node reverseKaltNodes = reverseKaltNodes(head, k);
-        //printList(reverseKaltNodes);
+        // Node reverseKaltNodes = reverseKaltNodes(head, k);
+        // printList(reverseKaltNodes);
 
         System.out.print("\n");
         boolean flag = true;
