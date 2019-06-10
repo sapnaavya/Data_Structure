@@ -6,7 +6,8 @@
     4. If the current letter isn’t the last in the input string
     5. Generate remaining combinations starting at next position with iteration starting at next letter beyond  the letter just selected     
     6. Delete the last character of the output string
-
+    Important point: This code only works when string has non repeating characters
+    It wont work in the case when string = aabc
     Reference Link: https://javahungry.blogspot.com/2014/02/algorithm-for-combinations-of-string-java-code-with-example.html
 */
 
