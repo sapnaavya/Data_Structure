@@ -5,7 +5,7 @@
  * Reference Link: https://www.quora.com/How-do-I-generate-all-subsets-of-a-set-in-Java-iteratively
  */
 public class PrintAllSubsetofSet {
-    static void printAllSubset(int set[]) {
+    static void printAllSubset(char set[]) {
         int n = set.length;
         //run a loop from 0 to 2^n
         for(int i = 0; i < (1 << n); i++) {
@@ -24,7 +24,7 @@ public class PrintAllSubsetofSet {
     }
     //main method
     public static void main(String args[]) {
-        int subset [] = {1, 2, 3};
+        char subset [] = {'a', 'b', 'c'};
         printAllSubset(subset);
     }
 }
