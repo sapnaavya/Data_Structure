@@ -1,9 +1,9 @@
 /**
 This code generates all counts of permutations and unique combinations counts of coins combination, given an amount
 This code uses two ways:
-    1. Recursive
-    2. Iterative
-  
+    1. Recursive - To calculate all possible combinations and uniqe combinations
+    2. Iterative - To calculate unique combinations
+   
   Example:
 
     * we are given coin denominations {1,2} and amount is 4.. what all combinations can be made
@@ -13,7 +13,7 @@ This code uses two ways:
     * So, total possible combinations or permutations count would be 5. 
     * But, total unique combinations count would be 3  
 
-  Logic behing using currentCoin variable :
+  Logic behind using currentCoin variable :
 
     *  Please note that to calculate unique combinations, we are maintaining currentCoin variable and everytime, passing that with recursion
     *  becuase with every recursive call, we dont need to start from 0 as we are doing in calculating all possible combinations.
@@ -55,8 +55,8 @@ public class CoinChange {
     }
 
     //Calculate all unique combinations of coins change in iterative manner
-    public static int uniqueCombIterative(int[] coins) {
-       int [] ways = new int[coins.length + 1] ;
+    public static int uniqueCombIterative(int[] coins, int amount) {
+       int [] ways = new int[amount + 1] ;
 
        //There is one ways to make 0 with 0 coins
        ways[0] = 1; 
@@ -73,7 +73,7 @@ public class CoinChange {
         }
 
         //return the value at nth position of ways array
-        return ways[coins.length];
+        return ways[amount];
     }
 
     
@@ -81,7 +81,7 @@ public class CoinChange {
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
         int amount = sc.nextInt(); 
-        int[] coins = new int[]{1,2};  
+        int[] coins = new int[]{1,5,10};  
 
         //Calculate total possible combinations of coin change problem
         int permCoinChange = permCoinChange(amount, coins);
@@ -92,7 +92,8 @@ public class CoinChange {
         int uniqCombCount = uniqueCombinationCount(amount, coins, currentCoin);
         System.out.println("Total unique combinations are: " + uniqCombCount);
 
-        int iter = uniqueCombIterative(coins);
+        //Calculate unique combinations using iterative manner
+        int iter = uniqueCombIterative(coins, amount);
         System.out.println("Total ways using iterative method:" + iter);
         sc.close();
     }

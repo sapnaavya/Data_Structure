@@ -8,6 +8,7 @@
     6. Arrange 0's and 1's in an array
     7. Arrange 0's, 1's and 2's in array using in place
     8. Arrange 0's, 1's and 2's using counting
+    9. Find the missing element in the consecutive array. For example, array is {1,2,3,4,6}. So, missing element is 5. and if arr is {2,4,5}
  */
 
 class Num {
@@ -25,8 +26,6 @@ public class ArrayOperations {
         if(arr.length == 0) {
             return;
         }
-
-        System.out.println("length of the array " + arr.length);
         for(int i = 0; i < arr.length; i++) {
             System.out.println(arr[i]);
         }
@@ -198,6 +197,23 @@ public class ArrayOperations {
         return arr;
     }
 
+    //Find the missing element in a consecutive array
+    public static int getMissingNum(int[] arr) {
+        if(arr.length == 0 || arr == null) {
+            return 0;
+        }
+    
+        int x1 = arr[0]; // for XOR of all the elements in the array
+        int x2 = arr[0]; //for XOR of all the elements from 1 to n+1
+        for(int i = 1; i <arr.length; i++) {
+            x1 = x1 ^ arr[i];
+        }
+
+        for(int j = arr[0] + 1; j <= arr[arr.length -1]; j++) {
+            x2 = x2 ^ j;
+        }
+        return (x1 ^ x2);
+    }
 
     //main method
     public static void main(String args[]) {
@@ -228,13 +244,18 @@ public class ArrayOperations {
         printallElements(binaryArray);
 
         //Segregate 0's, 1's and 2's in the array in place
-        int[] array1 = new int[]{0,2,1,2,2,1,1,1,0,0,0};
+        int[] array1 = new int[]{0,2,1,2,2,1,1,1};
         array1 = segregateNum(array1);
         printallElements(array1);
 
         //Segregate 0's, 1's and 2's in the array simple counting
-        int[] array2 = new int[]{0,1,1,1,1,1,2,2,1,1,1,0,0,0  };
-        array2 = segNumUsingCounting(array2);
-        printallElements(array2);
+        //int[] array2 = new int[]{0,1,1,1,1,1,2,2,1,1};
+        //array2 = segNumUsingCounting(array2);
+        //printallElements(array2);
+
+        //find the missing element in the consecutive array
+        int [] consecutiveArr = new int[]{3,4,5,6,7,8,10 };
+        int missingElem = getMissingNum(consecutiveArr);
+        System.out.println("Missing element: " + missingElem);
     }
 }
