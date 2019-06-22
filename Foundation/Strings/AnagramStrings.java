@@ -1,17 +1,9 @@
 /**
  This code checks whether two strings are anagram to each other using below approach:
- 1. Store both the strings in an array
- 2. Characters will get ascii values when one char gets subtracted from another
- 2. Subtract all elements from char 'a' to normalize so get ASCII values
- 3. Now, we subtract both the array from each other
- 4. if we get 0 as the result then yes, both the strings are anagram of each other else else not anagram
- 
- Bruteforce approach:
- 1. Store both the strings in arrays
- 2. sort both the arrays holding characters
- 3. After sorting, traverse both the arrays and if elements are not equal then return false else return true
- 
- */
+ 1. Bruteforce approach
+ 2. Subtract string each character and from another strings character and store the result .. at the end maxdiff would be 0 if two strings are anagram
+ 3. Using XOR 
+*/
 
 import java.util.Scanner;
 import java.util.Arrays;
@@ -53,35 +45,37 @@ public class AnagramStrings {
     }
 
     //function to check if two strings are anagram to each other
+    // ASCII values a-z  -> 97- 122
+    // ASCII values A-Z  -> 65 - 90
+    // for example, sapp and ppas maxdiff would be - 3-15+15-3 = 0
     public static AnagramCheck isAnagram(String str1, String str2) {
         if(str1 == null || str2 == null || str1.length() != str2.length()) {
             return new AnagramCheck();
         }
 
-        char[] str1Array = str1.toCharArray();
-        char[] str2Array = str2.toCharArray();
-        int[] arr1 = new int[26];
-        int[] arr2 = new int[26];
         int maxDiff = 0;
-        //Subtract each char from 'a' and store the values in an integer array
-        for(int i=0; i<str1Array.length; i++) {
-            arr1[str1Array[i] - 'a']++;
+        for(int i = 0; i < str1.length(); i++) {
+            maxDiff += (int)str1.charAt(i) - (int) str2.charAt(i);
         }
+        return new AnagramCheck(maxDiff == 0);
+    }
 
-        for(int j=0; j<str2Array.length; j++) {
-            arr2[str2Array[j] - 'a']++;
+    //function to check if two strings are anagram of each other using XOR 
+
+    /* The implementation can be further optimized by using bit manipulation. 
+    If we start at a value of 0 and XOR all the characters of both strings, we should return an end value of 0 if they are anagrams
+    because there would be an even occurrence of all characters in the anagram */
+
+    public static AnagramCheck isAnagramXOR(String str1, String str2) {
+        if(str1 == null || str2 == null || str1.length() != str2.length()) {
+            return new AnagramCheck();
         }
-
-        //Store the difference in a variable
-        for(int i=0; i<arr1.length; i++) {
-            maxDiff += arr1[i] - arr2[i];
-
-        }         
-
-        if(maxDiff == 0) {
-            return new AnagramCheck(true);
-        } 
-        return new AnagramCheck();
+        int value = 0;
+        for(int i = 0; i < str1.length(); i++) {
+            value = value ^ (int) str1.charAt(i) ^ (int) str2.charAt(i);
+            // value = value ^ (int) str2.charAt(i);
+        }
+        return new AnagramCheck(value == 0);
     }
 
     //main method
@@ -95,6 +89,10 @@ public class AnagramStrings {
 
         AnagramCheck anagramCheckBruteforce = isAnagramBruteForce(str1, str2);
         System.out.println(anagramCheckBruteforce.isAnagram);
+
+        //check for anagram using XOR 
+        AnagramCheck anagramCheckXOR = isAnagramXOR(str1, str2);
+        System.out.println(anagramCheckXOR.isAnagram);
         sc.close();
     }
 }
