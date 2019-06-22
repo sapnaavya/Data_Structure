@@ -1,5 +1,9 @@
 /**
-  This code finds the pattern in a string
+  This code finds the pattern in a string. For example, 
+  1. if a string is sapna and subset string is pna then subset string index found at index 2 in string
+  2. String -> sapna ... Subset String -> sap  then subset string index found at index 0 in string
+  3. String -> sappna ... Subset String -> pna then subset string index found at index 3
+  4. String -> sapna ... Subset String -> sd.. no index found in string
  */
 import java.util.Scanner;
 
@@ -41,7 +45,7 @@ public class FindPattern {
             } 
             else if(k != 0) { // In this case, do not increment i as we want to compare with k as 0 with existing i and if they do not match then increment i
                 k = 0;
-                s = i + 1;
+                s = i;
                 continue;// make sure to use this continue as we do not want increment i after resetting k to 0
             }
             i++;
