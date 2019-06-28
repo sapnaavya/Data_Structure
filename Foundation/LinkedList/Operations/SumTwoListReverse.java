@@ -109,11 +109,13 @@ public class SumTwoListReverse {
         list2.insertFront(4);
 
         print(list1.head);
+        System.out.print("\n");
         print(list2.head);
 
         int carry = 0;
         Node sumNode = sumofTwoList(list1.head, list2.head, carry);
         sumNode = reverseNode(sumNode);
+        System.out.print("\n");
         print(sumNode);
     }
 }
