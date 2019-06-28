@@ -4,15 +4,16 @@
  Assumption: Make sure to convert each char to lowercase
  we are converting each char to lowercase as we are counting the frequency 
  so we are considering 'b' and 'B' the same characters.
-
- subtract each char from 'a' and count their frequency and store them in int array and subtract their frequencies from each other int array
-    1. Store both the strings in an array
-    2. Characters will get ascii values when one char gets subtracted from another
-    2. Subtract all elements from char 'a' to normalize so get ASCII values
-    3. Now, we subtract both the array from each other
-    4. if we get 0 as the result then yes, both the strings are anagram of each other else else not anagram
-    5. DO NOT FORGET TO DO MATH.abs before storing maxdiff value to cover 'aaaa' and 'dddd' scenario
- Bruteforce approach:
+ Optimize approach:
+    subtract each char from 'a' and count their frequency and store them in int array and subtract their frequencies from each other int array
+        1. Store both the strings in an array
+        2. Characters will get ascii values when one char gets subtracted from another
+        2. Subtract all elements from char 'a' to normalize so get ASCII values
+        3. Now, we subtract both the array from each other
+        4. if we get 0 as the result then yes, both the strings are anagram of each other else else not anagram
+        5. DO NOT FORGET TO DO MATH.abs before storing maxdiff value to cover 'aaaa' and 'dddd' scenario
+ 
+  Bruteforce approach:
     1. Store both the strings in arrays
     2. sort both the arrays holding characters
     3. After sorting, traverse both the arrays and if elements are not equal then return false else return true
