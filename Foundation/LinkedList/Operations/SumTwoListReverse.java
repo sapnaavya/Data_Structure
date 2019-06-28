@@ -67,6 +67,7 @@ public class SumTwoListReverse {
 
         Node node = new Node(value%10);
         
+        //if l1 is not null or l2 is not null then only go to if block
         if(l1 != null || l2 != null) {
             Node nextNode = sumofTwoList(l1 == null ? null: l1.next, l2 == null ? null : l2.next, value >= 10 ? 1: 0);
             node.setNext(nextNode, node);
