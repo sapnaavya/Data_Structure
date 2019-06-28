@@ -27,7 +27,7 @@ public class SumTwoListReverse {
             }
             else{
                 prevNode.next = nextNode;
-                nextNode = prevNode;
+                nextNode = prevNode; //DO NOT FORGET THIS ...
             }
         }
     }
