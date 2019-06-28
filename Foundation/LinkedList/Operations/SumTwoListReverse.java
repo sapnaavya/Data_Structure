@@ -27,7 +27,7 @@ public class SumTwoListReverse {
             }
             else{
                 prevNode.next = nextNode;
-                nextNode = prevNode; //DO NOT FORGET THIS ...
+                //nextNode = prevNode; //NOT SURE WHY WE NEED THIS.. DO NOT FORGET THIS ...
             }
         }
     }
@@ -100,13 +100,13 @@ public class SumTwoListReverse {
         SumTwoListReverse list1 = new SumTwoListReverse();
         SumTwoListReverse list2 = new SumTwoListReverse();
     
-        list1.insertFront(2);
         list1.insertFront(5);
-        list1.insertFront(4);
+        list1.insertFront(2);
+        list1.insertFront(6);
 
-        list2.insertFront(2);
         list2.insertFront(5);
-        list2.insertFront(4);
+        list2.insertFront(2);
+        list2.insertFront(6);
 
         print(list1.head);
         System.out.print("\n");
