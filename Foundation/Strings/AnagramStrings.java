@@ -11,7 +11,7 @@
     2. Subtract all elements from char 'a' to normalize so get ASCII values
     3. Now, we subtract both the array from each other
     4. if we get 0 as the result then yes, both the strings are anagram of each other else else not anagram
- 
+    5. DO NOT FORGET TO DO MATH.abs before storing maxdiff value to cover 'aaaa' and 'dddd' scenario
  Bruteforce approach:
     1. Store both the strings in arrays
     2. sort both the arrays holding characters
@@ -60,7 +60,7 @@ public class AnagramStrings {
             //convert to lower case first before comparing the letters
             char ch1 = Character.toLowerCase(charArr1[i]);
             char ch2 = Character.toLowerCase(charArr2[i]);
-            
+
             if(ch1 != ch2) {
                 return new AnagramCheck(Boolean.FALSE);
             }
