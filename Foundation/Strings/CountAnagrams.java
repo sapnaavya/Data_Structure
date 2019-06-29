@@ -123,5 +123,7 @@ public class CountAnagrams {
         // Count anagram of a pattern in a string using optimize code in O(1) space
         int anagramCountOpt = countAnagramOptimize(text, word);
         System.out.println("Anagram count using optimization code: " + anagramCountOpt);
+
+        sc.close();
     } 
 }
