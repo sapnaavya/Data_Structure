@@ -1,4 +1,4 @@
-public class MergeTwoSortedArrayBruteForce {
+public class MergeTwoSortedUsingThirdArray {
     public static int[] mergeTwoSortedArray(int[] arr1, int[] arr2) {
         if(arr1 == null || arr2 == null || arr1.length == 0 || arr2.length == 0) {
             return null;
@@ -29,7 +29,7 @@ public class MergeTwoSortedArrayBruteForce {
     }
     public static void main(String args[]) {
         int [] array1 = {1,2,3,4,5,9};
-        int [] array2 = {4,5,6,7,8,10,11};
+        int [] array2 = {2,5,6,7,8,10,11};
         int merdedArrayLength  =  array1.length + array2.length;
         int[] mergedArray = new int[merdedArrayLength];
         mergedArray =  mergeTwoSortedArray(array1, array2);
