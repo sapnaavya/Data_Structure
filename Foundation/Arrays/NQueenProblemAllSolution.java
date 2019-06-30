@@ -1,5 +1,5 @@
 /**
- * This problem finds the solution to place n queens in a chess so that those queens do not kill themselves
+ * This problem finds all possible solution to place n queens in a chess so that those queens do not kill themselves
  * Remember, queens can kill each other when they are in same row, same column and diagonally
  * Time complexity - exponential due to backtracking and space complexity
  * Time complexity O(n*n)
@@ -7,9 +7,15 @@
  * Refer this link for more details: https://www.youtube.com/watch?time_continue=2&v=xouin83ebxE
  * 
 */
-import java.util.Scanner;
 
-public class NQueenProblem {
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+
+public class NQueenProblemAllSolution {
+    //Position class
     static class Position {
         int row, col;
         Position(int row, int col) {
@@ -18,21 +24,33 @@ public class NQueenProblem {
         }
     }
 
-    public static Position[] nQueenPos(int n) {
+    public static List<List<String>> nQueenPos(int n) {
         Position[] positions = new Position[n];
-        boolean isSolution = nQueenSolutionUtil(n, 0, positions);
-        if(isSolution) {
-            return positions;
-        } else {
-            return new Position[0];
-        }
+        List<List<String>> result = new ArrayList<>();
+        nQueenSolutionUtil(n, 0, positions, result);
+        return result;
     }
     
-    public static boolean nQueenSolutionUtil(int n, int row, Position[] position) {
+    public static void nQueenSolutionUtil(int n, int row, Position[] position, List<List<String>> result) {
 
         //means all queens have placed themselves in a position that they are not killing each other
         if(n == row) {
-            return true;
+            StringBuilder sb = new StringBuilder();
+            List<String> oneResult = new ArrayList<>();
+            for(Position p: position) {
+                for(int i = 0; i < n; i++) {
+                    if(p.col == i) {
+                        sb.append("Q ");
+                    } else {
+                        sb.append(". ");
+                    }
+                }
+
+                oneResult.add(sb.toString());
+                //reset sb to 0
+                sb.setLength(0);
+            }
+            result.add(oneResult);
         }
 
         int col;
@@ -51,23 +69,21 @@ public class NQueenProblem {
 
             if(foundSafe) {
                 position[row] = new Position(row, col);
-                if(nQueenSolutionUtil(n, row + 1, position)) {
-                    return true;
-                }
+                nQueenSolutionUtil(n, row + 1, position, result);
             }
         }
-        return false;
     }
 
     //main method
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        Position[] pos =  nQueenPos(n);
-        System.out.println("rows and columns:");
-        for(int i = 0; i < pos.length; i++) {
-            int col = pos[i].col;
-            System.out.println(i + " " + col);
+        List<List<String>> lists = nQueenPos(n);
+        for(List<String> list:lists) {
+            System.out.print("\n");
+            for(int i = 0; i < list.size(); i++) {
+                System.out.println(list.get(i));
+            }
         }
         sc.close();
     }
