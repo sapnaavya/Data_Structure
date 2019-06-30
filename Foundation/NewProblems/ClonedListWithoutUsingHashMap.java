@@ -85,11 +85,20 @@ class ClonedListWithoutUsingHashMap {
         // now separate the original list and copied list 
         while (original != null && copy != null) 
         { 
-            original.next = (original.next != null)? 
-                        original.next.next : original.next; 
+            // original.next = (original.next != null)? 
+            //             original.next.next : original.next; 
 
-            copy.next = (copy.next != null) ? copy.next.next 
-                                                : copy.next; 
+            // copy.next = (copy.next != null) ? copy.next.next 
+            //                                     : copy.next; 
+            
+            if(original.next != null) {
+                original.next = original.next.next;
+            }
+            
+            if(copy.next != null) {
+                copy.next = copy.next.next;
+            }
+
             original = original.next; 
             copy = copy.next; 
         } 
