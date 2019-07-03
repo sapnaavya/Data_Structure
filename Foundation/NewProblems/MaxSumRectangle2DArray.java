@@ -1,6 +1,18 @@
 /**
- * Function to to calculate maximum size rectangle in 2d array:
+ * Program to to calculate maximum size rectangle in 2d array
+ 
+ * Complexity:
+    * Space complexity of this algorithm is O(row)
+    * Time complexity of this algorithm is O(row*col*col)
+  
+ * Solution:
+    * Keep temp array with size as number of rows. Start left and right from 0
+    * and keep adding values for each row and maintain them in this temp array.
+    * Run Kadane's algorithm to find max sum subarray in temp. Now increment right by 1. 
+    * When right reaches last column reset right to 1 and left to 1.
+
  * Reference: https://www.youtube.com/watch?v=yCQN096CwWM 
+
  */
 public class MaxSumRectangle2DArray {
 
