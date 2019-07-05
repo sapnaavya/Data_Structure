@@ -11,6 +11,10 @@
         2. Reverse List L2.
         3. Add the nodes of both the lists iteratively.
         4. Reverse the resultant list and return its head.
+
+    We are doing inplace sum here
+    Time Complexity: O(max(m, n)) where m and n are number of nodes in first and second lists respectively.
+    Space Complexity: O(1)
 */
 
 public class SumTwoListReverse {
@@ -26,7 +30,7 @@ public class SumTwoListReverse {
         //set next node 
         public void setNext(Node nextNode, Node prevNode) {
             // if prevNode is null that mean we have reached the end of the list, so we return from here
-            if(prevNode == null) {
+            if(prevNode == null) {     //Do not forget this ...Sapna .. to do this as this mean it is the last node
                 return;
             }
             else{
@@ -100,10 +104,15 @@ public class SumTwoListReverse {
     }
 
     static Node revNodeUtil(Node head1, Node head2) {
+        //reverse both the lists
         Node revNode1 = reverseNode(head1);
         Node revNode2 = reverseNode(head2);
+        
+        //sum two lists
         int carry = 0;
         Node sumNode = sumofTwoList(revNode1, revNode2, carry);
+
+        //reverse the lists again
         sumNode = reverseNode(sumNode);
         return sumNode;
     }
@@ -114,12 +123,12 @@ public class SumTwoListReverse {
         SumTwoListReverse list2 = new SumTwoListReverse();
     
         list1.insertFront(0);
-        list1.insertFront(0);
-        list1.insertFront(1);
+        list1.insertFront(2);
+        list1.insertFront(5);
 
-        list2.insertFront(1);
-        list2.insertFront(9);
-        //list2.insertFront(2);
+        list2.insertFront(0);
+        list2.insertFront(2);
+        list2.insertFront(5);
 
         print(list1.head);
         System.out.print("\n");
