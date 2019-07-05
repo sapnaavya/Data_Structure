@@ -6,7 +6,11 @@
 
     for example, we want to add 254 and 254..first, we will reverse the both lists. So, head points to 1's digith i.e. 4 and 4
     4->5->2 and 4->5->2 So, resultant list would be 8->0->5. We need to reverse the list so that we can result like this 5->0->8
-
+    Steps:
+        1. Reverse List L1.
+        2. Reverse List L2.
+        3. Add the nodes of both the lists iteratively.
+        4. Reverse the resultant list and return its head.
 */
 
 public class SumTwoListReverse {
@@ -94,28 +98,35 @@ public class SumTwoListReverse {
 
         return prev;
     }
+
+    static Node revNodeUtil(Node head1, Node head2) {
+        Node revNode1 = reverseNode(head1);
+        Node revNode2 = reverseNode(head2);
+        int carry = 0;
+        Node sumNode = sumofTwoList(revNode1, revNode2, carry);
+        sumNode = reverseNode(sumNode);
+        return sumNode;
+    }
    
     //main method
     public static void main(String args[]) {
         SumTwoListReverse list1 = new SumTwoListReverse();
         SumTwoListReverse list2 = new SumTwoListReverse();
     
-        list1.insertFront(5);
-        list1.insertFront(2);
-        list1.insertFront(6);
+        list1.insertFront(0);
+        list1.insertFront(0);
+        list1.insertFront(1);
 
-        list2.insertFront(5);
-        list2.insertFront(2);
-        list2.insertFront(6);
+        list2.insertFront(1);
+        list2.insertFront(9);
+        //list2.insertFront(2);
 
         print(list1.head);
         System.out.print("\n");
         print(list2.head);
 
-        int carry = 0;
-        Node sumNode = sumofTwoList(list1.head, list2.head, carry);
-        sumNode = reverseNode(sumNode);
+        Node sumList = revNodeUtil(list1.head, list2.head);
         System.out.print("\n");
-        print(sumNode);
+        print(sumList);
     }
 }
