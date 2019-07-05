@@ -55,6 +55,6 @@ public class CountMinHopsinHoppableTower {
     //main method
     public static void main(String args[]) {
         int [] arr = new int[]{5, 0, 0, 0, 2, 0};
-        System.out.println("minimum jops required to come out of tower: " + countHopsOptimized(arr));
+        System.out.println("minimum hops required to come out of tower: " + countHopsOptimized(arr));
     }
 }
