@@ -1,5 +1,7 @@
 /**
  * This code flattens a linkedlist
+ * The idea is to use Merge() process of merge sort for linked lists. We use merge() to merge lists one by one. We recursively merge() the current list with already flattened list.
+   The down pointer is used to link nodes of the flattened list.
  * Example: 
  *     5 -> 10 -> 19 -> 28
        |    |     |     |
