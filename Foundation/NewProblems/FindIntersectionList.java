@@ -108,16 +108,16 @@ public class FindIntersectionList {
         list.printList(list.head1);
 
         list.head2 = list.insertFront(list.head2, 40);
-        list.head2 = list.insertFront(list.head2, 50);
-        //list.head2.next.next = list.head1.next.next;
-        System.out.println("\n");
+        //list.head2 = list.insertFront(list.head2, 50);
+        list.head2.next = list.head1.next.next;
+        System.out.print("\n");
         list.printList(list.head2);
 
-        System.out.println("\n");
-        Node intersectNode = list.findIntersection(list.head1, list.head2);
         System.out.print("\n");
+        Node intersectNode = list.findIntersection(list.head1, list.head2);
+        //System.out.print("\n");
         if(intersectNode != null) {
-            System.out.println( "intersecting node:" + intersectNode.data);
+            System.out.print( "intersecting node:" + intersectNode.data);
         }
     }
 }
