@@ -15,6 +15,8 @@
     We are doing inplace sum here
     Time Complexity: O(max(m, n)) where m and n are number of nodes in first and second lists respectively.
     Space Complexity: O(1)
+
+    Iterative approach Time complexity O(m + n)
 */
 
 public class SumTwoListReverse {
@@ -26,20 +28,18 @@ public class SumTwoListReverse {
             data = d;
             next = null;
         }
-
         //set next node 
         public void setNext(Node nextNode, Node prevNode) {
             // if prevNode is null that mean we have reached the end of the list, so we return from here
             if(prevNode == null) {     //Do not forget this ...Sapna .. to do this as this mean it is the last node
                 return;
             }
-            else{
+            else {
                 prevNode.next = nextNode;
                 //nextNode = prevNode; //NOT SURE WHY WE NEED THIS.. DO NOT FORGET THIS ...
             }
         }
     }
-    
 
     //Insert at the beginning of the List
     public void insertFront(int data) {
@@ -103,6 +103,54 @@ public class SumTwoListReverse {
         return prev;
     }
 
+    //utility function to do sum of two lists using iterative approach
+    public static Node sumofTwoListsIterativeUtil(Node head1, Node head2) {
+        Node revNode1 = reverseNode(head1);
+        Node revNode2 = reverseNode(head2);
+
+        Node sumNode = sumofTwoListIter(revNode1, revNode2);
+
+        sumNode = reverseNode(sumNode);
+        return sumNode;
+    }
+
+    public static Node sumofTwoListIter(Node l1, Node l2) {
+        Node res = null; //res -> head node of linkedlist
+        Node prev = null;
+        Node temp = null;
+        int carry = 0, sum;
+
+        while(l1 != null || l2 != null) {
+            sum = carry + (l1 != null ? l1.data : 0) + 
+                            (l2 != null ? l2.data : 0);
+            carry = sum >= 10 ? 1: 0;
+            sum = sum % 10;
+            temp = new Node(sum);
+            if(res == null) {
+                res = temp;
+            }
+            else {
+                prev.next = temp;     //0 <- 4 <- 0 <- 1
+            }
+
+            //set previous for next iteration
+            prev = temp;
+
+            //move pointers of l1 and l2 to next node
+            if(l1 != null) {
+                l1 = l1.next;
+            }
+            if(l2 != null) {
+                l2 = l2.next;
+            }
+        }
+
+        if(carry > 0) {
+            prev.next = new Node(carry);
+        }
+        return res;
+    }
+
     static Node revNodeUtil(Node head1, Node head2) {
         //reverse both the lists
         Node revNode1 = reverseNode(head1);
@@ -123,19 +171,21 @@ public class SumTwoListReverse {
         SumTwoListReverse list2 = new SumTwoListReverse();
     
         list1.insertFront(0);
-        list1.insertFront(2);
+        list1.insertFront(5);
         list1.insertFront(5);
 
         list2.insertFront(0);
-        list2.insertFront(2);
+        list2.insertFront(5);
         list2.insertFront(5);
 
         print(list1.head);
         System.out.print("\n");
         print(list2.head);
 
-        Node sumList = revNodeUtil(list1.head, list2.head);
+       // Node sumList = revNodeUtil(list1.head, list2.head);
+        Node sumListIter = sumofTwoListsIterativeUtil(list1.head, list2.head);
         System.out.print("\n");
-        print(sumList);
+        //print(sumList);
+        print(sumListIter);
     }
 }
