@@ -89,6 +89,7 @@ public class FindIntersectionList {
             }
         }
 
+        //when both the lists length is equal traverse both the nodes and return when list1 and list2 are equal
         while(list1 != list2) {
             list1 = list1.next;
             list2= list2.next;
