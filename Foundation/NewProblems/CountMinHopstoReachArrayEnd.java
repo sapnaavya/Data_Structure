@@ -10,6 +10,8 @@
         In this method, we build a jumps[] array from left to right such that jumps[i] indicates the minimum number of jumps needed to reach arr[i] from arr[0]. 
         Finally, we return jumps[n-1].
     
+    References:
+        https://www.youtube.com/watch?time_continue=4&v=jH_5ypQggWg
  */
 public class CountMinHopstoReachArrayEnd {
     static int minHops;
