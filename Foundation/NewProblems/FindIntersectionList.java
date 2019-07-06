@@ -1,10 +1,13 @@
 /**
  * This code finds the intersecting node between two linkedlist. 
- * Please note that in intersecting node, both linkedlist would have same tail.
- * So, its a good idea to check tail in the beginning if they both have same tail or not.
- * Time complexity: O(A + B)
- * Space complexity: O(1) as no extra space is being used
+ * Please note two things:
+ * 1. In intersecting node, both linkedlist would have same tail.
+ *    So, its a good idea to check tail in the beginning if they both have same tail or not.
+ * 2. If both nodes are of different length then make sure to traverse those extra nodes in the beginning.
+ *      Time complexity: O(A + B)
+ *      Space complexity: O(1) as no extra space is being used
  */
+
 public class FindIntersectionList {
     class Node {
         int data;
@@ -34,6 +37,7 @@ public class FindIntersectionList {
             size++;
             current = current.next;
         }
+
         return new Result(current, size);
     }
 
