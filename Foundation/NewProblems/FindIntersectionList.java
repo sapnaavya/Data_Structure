@@ -82,6 +82,7 @@ public class FindIntersectionList {
     }
 
     public static Node findIntersectionUtil(int d, Node list1, Node list2) {
+        //traverse those extra nodes
         for(int i = 0; i < d; i++) {
             if(list1 != null) {
                 list1 = list1.next;
