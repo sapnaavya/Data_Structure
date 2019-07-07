@@ -15,6 +15,7 @@
  */
 public class CountMinHopstoReachArrayEnd {
     static int minHops;
+    static int[] jumpPathArr;
 
     public static int countMinHops(int[] arr)
     {
@@ -49,6 +50,7 @@ public class CountMinHopstoReachArrayEnd {
     public static int countHopsOptimized(int [] arr) {
         int n = arr.length;
         int [] jumps = new int[n];
+        //int[] jumpPathArray = new int[n];
         int i, j;
 
         //if first element is 0 then end can not achieved
@@ -58,6 +60,7 @@ public class CountMinHopstoReachArrayEnd {
 
         //assign the starting index as 0.. DO NOT FORGET THIS
         jumps[0] = 0; 
+        //jumpPathArray[0]
 
         //find the minimum no of jumps required to reach arr[i] from arr[0],
         //assign this value to jumps[i]
@@ -67,12 +70,14 @@ public class CountMinHopstoReachArrayEnd {
                 //check if i is in the range of j.
                 //In other words, check if we can reach to j from i
                 if(i <= j + arr[j] && jumps[j] != Integer.MAX_VALUE) {
-                    jumps[i] = Math.min(jumps[i], jumps[j] + 1);
+                    jumps[i] = Math.min(jumps[i], jumps[j] + 1); //DO NOT FORGET THIS SAPNA
+                    //jumpPathArray[i] = j;  (Use this to store jump path array)
                     break;
                 }
             }
         }
-
+        //assign to global array
+        //jumpPathArr = jumpPathArray;
         //return last step
         return jumps[n - 1];
     }
@@ -81,7 +86,7 @@ public class CountMinHopstoReachArrayEnd {
     //main method
     public static void main(String args[]) {
         //int [] arr = new int[]{4, 3, 0, 0, 2, 1};  
-        int [] arr = new int[]{8, 3, 0, 2, 6, 0};
+        int [] arr = new int[]{1, 2, 3, 2, 6, 0};
         System.out.println("Minimum no of hops required: " + countMinHops(arr));
         System.out.println("(Optimized) Min hops requred: " + countHopsOptimized(arr));
     }
