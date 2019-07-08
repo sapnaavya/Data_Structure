@@ -1,5 +1,5 @@
 /**
- * This code find the next bigger element for each element in the array
+* This code find the next bigger element for each element in the array
     Two approaches:
     * 1. using two for loop
     * 2. Using stack
