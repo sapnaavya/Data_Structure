@@ -1,4 +1,4 @@
-/**
+  /**
  * This problem finds the solution to place n queens in a chess so that those queens do not kill themselves
  * Notes: This problem finds the first solution as soon as it finds the solution.. it will come out with boolean value as true
  * Remember, queens can kill each other when they are in same row, same column and diagonally
@@ -41,8 +41,8 @@ public class NQueenProblemOneSolution {
         int col;
         for(col = 0; col < n; col++) {
             boolean foundSafe = true;
-
-            //check rows and columns are not under attch for previous queen
+            //check each column for each queen(place in row) if it is safe to place new queen 
+            //check rows and columns are not under attck for previous queen in previous rows
             for(int queen = 0 ; queen < row; queen++) {
                 if(position[queen].col == col || position[queen].row - position[queen].col == row - col
                     || position[queen].row + position[queen].col == row + col) {
