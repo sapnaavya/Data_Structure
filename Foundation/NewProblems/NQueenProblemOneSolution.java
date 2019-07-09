@@ -70,7 +70,8 @@ public class NQueenProblemOneSolution {
         System.out.println("rows and columns:");
         for(int i = 0; i < position.length; i++) {
             int col = position[i].col;
-            System.out.println(i + " " + col);
+            int row = position[i].row;
+            System.out.println(row + " " + col);
         }
         //Arrays.stream(pos).forEach(position -> System.out.println(position.row + " " + position.col));
         sc.close();
