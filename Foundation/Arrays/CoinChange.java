@@ -68,6 +68,7 @@ public class CoinChange {
                if(coins[i] <= j) {
                    //Update the ways
                    ways[j] += ways[j - coins[i]];
+                   //ways[j] = ways[j] + ways[j - coins[i]]
                }
            }
         }
