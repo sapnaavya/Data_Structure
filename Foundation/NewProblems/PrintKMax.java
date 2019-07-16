@@ -57,7 +57,7 @@ public class PrintKMax {
 
         //process rest of the element from k to n-1
         for(int i = k; i < n; i++) {
-            //he element in the front queue is the biggest element from the 
+            //The element in the front queue is the biggest element from the 
             //previous window. So, print it
             System.out.print(arr[deq.peekFirst()] + " ");
 
@@ -83,7 +83,7 @@ public class PrintKMax {
     //main method
     public static void main(String args[]) {
         int[] arr = {25,12,30,50,45};
-        int k = 2;
+        int k = 4;
         printkMaxSubArray(arr, k);
         System.out.print("\n");
         printKmaxDeque(arr, k);
