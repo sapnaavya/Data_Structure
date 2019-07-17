@@ -1,10 +1,12 @@
 /**
  * This code implements the algorithm to merge k sorted array using priority queues
+ * References: https://www.byte-by-byte.com/mergekarrays/
 */
 
 import java.util.PriorityQueue;
 
 public class MergeKSortedArray {
+
     //QueueNode class to hold the index of the current element in the array, value and index of the current array
     private static class QueueNode implements Comparable<QueueNode> {
         int array, index, value;
@@ -13,6 +15,7 @@ public class MergeKSortedArray {
             this.index = index;
             this.value = value;
         }
+
         public int compareTo(QueueNode n) {
             if(value > n.value) return 1;
             if(value < n.value) return -1;
