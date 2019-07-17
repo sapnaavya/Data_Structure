@@ -40,7 +40,6 @@ public class EggDropProblem {
         time complexity - O(n*n*e)
         space complexity - O(nk)
     */
-    
     static int eggDropDP(int n, int k) {
         int[][] eggFloor = new int[n + 1][k + 1];
         int res;
@@ -59,7 +58,7 @@ public class EggDropProblem {
 
         //fill rest of the entries in table using optimal substructure
         for(i = 2; i <= n; i++) {                 //eggs   //n
-            for(j = 2; j <= k; j++) {             // floor //n
+            for(j = 2; j <= k; j++) {             //floor  //n
                 eggFloor[i][j] = Integer.MAX_VALUE;      
                 for(x = 1; x <= j; x++) {         //e
                     res = 1 + Math.max(eggFloor[i - 1][x - 1], eggFloor[i][j - x]);
@@ -76,8 +75,8 @@ public class EggDropProblem {
 
     //main method
     public static void main(String args[]) {
-        int n = 2;
-        int k = 6;
+        int n = 4;
+        int k = 10;
         System.out.println(eggDrop(n, k));
         System.out.println(eggDropDP(n, k));
     }
