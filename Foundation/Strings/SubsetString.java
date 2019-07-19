@@ -16,18 +16,21 @@ public class SubsetString {
         }
 
         int k = 0;
-        for(int i=0; i<str1.length() && i<str2.length(); i++) {
-            for(int j=0; j<str1.length(); j++) {
-                if(str1.charAt(j) == str2.charAt(k)) {
-                    k++;
-                    if(k != str2.length()) {
-                        continue;
-                    } else {
-                        return true;
-                    }
-                } else if(k != 0) {
-                    k = 0;
+        int i = 0;
+        while(i < str1.length()) {
+            if(str1.charAt(i) == str2.charAt(k)) {
+                k++;
+                i++;
+                if(k != str2.length()) {
+                    continue;
+                } else {
+                    return true;
                 }
+            } 
+            else if(k != 0) {
+                k = 0;
+            } else {
+                i++;
             }
         }  
         return false;
