@@ -33,6 +33,7 @@ public class SubsetString {
                 i++;
             }
         }  
+        //means you have reached the end of string and still could not find the substring
         return false;
     }
     
