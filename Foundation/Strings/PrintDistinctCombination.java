@@ -43,13 +43,12 @@ public class PrintDistinctCombination {
     public void printCombination(int start) {
         for(int i = start; i < inputString.length(); i++) {
             sb.append(inputString.charAt(i));
-
             //storing these values in hashset as hashset does not store duplicate values and we want to store distinct combinations
             set.add(sb.toString());
             if(i < inputString.length()) {
                 printCombination(i + 1);
-                sb.setLength(sb.length() - 1);
             }
+            sb.setLength(sb.length() - 1);
         }
     }
 
