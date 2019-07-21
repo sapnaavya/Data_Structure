@@ -2,6 +2,10 @@
  * Reference: Print frequency of each element using Hashmap
  *            https://java2blog.com/count-occurences-frequency-each-element-sorted-array/
  *            https://stackoverflow.com/questions/27448266/java-8-streams-iterate-over-map-of-lists
+ * Time complexity: O(n) to insert elements and their counts in the hash
+ *                  We copy contents of hash to an array (or vector) and sort them by counts. 
+ *                  This step takes O(m Log m) time where m is total number of distinct elements.
+ *                  O(n) + O(mlogm)
 */
 
 import java.util.LinkedHashMap;
