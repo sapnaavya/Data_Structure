@@ -4,6 +4,7 @@
  * Example, Superstring: sapnagandhi 
  *          subset string: gandhi
  *          output: sapna
+ * Assumption: Strings does not have any spaces
 */
 
 import java.util.Scanner;
