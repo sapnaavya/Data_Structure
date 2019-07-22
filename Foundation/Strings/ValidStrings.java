@@ -35,7 +35,7 @@ public class ValidStrings{
         }
 
         //check if at the end, stack is empty then returns true as this mean string has valid parenthesis
-        return stack.isEmpty() ? true:false;
+        return stack.isEmpty() ? true : false;
     }
 
     //main method
