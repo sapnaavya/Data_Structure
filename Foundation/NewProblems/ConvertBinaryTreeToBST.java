@@ -15,15 +15,6 @@ import java.util.Arrays;
 import java.util.LinkedList;
 
 public class ConvertBinaryTreeToBST  {
-    class QueueNode   {
-        TreeNode treeNode;
-        int level;
-        QueueNode(TreeNode node, int level) {
-            this.treeNode = node;
-            this.level = level;
-        }
-    }
-
     class TreeNode {
         TreeNode left;
         TreeNode right;
@@ -32,14 +23,17 @@ public class ConvertBinaryTreeToBST  {
             this.value = value;
         }
     }
+
     TreeNode root;
     int treeSize;
+    static int i = 0;
+    static int j = 0;
 
     private TreeNode createTree() {
         this.root = new TreeNode(0);
         TreeNode n1   = new TreeNode(1);
         TreeNode n2   = new TreeNode(2);
-        TreeNode n3   = new TreeNode(3);
+        TreeNode n3   = new TreeNode(9);
         TreeNode n4   = new TreeNode(4);
         TreeNode n5   = new TreeNode(5);
         TreeNode n6   = new TreeNode(6);
@@ -58,40 +52,48 @@ public class ConvertBinaryTreeToBST  {
         return root;
     }
 
-    private void createInorderArray(TreeNode currentNode, int[] inorder, int[] index) {
+    private void createInorderArray(TreeNode currentNode, int[] inorder) {
         if (currentNode == null) {
             return;
         }
-        createInorderArray(currentNode.left, inorder, index);
-        inorder[index[0]] = currentNode.value;
-        index[0] += 1;
-        createInorderArray(currentNode.right, inorder, index);
+        createInorderArray(currentNode.left, inorder);
+        System.out.print(currentNode.value + " ");
+        inorder[i++] = currentNode.value;
+        createInorderArray(currentNode.right, inorder);
     }
 
-    private void changeNodeValues(TreeNode currentNode, int[] inorder, int[] index) {
+    private void changeNodeValues(TreeNode currentNode, int[] inorder) {
         if (currentNode == null) {
             return;
         }
-        changeNodeValues(currentNode.left, inorder, index);
-        currentNode.value = inorder[index[0]];
-        index[0] += 1;
-        changeNodeValues(currentNode.right, inorder, index);
+        changeNodeValues(currentNode.left, inorder);
+        currentNode.value = inorder[j++];
+        changeNodeValues(currentNode.right, inorder);
+    }
+
+    public void printNodeInOrder(TreeNode currentNode) {
+        if (currentNode == null) {
+            return;
+        }
+        printNodeInOrder(currentNode.left);
+        System.out.print(currentNode.value + " ");
+        printNodeInOrder(currentNode.right);
     }
 
     public void changeTreeToBST() {
         int[] inorder = new int[treeSize];
-        int[] index = new int[1];
-        createInorderArray(root, inorder, index);
+        createInorderArray(root, inorder);
         Arrays.sort(inorder);
-        index[0] = 0; 
-        changeNodeValues(root, inorder, index);
+        changeNodeValues(root, inorder);
     }
 
     public static void main(String[] args) {
         ConvertBinaryTreeToBST solution = new ConvertBinaryTreeToBST();
         solution.createTree();
         solution.changeTreeToBST();
+        System.out.print("\n");
         System.out.print("Modified tree to BST: \n" );
+        solution.printNodeInOrder(solution.root);
     }
 }
 
