@@ -4,7 +4,8 @@
  *  1. root is at index 0
  *  2. Left child of ith node - 2*i+1
  *  3. Right child of ith node - 2*i+2
- *  4. Most important -> index of first non-leaf node : (n/2) - 1
+ *  4. Parent of i - (i - 1)/2
+ *  5. Most important -> index of first non-leaf node : (n/2) - 1
  *  
  *  -> Start heapify process on each non-leaf node in reverse level order traversal
  */
@@ -47,7 +48,7 @@
             arr[i] = arr[largest];
             arr[largest] = temp;
 
-            //recursively heapfy the affected subtree
+            //recursively heapify the affected subtree
             heapify(arr, largest, n);
         }  
     }

@@ -40,7 +40,7 @@ public class LongestPallindromicSubstring {
         if(len == 0) {
             return 0;
         }
-        if(str[start] == str[start + len - 1]) {
+        if(str[start] == str[start + len -  1]) {
             return 2 + countLongestSubSequence(str, start + 1,len - 2);
         } else {
             return Math.max(countLongestSubSequence(str, start + 1, len - 1), countLongestSubSequence(str, start, len - 1));
