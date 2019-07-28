@@ -109,8 +109,7 @@ public class SumTwoListReverse {
         int carry = 0, sum;
 
         while(l1 != null || l2 != null) {
-            sum = carry + (l1 != null ? l1.data : 0) + 
-                            (l2 != null ? l2.data : 0);
+            sum = carry + (l1 != null ? l1.data : 0) + (l2 != null ? l2.data : 0);
             carry = sum >= 10 ? 1: 0;
             sum = sum % 10;
             temp = new Node(sum);
