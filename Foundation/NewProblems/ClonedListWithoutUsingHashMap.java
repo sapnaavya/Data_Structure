@@ -64,7 +64,7 @@ class ClonedListWithoutUsingHashMap {
                 } else {
                     curr.next.random = curr.random;
                 }
-            } 
+            }  
 
             // move to the next newly added node by skipping an original node 
             if(curr.next != null) {
@@ -131,5 +131,3 @@ class ClonedListWithoutUsingHashMap {
 
     } 
 } 
-
-// This code is contributed by Prerna Saini. 
