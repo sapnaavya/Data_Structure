@@ -57,7 +57,7 @@ class ClonedLinkedList
 	{ 
 		// Initialize two references, one with original 
 		// list's head. 
-		Node origCurr = this.head, cloneCurr = null; 
+		Node origCurr = head, cloneCurr = null; 
 
 		// Hash map which contains node to node mapping of 
 		// original and clone linked list. 
