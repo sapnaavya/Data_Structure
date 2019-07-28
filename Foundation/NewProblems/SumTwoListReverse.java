@@ -104,7 +104,7 @@ public class SumTwoListReverse {
     }
 
     public static Node sumofTwoListIter(Node l1, Node l2) {
-        Node res = null; //res -> head node of linkedlist
+        Node head = null; //res -> head node of linkedlist
         Node current = null;
         Node temp = null;
         int carry = 0, sum;
@@ -115,15 +115,14 @@ public class SumTwoListReverse {
             carry = sum >= 10 ? 1: 0;
             sum = sum % 10;
             temp = new Node(sum);
-            if(res == null) {
-                res = temp;
+            if(head == null) {
+                head = temp;
+                current = temp;
             }
             else {
-                current.next = temp;     //0 <- 4 <- 0 <- 1
+                current.next = temp;  
+                current = temp;   //0 <- 4 <- 0 <- 1
             }
-
-            //set previous for next iteration
-            current = temp;
 
             //move pointers of l1 and l2 to next node
             if(l1 != null) {
@@ -137,7 +136,7 @@ public class SumTwoListReverse {
         if(carry > 0) {
             current.next = new Node(carry);
         }
-        return res;
+        return head;
     }
 
     static Node revNodeUtil(Node head1, Node head2) {
