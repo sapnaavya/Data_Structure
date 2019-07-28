@@ -29,8 +29,7 @@ class ClonedListWithoutUsingHashMap {
         Node ptr = start; 
         while (ptr != null) 
         { 
-            System.out.println("Data = " + ptr.data + 
-                        ", Random = "+ptr.random.data); 
+            System.out.println("Data = " + ptr.data +  ", Random = " + ptr.random.data); 
             ptr = ptr.next; 
         } 
     } 

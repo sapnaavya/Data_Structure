@@ -33,8 +33,8 @@ class ClonedLinkedList
 	public void push(int data) 
 	{ 
 		Node node = new Node(data); 
-		node.next = this.head; 
-		this.head = node; 
+		node.next = head; 
+		head = node; 
 	} 
 
 	// Method to print the list. 
