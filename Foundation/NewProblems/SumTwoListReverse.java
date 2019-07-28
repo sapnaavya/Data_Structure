@@ -97,7 +97,6 @@ public class SumTwoListReverse {
         Node revNode2 = reverseNode(head2);
 
         Node sumNode = sumofTwoListIter(revNode1, revNode2);
-
         sumNode = reverseNode(sumNode);
         return sumNode;
     }
