@@ -28,17 +28,6 @@ public class SumTwoListReverse {
             data = d;
             next = null;
         }
-        //set next node 
-        public void setNext(Node nextNode, Node prevNode) {
-            // if prevNode is null that mean we have reached the end of the list, so we return from here
-            if(prevNode == null) {     //Do not forget this ...Sapna .. to do this as this mean it is the last node
-                return;
-            }
-            else {
-                prevNode.next = nextNode;
-                //nextNode = prevNode; //NOT SURE WHY WE NEED THIS.. DO NOT FORGET THIS ...
-            }
-        }
     }
 
     //Insert at the beginning of the List
@@ -78,7 +67,7 @@ public class SumTwoListReverse {
         //if l1 is not null or l2 is not null then only go to if block
         if(l1 != null || l2 != null) {
             Node nextNode = sumofTwoList(l1 == null ? null: l1.next, l2 == null ? null : l2.next, value >= 10 ? 1: 0);
-            node.setNext(nextNode, node);
+            node.next = nextNode;
         }
 
         return node;
@@ -116,7 +105,7 @@ public class SumTwoListReverse {
 
     public static Node sumofTwoListIter(Node l1, Node l2) {
         Node res = null; //res -> head node of linkedlist
-        Node prev = null;
+        Node current = null;
         Node temp = null;
         int carry = 0, sum;
 
@@ -130,11 +119,11 @@ public class SumTwoListReverse {
                 res = temp;
             }
             else {
-                prev.next = temp;     //0 <- 4 <- 0 <- 1
+                current.next = temp;     //0 <- 4 <- 0 <- 1
             }
 
             //set previous for next iteration
-            prev = temp;
+            current = temp;
 
             //move pointers of l1 and l2 to next node
             if(l1 != null) {
@@ -146,7 +135,7 @@ public class SumTwoListReverse {
         }
 
         if(carry > 0) {
-            prev.next = new Node(carry);
+            current.next = new Node(carry);
         }
         return res;
     }
@@ -172,20 +161,20 @@ public class SumTwoListReverse {
     
         list1.insertFront(0);
         list1.insertFront(5);
-        list1.insertFront(5);
+        list1.insertFront(2);
 
         list2.insertFront(0);
-        list2.insertFront(5);
-        list2.insertFront(5);
+        list2.insertFront(5  );
+        list2.insertFront(2);
 
         print(list1.head);
         System.out.print("\n");
         print(list2.head);
 
-       // Node sumList = revNodeUtil(list1.head, list2.head);
-        Node sumListIter = sumofTwoListsIterativeUtil(list1.head, list2.head);
+        Node sumList = revNodeUtil(list1.head, list2.head);
+        //Node sumListIter = sumofTwoListsIterativeUtil(list1.head, list2.head);
         System.out.print("\n");
-        //print(sumList);
-        print(sumListIter);
+        print(sumList);
+        //print(sumListIter);
     }
 }
