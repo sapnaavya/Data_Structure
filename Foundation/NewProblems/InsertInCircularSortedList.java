@@ -38,7 +38,7 @@ public class InsertInCircularSortedList {
             }
             current.next = newNode;
             newNode.next = head;
-            head = newNode;
+            head = newNode;  //it is very important.. new added element will point to head
         }
 
         else {

@@ -15,7 +15,8 @@
        30               45 
     
     Output: 5->7->8->10->19->20->22->28->30->35->40->45->50.
- */
+*/
+  
 public class FlattenLinkedList {
     class Node {
         int data;
@@ -46,22 +47,45 @@ public class FlattenLinkedList {
 
     //merge two sorted linkedlist
     public Node mergeSortedList(Node root1, Node root2) {
+
         if(root1 == null) 
             return root2;
         
         if(root2 == null)
             return root1;
-        
-        Node result;
-        if(root1.data < root2.data) {
-            result = root1;
-            result.down = mergeSortedList(root1.down, root2);
-        } else {
-            result = root2;
-            result.down = mergeSortedList(root2.down, root1);
+
+        /* Recursive Approach */
+        // Node result;
+        // if(root1.data < root2.data) {
+        //     result = root1;
+        //     result.down = mergeSortedList(root1.down, root2);
+        // } else {
+        //     result = root2;
+        //     result.down = mergeSortedList(root2.down, root1);
+        // }
+        // return result;
+
+        /* Iterative approach */
+        Node newList = new Node(0);
+        Node head = newList;
+        while(root1 != null && root2 != null) {
+            if(root1.data < root2.data) {
+                newList.down = root1;
+                root1 = root1.down;
+            } else {
+                newList.down = root2;
+                root2 = root2.down;
+            }
+            newList = newList.down;
         }
 
-        return result;
+        if(root1 != null) {
+            newList.down = root1;
+        }
+        if(root2 != null) {
+            newList.down = root2;
+        }
+        return head.down;
     }
 
     //flatten list
@@ -75,7 +99,6 @@ public class FlattenLinkedList {
 
         //now merge root and root.right
         root = mergeSortedList(root, root.right);
-
         return root;
     }
 
@@ -95,12 +118,12 @@ public class FlattenLinkedList {
         list.head.right.right = list.insertFront(list.head.right.right, 22); 
         list.head.right.right = list.insertFront(list.head.right.right, 19); 
 
-        list.printList(list.head);
-        System.out.print("\n");
-        list.printList(list.head.right);
+        //list.printList(list.head);
+        //System.out.print("\n");
+        //list.printList(list.head.right);
 
         list.head = list.flattenList(list.head);
-        System.out.print("\n");
+        //System.out.print("\n");
         list.printList(list.head);
     }
 }
