@@ -69,7 +69,6 @@ public class SumTwoListReverse {
             Node nextNode = sumofTwoList(l1 == null ? null: l1.next, l2 == null ? null : l2.next, value >= 10 ? 1: 0);
             node.next = nextNode;
         }
-
         return node;
     }
 
