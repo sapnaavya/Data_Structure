@@ -38,22 +38,22 @@ class ClonedLinkedList
 	} 
 
 	// Method to print the list. 
-	void print() 
+	static void print(Node node) 
 	{ 
-		Node temp = head; 
-		while (temp != null) 
+		//Node temp = node; 
+		while (node != null) 
 		{ 
-			Node random = temp.random; 
+			Node random = node.random; 
 			int randomData = (random != null)? random.data: -1; 
-			System.out.println("Data = " + temp.data + 
+			System.out.println("Data = " + node.data + 
 							", Random data = "+ randomData); 
-			temp = temp.next; 
+			node = node.next; 
 		} 
 	} 
 
 	// Actual clone method which returns head 
 	// reference of cloned linked list. 
-	public ClonedLinkedList clone() 
+	public Node clone() 
 	{ 
 		// Initialize two references, one with original 
 		// list's head. 
@@ -73,7 +73,7 @@ class ClonedLinkedList
 		} 
 
 		// Adjusting the original list reference again. 
-		origCurr = this.head; 
+		origCurr = head; 
 
 		// Traversal of original list again to adjust the next 
 		// and random references of clone list using hash map. 
@@ -86,7 +86,7 @@ class ClonedLinkedList
 		} 
 
 		//return the head reference of the clone list. 
-		return new ClonedLinkedList(map.get(this.head)); 
+		return (map.get(head)); 
 	}
 	
 	// Main method. 
@@ -111,13 +111,13 @@ class ClonedLinkedList
 			list.head.next; 
 
 		// Making a clone of the original linked list. 
-		ClonedLinkedList clone = list.clone(); 
+		Node clone = list.clone(); 
 
 		// Print the original and cloned linked list. 
 		System.out.println("Original linked list"); 
-		list.print(); 
+		print(list.head); 
 		System.out.println("\nCloned linked list"); 
-		clone.print(); 
+		print(clone); 
 	} 
 } 
 
