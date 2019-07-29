@@ -109,7 +109,7 @@ public class FindNextGreaterElemInArray {
     public static void main(String args[]) {
         int [] arr = {4, 10, 5, 15, 25, 50};
         findNGE(arr);
-        System.out.print("\n");
+        System.out.print("\n"); 
         findNGEUsingStack(arr);
     }
 }

@@ -82,8 +82,8 @@ public class PrintKMax {
 
     //main method
     public static void main(String args[]) {
-        int[] arr = {25,12,30,50,45};
-        int k = 4;
+        int[] arr = {25,12,20,50,45};
+        int k = 3;
         printkMaxSubArray(arr, k);
         System.out.print("\n");
         printKmaxDeque(arr, k);
