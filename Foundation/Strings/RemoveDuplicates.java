@@ -64,7 +64,7 @@ public class RemoveDuplicates {
         return sb.toString();
     }
 
-    //Bruteforce algorithm to remove duplicates from the string
+    // Bruteforce algorithm to remove duplicates from the string
     public static String removeDupBruteForce(String str) {
         if(str.length() == 0 || str == null) {
             return null;
@@ -75,15 +75,13 @@ public class RemoveDuplicates {
         for (int i = 0; i < length; i++) {
             for (int j = i + 1; j < length; j++) {
                 if (characters[i] == characters[j]) {
-                    int temp = j;//set duplicate element index
+                    int temp = j; // set duplicate element index
  
-                    //delete the duplicate element by shifting the elements to left
+                    // delete the duplicate element by shifting the elements to left
                     for (int k = temp; k < length - 1; k++) {
                     	characters[k] = characters[k + 1];
                     }
-                    j--;
-                    length--;//reduce char array length
- 
+                    length--; // reduce char array length
                 }
             }
         }
@@ -93,7 +91,7 @@ public class RemoveDuplicates {
         return  stringWithOutDuplicates;
     }
 
-    //main method
+    // main method
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
         String str = sc.nextLine();
@@ -103,15 +101,15 @@ public class RemoveDuplicates {
             // System.out.println(removedDup);
 
         /* Remove duplicates using LinkedHashSet */
-           //String rmvDup = removeDupLinkedHashSet(str);
+           // String rmvDup = removeDupLinkedHashSet(str);
         
         /* Remove duplicates using hashset */
-            //String str1 = removeDupChar(str);
-            //System.out.println(str1);
+            // String str1 = removeDupChar(str);
+            // System.out.println(str1);
         
         /* Remove duplicates using bruteforce approach */
-        String str23 = removeDupBruteForce(str); 
-        System.out.println(str23);
-        sc.close();
+            String str23 = removeDupBruteForce(str); 
+            System.out.println(str23);
+            sc.close();
     }
 }
