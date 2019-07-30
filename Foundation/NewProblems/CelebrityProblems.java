@@ -3,7 +3,6 @@
  * Reference: https://www.geeksforgeeks.org/the-celebrity-problem/
  */
 import java.util.Stack;
-
 public class CelebrityProblems {
     static int MATRIX[][] = {{0, 0, 1, 0}, 
                             {0, 0, 1, 0}, 
