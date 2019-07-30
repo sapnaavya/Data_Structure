@@ -1,3 +1,7 @@
+/**
+ * This problem triws to find celebrity in the party
+ * Reference: https://www.geeksforgeeks.org/the-celebrity-problem/
+ */
 import java.util.Stack;
 
 public class CelebrityProblems {
