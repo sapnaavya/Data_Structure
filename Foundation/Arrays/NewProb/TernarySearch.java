@@ -8,23 +8,25 @@ public class TernarySearch {
     //this function searches for the key usinh ternary search using recursive manner
     static int ternarySearchRecur(int [] arr, int start, int end, int key) {
         if(end >= start) {
-            int mid1 = start + (end - start) / 3;
+            int mid1 = (end - start) / 3;
             int mid2 = mid1 + (end - start) / 3;
 
+            System.out.println("mid1: " + mid1);
+            System.out.println("mid2: " + mid2); 
             if(arr[mid1] == key) {
                 return mid1;
             }
             if(arr[mid2] == key) {
                 return mid2;
             }
-            //ternarySearchRecur(arr, )
+            
             if(key < arr[mid1]) {
                 return ternarySearchRecur(arr, start, mid1 - 1, key); 
             } else if(key > arr[mid2]) {
                 return ternarySearchRecur(arr, mid2 - 1, end, key);
             } else {
                 return ternarySearchRecur(arr, mid1 + 1, mid2 - 1, key);
-            }
+            } 
         }
         return -1;
     }
@@ -70,11 +72,11 @@ public class TernarySearch {
 
     //main method
     public static void main (String args[]) {
-        int [] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        int [] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
         int start = 0;
         int end = arr.length - 1;
         
-        int key = 4;
+        int key = 5;
         int keyIndexiter = ternarySearchIter(arr, start, end, key);
         System.out.println("key is at index: " + keyIndexiter);
 
