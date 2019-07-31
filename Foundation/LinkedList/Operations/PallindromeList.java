@@ -57,13 +57,13 @@ public class PallindromeList {
         return true;
     }
 
-    //Check if a linkedlist is a pallindrom or not using reverse and clone linkedlist
+    // Check if a linkedlist is a pallindrom or not using reverse and clone linkedlist
     public static boolean isPalLinkedList(Node originalList) {
         Node reverseList = reverseAndClone(originalList);
         return compareList(reverseList, originalList);
     }
 
-    //Reverse a linkedList
+    // Reverse a linkedList
     public static Node reverseAndClone(Node l1) {
         if(l1 == null) {
             return null;
@@ -78,7 +78,7 @@ public class PallindromeList {
         return prev;
     }
 
-    //Compare reverselist and actual list
+    // Compare reverselist and actual list
     private static boolean compareList(Node list1, Node list2) {
         if(list1 == null && list2 == null) {
             return true;
