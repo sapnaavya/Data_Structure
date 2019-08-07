@@ -49,7 +49,7 @@ public class FindPattern {
                 continue;// make sure to use this continue as we do not want increment i after resetting k to 0
             }
             i++;
-            s = i + 1;
+            s = i;
         }
         //}
         return -1;
