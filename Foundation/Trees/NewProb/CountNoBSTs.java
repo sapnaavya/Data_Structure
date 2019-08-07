@@ -1,3 +1,7 @@
+/**
+ * This code counts the number of binary search trees in the binary tree
+ * Reference: https://www.geeksforgeeks.org/count-the-number-of-binary-search-trees-present-in-a-binary-tree/
+ */
 class Node {
     int data;
     Node left;

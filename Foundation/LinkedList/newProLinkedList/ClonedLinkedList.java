@@ -6,8 +6,8 @@ import java.util.Map;
 // Linked List Node class 
 class Node 
 { 
-	int data;//Node data 
-	Node next, random;//Next and random reference 
+	int data; //Node data 
+	Node next, random; //Next and random reference 
 
 	//Node constructor 
 	public Node(int data) 
@@ -20,7 +20,7 @@ class Node
 // linked list class 
 class ClonedLinkedList 
 { 
-	Node head;//Linked list head reference 
+	Node head; //Linked list head reference 
 
 	// Linked list constructor 
 	public ClonedLinkedList(Node head) 
