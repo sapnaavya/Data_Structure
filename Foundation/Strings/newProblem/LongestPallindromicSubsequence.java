@@ -7,10 +7,10 @@
  *  Reference: https://github.com/mission-peace/interview/blob/master/src/com/interview/dynamic/LongestPalindromicSubsequence.java
 */
 
-public class LongestPallindromicSubstring {
+public class LongestPallindromicSubsequence {
 
     // function to count longest pallindromic subsequence using Dynamic Programming
-    public int countLongestCommonSubseq(char[] str) {
+    public int countLongestPalSubseq(char[] str) {
         int T[][] = new int[str.length][str.length];
         for(int i = 0; i < str.length; i++) {
             T[i][i] = 1;
@@ -49,9 +49,9 @@ public class LongestPallindromicSubstring {
 
     //main method 
     public static void main(String args[]) {
-        LongestPallindromicSubstring lps = new LongestPallindromicSubstring();
-        String str1 = "agbbddbba";
-        int longestSubseqCount = lps.countLongestCommonSubseq(str1.toCharArray());
+        LongestPallindromicSubsequence lps = new LongestPallindromicSubsequence();
+        String str1 = "ababddbaba";
+        int longestSubseqCount = lps.countLongestPalSubseq(str1.toCharArray());
         int longestSubseqCountRecur = lps.countLongestSubSequence(str1.toCharArray(), 0, str1.length());
         System.out.println(longestSubseqCountRecur);
         System.out.println(longestSubseqCount);
