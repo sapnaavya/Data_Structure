@@ -41,7 +41,7 @@ public class LongestPallindromicSubsequence {
             return 0;
         }
         if(str[start] == str[start + len -  1]) {
-            return 2 + countLongestSubSequence(str, start + 1,len - 2);
+            return 2 + countLongestSubSequence(str, start + 1, len - 2);
         } else {
             return Math.max(countLongestSubSequence(str, start + 1, len - 1), countLongestSubSequence(str, start, len - 1));
         }
@@ -50,7 +50,7 @@ public class LongestPallindromicSubsequence {
     //main method 
     public static void main(String args[]) {
         LongestPallindromicSubsequence lps = new LongestPallindromicSubsequence();
-        String str1 = "ababddbaba";
+        String str1 = "abbdcacb";
         int longestSubseqCount = lps.countLongestPalSubseq(str1.toCharArray());
         int longestSubseqCountRecur = lps.countLongestSubSequence(str1.toCharArray(), 0, str1.length());
         System.out.println(longestSubseqCountRecur);
