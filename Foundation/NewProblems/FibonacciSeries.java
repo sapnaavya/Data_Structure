@@ -37,9 +37,9 @@ public class FibonacciSeries {
             return 1;
         }
         int[] bottomUp = new int[num + 1];
+        bottomUp[0] = 0;
         bottomUp[1] = 1;
-        bottomUp[2] = 1;
-        for(int i = 3; i <= num; i++) {
+        for(int i = 2; i <= num; i++) {
             bottomUp[i] = bottomUp[i - 1] + bottomUp[i - 2];
             
         }
