@@ -39,7 +39,7 @@ public class PrintDistinctCombination {
             System.out.println(itr.next());  
         }
     }
-
+    
     public void printCombination(int start) {
         for(int i = start; i < inputString.length(); i++) {
             sb.append(inputString.charAt(i));
@@ -51,10 +51,11 @@ public class PrintDistinctCombination {
             sb.setLength(sb.length() - 1);
         }
     }
+     
 
     //main method
     public static void main(String args[]) {
-        PrintDistinctCombination strObj = new PrintDistinctCombination("abc");
+        PrintDistinctCombination strObj = new PrintDistinctCombination("aaa");
         strObj.printCombinationofString();
     }
 }

@@ -1,4 +1,4 @@
-  /**
+/**
  * This problem finds the solution to place n queens in a chess so that those queens do not kill themselves
  * Notes: This problem finds the first solution as soon as it finds the solution.. it will come out with boolean value as true
  * Remember, queens can kill each other when they are in same row, same column and diagonally
@@ -13,6 +13,8 @@ import java.util.Collections;
 import java.util.Arrays;
 
 public class NQueenProblemOneSolution {
+
+    //Position class to hold rows and columns of queens places
     static class Position {
         int row, col;
         Position(int row, int col) {
@@ -38,27 +40,33 @@ public class NQueenProblemOneSolution {
             return true;
         }
 
+        //As we need to place queens in each of the column.. we will start from column
         int col;
         for(col = 0; col < n; col++) {
             boolean foundSafe = true;
-            //check each column for each queen(place in row) if it is safe to place new queen 
-            //check rows and columns are not under attck for previous queen in previous rows
+
+            //check rows and columns are not under attack for previous queen
+            //if row -> 1 means till now 1 queen is placed .. if row is 2 that mean till now 2 queens are placed
+            //first time, queen will be 0 and row will be 0 so we dont need to go in this for loop and we can place queen on 0,0 position
+            
             for(int queen = 0 ; queen < row; queen++) {
                 if(position[queen].col == col || position[queen].row - position[queen].col == row - col
                     || position[queen].row + position[queen].col == row + col) {
                     foundSafe = false;
                     break;
                 }
-            
             }
 
+            //if foundsafe is true that mean this position is safe to place queen. Thus, assign those coordination to position
             if(foundSafe) {
-                position[row] = new Position(row, col);
+                position[row] = new Position(row, col); //DO NOT FORGET TO SAVE THOSE COORDINATES
                 if(nQueenSolutionUtil(n, row + 1, position)) {
                     return true;
                 }
             }
         }
+
+        //COULD NOT FIND POSITION TO PLACE QUEEN IN ALL COLUMNS, THUS RETURN FALSE TO CALL STACK
         return false;
     }
 
@@ -70,10 +78,8 @@ public class NQueenProblemOneSolution {
         System.out.println("rows and columns:");
         for(int i = 0; i < position.length; i++) {
             int col = position[i].col;
-            int row = position[i].row;
-            System.out.println(row + " " + col);
+            System.out.println(i + " " + col);
         }
-        //Arrays.stream(pos).forEach(position -> System.out.println(position.row + " " + position.col));
         sc.close();
     }
 }

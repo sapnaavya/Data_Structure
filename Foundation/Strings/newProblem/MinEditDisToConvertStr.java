@@ -11,14 +11,14 @@ import java.util.Scanner;
 public class MinEditDisToConvertStr {
     static int dp[][];
 
-    //Calculate DP Matrix to count minimum edit distance to convert one string to another
+    // Calculate DP Matrix to count minimum edit distance to convert one string to another
     public static void calculateDPMatrix(String str1, String str2) {
         if(str1 == null || str2 == null) {
             return;
         }
         int len1 = str1.length();
         int len2 = str2.length();
-        //intialize matirx with +1 to conside null also
+        // intialize matirx with +1 to conside null also
         int[][] DP = new int[len1 + 1][len2 + 1];
 
         // initilize by the maximum edits possible 
@@ -36,7 +36,7 @@ public class MinEditDisToConvertStr {
                 }
             }
         }
-        //initialize to global array
+        // initialize to global array
         dp = DP;
     }
 
@@ -47,7 +47,7 @@ public class MinEditDisToConvertStr {
 		return Math.min(z, c); 
     }
     
-    //function to print changes requred to convert str1 to str2 based on DP Matrix
+    // function to print changes requred to convert str1 to str2 based on DP Matrix
     public static void printChanges(String s1, String s2) {
         int i = s1.length();
         int j = s2.length();
@@ -73,7 +73,8 @@ public class MinEditDisToConvertStr {
             }
         }
     }
-    //main method
+
+    // main method
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter string that needs to be change");

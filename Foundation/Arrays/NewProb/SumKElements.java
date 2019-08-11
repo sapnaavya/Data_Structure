@@ -40,11 +40,10 @@ public class SumKElements {
 
             sum = 0;
             if(deq.size() == k) {
-                for(Object obj: deq) {
-                    Integer elem = (Integer)obj;
-                    int index = elem;
-                    sum += arr[index];
+                for(Integer obj: deq) {
+                    sum += arr[obj];
                 }
+                
                 System.out.print(sum + " ");
             }
             deq.addLast(i);

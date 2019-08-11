@@ -71,7 +71,7 @@ public class AnagramStrings {
     }
 
     //Optimization - check each character's frequency in the strings and then subtract the frequency.
-
+    //Assuming: no special character and space is there
     public static AnagramCheck isAnagramOptimize(String str1, String str2) {
         //Both strings null -> return true
         if(str1 == null && str2 == null) {

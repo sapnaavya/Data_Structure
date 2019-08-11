@@ -34,26 +34,31 @@ public class LongestPallindromicSubsequence {
 
     //function to calculate longest pallindromic subsequence using recursion
     public int countLongestSubSequence(char[] str, int start, int len) {
-        if(len == 1) {
+        // Base Case 1: If there is only 1 character 
+        if(start == len) {
             return 1;
         }
-        if(len == 0) {
-            return 0;
-        }
-        if(str[start] == str[start + len -  1]) {
-            return 2 + countLongestSubSequence(str, start + 1, len - 2);
+
+        // Base Case 2: If there are only 2 characters and both are same  
+        if (str[start] == str[len] && start + 1 == len) { 
+            return 2; 
+        } 
+
+        if(str[start] == str[len]) {
+            return 2 + countLongestSubSequence(str, start + 1, len - 1);
         } else {
-            return Math.max(countLongestSubSequence(str, start + 1, len - 1), countLongestSubSequence(str, start, len - 1));
+            return Math.max(countLongestSubSequence(str, start + 1, len), countLongestSubSequence(str, start, len - 1));
         }
     }
 
     //main method 
-    public static void main(String args[]) {
+    public static void main(String args[]) { 
         LongestPallindromicSubsequence lps = new LongestPallindromicSubsequence();
-        String str1 = "abbdcacb";
+        String str1 = "sapn";
         int longestSubseqCount = lps.countLongestPalSubseq(str1.toCharArray());
-        int longestSubseqCountRecur = lps.countLongestSubSequence(str1.toCharArray(), 0, str1.length());
+        int n = str1.length() - 1;
+        int longestSubseqCountRecur = lps.countLongestSubSequence(str1.toCharArray(), 0, n);
         System.out.println(longestSubseqCountRecur);
         System.out.println(longestSubseqCount);
     }
-}
+} 

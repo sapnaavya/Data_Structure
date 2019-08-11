@@ -9,6 +9,21 @@ import java.util.Scanner;
 
 public class ReverseString {
 
+    public static void reverseStr(String str) {
+        if(str == null) {
+            return ;
+        }
+        char[] charArr = str.toCharArray();
+        int len = charArr.length;
+        for(int i = 0; i < charArr.length/2; i++) {
+            char temp = charArr[i];
+            charArr[i] = charArr[len -i -1];
+            charArr[len -i -1] = temp;
+        }
+
+        System.out.println(charArr);
+    }
+
     //main method
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
@@ -22,6 +37,7 @@ public class ReverseString {
             sb.setCharAt(length - i - 1, curr);
         }
         System.out.println(sb.toString());
+        reverseStr(str);
         sc.close();
     }
 }

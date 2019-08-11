@@ -145,15 +145,9 @@ public class ArrayOperations {
                 swapElements(low, mid, arr);
                 low++;
                 mid++;
-                continue;
-            }
-
-            if(arr[mid] == 1) {
+            } else if(arr[mid] == 1) {
                 mid++;
-                continue;
-            }
-
-            if(arr[mid] == 2) {
+            } else if(arr[mid] == 2) {
                 swapElements(mid, high, arr);
                 high--;
             }
@@ -222,26 +216,26 @@ public class ArrayOperations {
         //printallElements(arr);
 
         //Reverse an array and print it
-        int[] arr1 = new int[]{3,3,4,5,9,7,8,9};
-        reverseArray(arr1);
-        printallElements(arr1);
+        // int[] arr1 = new int[]{3,3,4,5,9,7,8,9};
+        // reverseArray(arr1);
+        // printallElements(arr1);
 
-        //print sum of all elements in an array
-        int sum = sumOfArray(arr);
-        System.out.println("Sum of all elements in array: " + sum);
+        // //print sum of all elements in an array
+        // int sum = sumOfArray(arr);
+        // System.out.println("Sum of all elements in array: " + sum);
 
-        //Print minimum element in an array and its index
-        Num minNum = minArray(arr);
-        System.out.println("Minimum number and its index:" + minNum.num + " " + minNum.index);
+        // //Print minimum element in an array and its index
+        // Num minNum = minArray(arr);
+        // System.out.println("Minimum number and its index:" + minNum.num + " " + minNum.index);
 
-        //print largest number and its index in an array
-        Num num = maxArray(arr);
-        System.out.println("Largest number and its index: " + num.num +" " + num.index);
+        // //print largest number and its index in an array
+        // Num num = maxArray(arr);
+        // System.out.println("Largest number and its index: " + num.num +" " + num.index);
 
-        //Arrange 0's and 1's in an array
-        int[] binaryArray = new int[]{0,1,1,1,1,0,0,0,1,0};
-        binaryArray = arrangeBinaryElem(binaryArray);
-        printallElements(binaryArray);
+        // //Arrange 0's and 1's in an array
+        // int[] binaryArray = new int[]{0,1,1,1,1,0,0,0,1,0};
+        // binaryArray = arrangeBinaryElem(binaryArray);
+        // printallElements(binaryArray);
 
         //Segregate 0's, 1's and 2's in the array in place
         int[] array1 = new int[]{0,2,1,2,2,1,1,1};
@@ -254,8 +248,8 @@ public class ArrayOperations {
         //printallElements(array2);
 
         //find the missing element in the consecutive array
-        int [] consecutiveArr = new int[]{3,4,5,6,7,8,10 };
-        int missingElem = getMissingNum(consecutiveArr);
-        System.out.println("Missing element: " + missingElem);
+        // int [] consecutiveArr = new int[]{3,4,5,6,7,8,10 };
+        // int missingElem = getMissingNum(consecutiveArr);
+        // System.out.println("Missing element: " + missingElem);
     }
 }

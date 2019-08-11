@@ -58,9 +58,9 @@ public class SumOfCombinationRelemements {
         int [] arr = {1, 0, 2, 1};
 
         //here, value is the combinational sum
-        int value = 2;
+        int value = 4;
         // r is the total elements in the combination. if r is 2 that mean show all combination with only 2 elements
-        int r = 2;
+        int r = 3;
 
         obj.printCombinationUtil(arr, value, r);
     }

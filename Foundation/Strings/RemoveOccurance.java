@@ -24,9 +24,10 @@ public class RemoveOccurance {
         return sb.toString();
     }
 
-    //This function recursively removes a character from a string
+    // This function recursively removes a character from a string
     public static String removeOccurRecur(String str, char ch) {
         int index = str.indexOf(ch);
+        // base case
         if(index == -1) {
             return str;
         }
@@ -34,7 +35,7 @@ public class RemoveOccurance {
         return removeOccurRecur(str.substring(0, index) + str.substring(index + 1, length), ch);
     }
 
-    //function to remove character from a string using character array
+    // function to remove character from a string using character array
     public static void removeCharIter(String str, char ch) {
         if(str == null || ch == '\u0000') {
             return;

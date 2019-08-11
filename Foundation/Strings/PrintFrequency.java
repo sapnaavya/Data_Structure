@@ -10,8 +10,10 @@
     * So, make sure to not give spaces or any special characters or '\t' withing words or characters in optimize code 
     * as our array size is 26 only it can only store chacters not any special characters
  * */
-import java.util.Hashtable;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
+import java.util.TreeMap;
 
 public class PrintFrequency {
 
@@ -61,17 +63,37 @@ public class PrintFrequency {
         if(str == null) {
             return;
         }
-        Hashtable<Character, Integer> table = new Hashtable<>();
+        HashMap<Character, Integer> map = new HashMap<>();
         for(int i = 0; i < str.length(); i++) {
-            if(!table.containsKey(str.charAt(i))) {
-                table.put(str.charAt(i), 1);
+            if(!map.containsKey(str.charAt(i))) {
+                map.put(str.charAt(i), 1);
             } else {
-                table.put(str.charAt(i), table.get(str.charAt(i)) + 1);
+                map.put(str.charAt(i), map.get(str.charAt(i)) + 1);
             }
         }
-        
-        System.out.print(table);
+        System.out.print(map);
+    }
 
+    //function to print frequency of each character using TreeMap
+    public static void printFreqTreeMap(String str) {
+        if(str == null) {
+            return;
+        }
+
+        TreeMap<Character, Integer> tMap = new TreeMap<Character, Integer>();
+        for(int i = 0; i < str.length(); i++) {
+            if(!tMap.containsKey(str.charAt(i))) {
+                tMap.put(str.charAt(i), 1);
+            } else {
+                tMap.put(str.charAt(i), tMap.get(str.charAt(i)) + 1);
+            }
+        }
+
+        for(Map.Entry<Character, Integer> m: tMap.entrySet()) {
+            System.out.print(m.getKey() + "-->" + m.getValue() + " ");
+        }
+
+        //System.out.println(tMap);
     }
 
     // main method
@@ -85,6 +107,8 @@ public class PrintFrequency {
         countFrquencyOptimize(charArray);
         System.out.println();
         printFrqHashTable(str);
+        System.out.println();
+        printFreqTreeMap(str);
         sc.close();
     }
 }

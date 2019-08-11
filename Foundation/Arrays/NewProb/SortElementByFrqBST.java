@@ -81,12 +81,12 @@ public class SortElementByFrqBST{
         bst.inorderToFlattenList(added, flattened);
 
         //sort by frequency
-        List<Data> listSortedByFrequency = flattened.stream()
-                                           .sorted((e1, e2) -> e2.frequency - e1.frequency)
-                                           .collect(Collectors.toList());
+        flattened = flattened.stream() //Open a stream on List
+                        .sorted((e1, e2) -> e2.frequency - e1.frequency)
+                        .collect(Collectors.toList());
         
         List<Integer> output = new ArrayList<Integer>();
-        for(Data data : listSortedByFrequency) {
+        for(Data data : flattened) {
             int frequency = data.frequency;
             for(int i = 0; i < frequency; i++) {
                 output.add(data.number);

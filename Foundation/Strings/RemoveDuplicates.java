@@ -47,7 +47,7 @@ public class RemoveDuplicates {
 
     // Function to remove duplicates using hashset
     // Remember the difference between Linkedset and hashset...
-    // linkedhashset does not allow duplicate values
+    // linkedhashset and hashset both do not allow duplicate values. However, linkedhashset maintains the insertion order
     public static String removeDupChar(String str) {
         if(str.length() == 0) {
             return null;
@@ -56,10 +56,15 @@ public class RemoveDuplicates {
         HashSet<Character> set = new HashSet();
         StringBuilder sb = new StringBuilder();
         for(char c: charArr) {
-            if(!set.contains(c)) {
-                set.add(c);
-                sb.append(c);
-            }
+            // if(!set.contains(c)) {
+            //     set.add(c);
+            //     sb.append(c);
+            // }
+            set.add(c);
+        }
+
+        for(char ch: set) {
+            sb.append(ch);
         }
         return sb.toString();
     }
@@ -75,12 +80,11 @@ public class RemoveDuplicates {
         for (int i = 0; i < length; i++) {
             for (int j = i + 1; j < length; j++) {
                 if (characters[i] == characters[j]) {
-                    int temp = j; // set duplicate element index
- 
                     // delete the duplicate element by shifting the elements to left
-                    for (int k = temp; k < length - 1; k++) {
+                    for (int k = j; k < length - 1; k++) {
                     	characters[k] = characters[k + 1];
                     }
+                    
                     length--; // reduce char array length
                 }
             }
@@ -104,8 +108,8 @@ public class RemoveDuplicates {
            // String rmvDup = removeDupLinkedHashSet(str);
         
         /* Remove duplicates using hashset */
-            // String str1 = removeDupChar(str);
-            // System.out.println(str1);
+            String str1 = removeDupChar(str);
+            System.out.println(str1);
         
         /* Remove duplicates using bruteforce approach */
             String str23 = removeDupBruteForce(str); 
