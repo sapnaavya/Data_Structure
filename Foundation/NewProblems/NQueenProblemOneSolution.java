@@ -36,6 +36,7 @@ public class NQueenProblemOneSolution {
     public static boolean nQueenSolutionUtil(int n, int row, Position[] position) {
 
         //means all queens have placed themselves in a position that they are not killing each other
+        //BASE CASE: DO NOT FORGET THIS
         if(n == row) {
             return true;
         }
