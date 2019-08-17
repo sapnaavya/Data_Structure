@@ -5,6 +5,8 @@
  *  Space complexity - O(n*n)
  *  Youtube link - https://youtu.be/_nCsPn7_OgI
  *  Reference: https://github.com/mission-peace/interview/blob/master/src/com/interview/dynamic/LongestPalindromicSubsequence.java
+ *  if the given sequence is "BBABCBCAB”, then the output should be 7 as “BABCBAB” is the longest palindromic subseuqnce in it. 
+ *  “BBBBB” and “BBCBB” are also palindromic subsequences of the given sequence, but not the longest ones.
 */
 
 public class LongestPallindromicSubsequence {
