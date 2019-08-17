@@ -79,7 +79,7 @@ public class CountMinHopstoReachArrayEnd {
     //main method
     public static void main(String args[]) {
         //int [] arr = new int[]{4, 3, 0, 0, 2, 1};  
-        int [] arr = new int[]{1, 0, 0, 2, 6, 0};
+        int [] arr = new int[]{4, 3, 0, 0, 2, 1};
         System.out.println("Minimum no of hops required: " + countMinHops(arr));
         System.out.println("(Optimized) Min hops requred: " + countHopsOptimized(arr));
     }
