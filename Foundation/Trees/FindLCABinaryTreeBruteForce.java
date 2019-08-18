@@ -46,13 +46,10 @@ public class FindLCABinaryTreeBruteForce {
             return true; 
         } 
 
-        if(findPath(root.left, n, path)) {
+        if(findPath(root.left, n, path) || findPath(root.right, n, path) ) {
             return true;
         }
-
-        if(findPath(root.right, n, path)) {
-            return true;
-        }
+        
         path.remove(path.size() - 1);
         return false;
     }
