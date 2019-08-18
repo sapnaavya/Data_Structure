@@ -1,4 +1,8 @@
 /* This code check if a binary tree is a complate binary tree or not in below ways:
+    
+    A complete binary tree is a binary tree in which every level, except possibly the last, is completely filled, 
+    and all nodes are as far left as possible
+    
     -> Using recursion
        1. When using recurion, we check set the index of all nodes. i.e. 2*i+1 to left node and 2*i+2 to right node where i is the index 0 set to root node
        2. Also, we calculate the no of nodes in the tree
