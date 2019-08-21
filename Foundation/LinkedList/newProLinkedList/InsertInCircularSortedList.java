@@ -31,7 +31,9 @@ public class InsertInCircularSortedList {
             head = newNode;
         }
 
-        //case 2: when current is at last
+        //case 2: when we have to insert in the beginning..
+        //for that first go to last node and point last node next to new node 
+        // and new node next to head and point head to new node
         else if(current.data >= newNode.data) {
             while(current.next != head) {
                 current = current.next;
@@ -62,13 +64,13 @@ public class InsertInCircularSortedList {
     public static void main(String args[]) {
 
         InsertInCircularSortedList llist = new InsertInCircularSortedList();
-        int arr[] = {12, 56, 2, 11, 1, 90, 3};
+        int arr[] = {12, 56, 2, 11, 1, 90, 3, 100};
 
         //start with the empty linkedlist
         Node temp = null;
         
         /* Created linked list will be 1->2->11->12->56->90 */
-        for(int i = 0; i < 7; i++) {
+        for(int i = 0; i < 8; i++) {
             temp = new Node(arr[i]);
             llist.sortedInsert(temp);
         }

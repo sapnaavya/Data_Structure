@@ -1,3 +1,6 @@
+/**
+ * This code prints the number in the given range k1 and k2 in  binary search tree
+ */
 class Node {
     int data;
     Node left, right;

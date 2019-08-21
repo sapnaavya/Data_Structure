@@ -22,8 +22,9 @@ public class RemoveDup {
                     for(int k = j; k < n - 1; k++) {
                         arr[k] = arr[k + 1];
                     }
-                    n--;
                     counter++;
+                    n--;
+                    System.out.print(counter);
                 }
             }
         }
@@ -32,7 +33,7 @@ public class RemoveDup {
     
     //main method
     public static void main(String args[]) {
-        int[] arr = {1, 1, 2, 2, 3, 4, 3, 5, 5, 6, 6, 7, 7};
+        int[] arr = {1,2,2,4,4,4,5};
         Temp temp = removeDup(arr);
         for(int i = 0; i <= temp.size; i++) {
             System.out.print(temp.arr[i] + " ");

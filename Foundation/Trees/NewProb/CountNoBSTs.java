@@ -48,7 +48,7 @@ public class CountNoBSTs {
         bst.min = Math.min(root.data, Math.min(l.min, r.min));
         bst.max = Math.max(root.data, Math.max(l.max, r.max));
 
-        if(l.isBST && r.isBST && root.data > l.max & root.data < r.min) {
+        if(l.isBST && r.isBST && root.data > l.max && root.data < r.min) {
             bst.isBST = true;
             bst.num_bst = 1 + l.num_bst + r.num_bst;
         } else {
