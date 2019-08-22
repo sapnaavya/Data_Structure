@@ -19,10 +19,10 @@ public class MergeTwoSortedArraysWithoutUsingThirdArray {
                 int temp = arr1[i];
                 arr1[i] = arr2[0];
                 arr2[0] = temp;
-            }
 
-            //rearrange arr2 to put swapped element in the right position. Note: arr2[1.. n-1] is already sorted
-            rearrangeElem(arr2);
+                //rearrange arr2 to put swapped element in the right position. Note: arr2[1.. n-1] is already sorted
+                rearrangeElem(arr2);
+            }
         }
     }
 
@@ -47,8 +47,8 @@ public class MergeTwoSortedArraysWithoutUsingThirdArray {
 
     //main method
     public static void main(String args[]) {
-        int[] arr1 = {1, 2, 4, 6, 8};
-        int[] arr2 = {3,7,9,10};
+        int[] arr1 = {1, 2, 4,5, 6, 8};
+        int[] arr2 = {1,7,9,10};
         mergetwoSortedArray(arr1, arr2);
         printArrays(arr1);
         System.out.print("\n");

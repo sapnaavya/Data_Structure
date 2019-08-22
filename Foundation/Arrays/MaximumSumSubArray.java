@@ -4,13 +4,13 @@ import java.util.*;
 public class MaximumSumSubArray {
     
     public void maxSumSubArray (int [] arr) {
+        if(arr.length == 0) {
+            return;
+        }
         int start = 0;
         int end = 0;
         int s = 0;
         int i;
-        if(arr == null || arr.length == 0) {
-            return;
-        }
         int maxSofar = arr[0];
         int maxSum = 0;
         for(i=0; i<arr.length; i++) {

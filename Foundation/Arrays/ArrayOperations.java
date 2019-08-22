@@ -134,7 +134,7 @@ public class ArrayOperations {
     //Segregate 0's, 1's and 2's in the array, using three indices... low, high, and mid .. mid keeps track of 1 and low for 0 and high for 2
     //Do it with inplace
     static int[] segregateNum(int [] arr) {
-        if(arr == null || arr.length == 0) {
+        if(arr.length == 0) {
             return null;
         }
         int low = 0;
