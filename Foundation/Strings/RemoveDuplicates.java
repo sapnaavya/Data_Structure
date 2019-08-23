@@ -69,7 +69,7 @@ public class RemoveDuplicates {
         return sb.toString();
     }
 
-    // Bruteforce algorithm to remove duplicates from the string
+    // Bruteforce algorithm to remove duplicates from the string - with preserving the order
     public static String removeDupBruteForce(String str) {
         if(str.length() == 0 || str == null) {
             return null;
@@ -84,7 +84,7 @@ public class RemoveDuplicates {
                     for (int k = j; k < length - 1; k++) {
                     	characters[k] = characters[k + 1];
                     }
-                    
+                    j--; //THIS IS VERY IMPORTANT
                     length--; // reduce char array length
                 }
             }
@@ -93,6 +93,31 @@ public class RemoveDuplicates {
         String stringWithOutDuplicates = new String(characters);
 	    stringWithOutDuplicates = stringWithOutDuplicates.substring(0, length);
         return  stringWithOutDuplicates;
+    }
+
+    // this function removes duplicates from string - without preserving the order
+    public static void removeDupString(String str) {
+
+        char[] arr = str.toCharArray();
+        if(arr.length == 0) {
+            return;
+        }
+
+        int n = arr.length;
+        for(int i = 0; i < n; i++) {
+            for(int j = i + 1; j < n; j++) {
+                if(arr[i] == arr[j]) {
+                    arr[j] = arr[n - 1];
+                    n--;
+                    j--;
+                }
+            }
+        }
+        
+        for(int i = 0; i < n; i++) {
+            System.out.print(arr[i] + " ");
+        }
+
     }
 
     // main method
@@ -108,12 +133,14 @@ public class RemoveDuplicates {
            // String rmvDup = removeDupLinkedHashSet(str);
         
         /* Remove duplicates using hashset */
-            String str1 = removeDupChar(str);
-            System.out.println(str1);
+            // String str1 = removeDupChar(str);
+            // System.out.println(str1);
         
         /* Remove duplicates using bruteforce approach */
             String str23 = removeDupBruteForce(str); 
             System.out.println(str23);
+        /* Remove duplicates using bruteforce approach -  without preserving order */
+            //removeDupString(str);
             sc.close();
     }
 }
