@@ -69,7 +69,7 @@ public class ConvertBinaryTreetoCircularDLL {
 
         for(int i = 1; i < list1.size(); i++) {
             //Create a temporary pointer to current
-            Node temp = current;
+            Node temp = current; //DO NOT FORGET THIS POINT
 
             //current's right points to list.get(i)
             current.right = new Node(list1.get(i).data);

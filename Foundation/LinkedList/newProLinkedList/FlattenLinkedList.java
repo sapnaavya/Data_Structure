@@ -70,7 +70,7 @@ public class FlattenLinkedList {
         Node head = newList;
         while(root1 != null && root2 != null) {
             if(root1.data < root2.data) {
-                 ;
+                newList.down = root1;
                 root1 = root1.down;
             } else {
                 newList.down = root2;
