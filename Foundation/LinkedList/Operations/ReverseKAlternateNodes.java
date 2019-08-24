@@ -144,20 +144,24 @@ public class ReverseKAlternateNodes {
         llist.insertFront(3);
         llist.insertFront(2);
         llist.insertFront(5);
-        llist.insertFront(2);
+        llist.insertFront(9);
         llist.insertFront(3);
         llist.insertFront(4);
         llist.insertFront(1);
+        llist.insertFront(6);
+        llist.insertFront(7);
+        llist.insertFront(8);
+        llist.insertFront(3);
         printList(head);
-        int k = 2;
+        int k = 3;
         System.out.print("\n");
-        // Node reverseKaltNodes = reverseKaltNodes(head, k);
-        // printList(reverseKaltNodes);
+        Node reverseKaltNodes = reverseKaltNodes(head, k);
+        printList(reverseKaltNodes);
 
         System.out.print("\n");
         boolean flag = true;
-        Node reversealtKNodeOther = reversealtKNodeEfficient(head, k, flag);
-        printList(reversealtKNodeOther);
+        // Node reversealtKNodeOther = reversealtKNodeEfficient(head, k, flag);
+        //printList(reversealtKNodeOther);
 
     }
 }
