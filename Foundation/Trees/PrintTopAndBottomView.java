@@ -15,6 +15,10 @@
     -> we make sure that treemap only stores as key (hd) and ignore if we get the same key with diffrent value 
     as we only want to store first key and its respected value. This entryset will end up printing
     topmost view of the tree.
+
+    Reference:
+    1. BottomMost: https://www.geeksforgeeks.org/bottom-view-binary-tree/
+    2. TopMost: https://www.geeksforgeeks.org/print-nodes-top-view-binary-tree/
     
 */
 
@@ -72,10 +76,6 @@ public class PrintTopAndBottomView {
                 queue.add(temp.right);
             }
         }
-    
-        //bottommostView(root.left, map, hd - 1);
-        //bottommostView(root.right, map, hd + 1);
-
     } 
 
     //util function for printing bottomost element in the tree
@@ -88,23 +88,13 @@ public class PrintTopAndBottomView {
         }
     } 
 
-    public static void topMostRecur(Node root, TreeMap<Integer, Node> map, int hd) {
-        if(root == null) {
-            return;
-        }
-        if(!map.containsKey(hd)){
-            map.put(hd, root);
-        }
-
-        topMostRecur(root.left, map, hd - 1);
-        topMostRecur(root.right, map, hd + 1);
-    }
-
     //print topmost element in the tree
-    public static void topmost(Node root, TreeMap<Integer, Node> map, int hd) {
+    public void topmost(Node root) {
         if(root == null) {
             return;
         }
+        int hd = 0;
+        TreeMap<Integer, Node> map = new TreeMap<>();
         root.hd = hd;
         Queue<Node> queue = new LinkedList<>();
         queue.add(root);
@@ -126,23 +116,23 @@ public class PrintTopAndBottomView {
                 queue.add(temp.right);
             }
         }
-    }
 
-    //util function to print topmost nodes in the tree
-    public void printTopmost(Node node) {
-        TreeMap<Integer, Node> map = new TreeMap<>();
-        int hd = 0;
-        //topmost(node, map, hd);
-        topMostRecur(node, map, hd);
-
-        for(Entry<Integer, Node> entry: map.entrySet()) {
-            System.out.print(entry.getValue().data + " ");
+        for (Entry<Integer, Node> entry : map.entrySet()) { 
+            System.out.print(entry.getValue().data); 
         }
     }
 
     //main method
     public static void main(String args[]) {
         PrintTopAndBottomView tree  = new PrintTopAndBottomView();
+
+        // tree.root = new Node(1); 
+        // tree.root.left = new Node(2); 
+        // tree.root.right = new Node(3); 
+        // tree.root.left.right = new Node(4); 
+        // tree.root.left.right.right = new Node(5); 
+        // tree.root.left.right.right.right = new Node(6); 
+
         tree.root = new Node(20); 
         tree.root.left = new Node(8); 
         tree.root.right = new Node(22); 
@@ -154,7 +144,7 @@ public class PrintTopAndBottomView {
         tree.root.left.right.right = new Node(14); 
         
         //print inorder
-        tree.inorder(tree.root);
+       // tree.inorder(tree.root);
 
         //print bottommost view of the tree
         System.out.println("\n");
@@ -162,6 +152,6 @@ public class PrintTopAndBottomView {
         
         //print topmost view of the tree
         System.out.println("\n");
-        tree.printTopmost(tree.root);
+        //tree.topmost(tree.root);
     }
 }
