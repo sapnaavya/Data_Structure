@@ -34,7 +34,6 @@ public class KDistancefromRoot {
 
         Queue<Node> queue = new LinkedList<>();
         queue.add(root);
-        // k = k + 1;
         while(!queue.isEmpty() && k != 0) {
             k--;
             int nodeCount = queue.size();
