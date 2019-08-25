@@ -54,8 +54,8 @@ public class TreeTraversalwithoutRecursion {
         }
     }
 
-    //function to print postOrder Traversal of tree
-    //Caution: deletes the route between nodes
+    // function to print postOrder Traversal of tree
+    // Caution: deletes the route between nodes
     public void postOrderTraversal(Node root) {
         if(root == null) {
             return;
