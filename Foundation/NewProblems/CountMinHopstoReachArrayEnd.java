@@ -66,7 +66,6 @@ public class CountMinHopstoReachArrayEnd {
                 //In other words, check if we can reach to j from i
                 if(i <= j + arr[j] && jumps[j] != Integer.MAX_VALUE) {
                     jumps[i] = Math.min(jumps[i], jumps[j] + 1);
-                    break;
                 }
             }
         }
@@ -79,7 +78,7 @@ public class CountMinHopstoReachArrayEnd {
     //main method
     public static void main(String args[]) {
         //int [] arr = new int[]{4, 3, 0, 0, 2, 1};  
-        int [] arr = new int[]{4, 3, 0, 0, 2, 1};
+        int [] arr = new int[]{4, 3, 0, 6, 2, 1};
         System.out.println("Minimum no of hops required: " + countMinHops(arr));
         System.out.println("(Optimized) Min hops requred: " + countHopsOptimized(arr));
     }
