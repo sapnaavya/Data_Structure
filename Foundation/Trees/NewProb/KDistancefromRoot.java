@@ -34,8 +34,8 @@ public class KDistancefromRoot {
 
         Queue<Node> queue = new LinkedList<>();
         queue.add(root);
-
-        while(!queue.isEmpty()) {
+        // k = k + 1;
+        while(!queue.isEmpty() && k != 0) {
             k--;
             int nodeCount = queue.size();
             while(nodeCount > 0) {
@@ -52,9 +52,8 @@ public class KDistancefromRoot {
             }
         }
 
-        for(int i = 0; i < queue.size(); i++) {
+        while(!queue.isEmpty()) {
             Node node = queue.poll();
-            System.out.println("hello");
             System.out.println(node.data);
         }
     }
@@ -69,6 +68,7 @@ public class KDistancefromRoot {
         tree.root.left.right = new Node(5); 
         tree.root.right.left = new Node(8); 
         tree.printKDistant(tree.root, 2); 
+        System.out.println();
         tree.printKDistantIter(tree.root, 2);
     }
 }
