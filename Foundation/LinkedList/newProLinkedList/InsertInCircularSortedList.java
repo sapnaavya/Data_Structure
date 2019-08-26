@@ -34,7 +34,7 @@ public class InsertInCircularSortedList {
         //case 2: when we have to insert in the beginning..
         //for that first go to last node and point last node next to new node 
         // and new node next to head and point head to new node
-        else if(current.data >= newNode.data) {
+        else if(head.data >= newNode.data) {
             while(current.next != head) {
                 current = current.next;
             }
