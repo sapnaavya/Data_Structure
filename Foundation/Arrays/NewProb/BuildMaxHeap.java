@@ -1,5 +1,6 @@
 /**
  * This code builds the max heap from the array i.e children of the root node are smaller than root node
+ * 
  * Remember: 
  *  1. root is at index 0
  *  2. Left child of ith node - 2*i+1
