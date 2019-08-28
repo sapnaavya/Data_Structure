@@ -40,7 +40,6 @@ public class LRUCache {
             dq.push(x);
             set.add(x);
         }
-
     }
 
     /* Display the content of cache */
