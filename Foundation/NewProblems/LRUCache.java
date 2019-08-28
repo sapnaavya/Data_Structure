@@ -24,22 +24,23 @@ public class LRUCache {
             if(dq.size() == csize) {
                 int last = dq.removeLast();
                 set.remove(last);
-            } else {
-                int index = 0;
-                int i = 0;
-                Iterator<Integer> itr = dq.iterator();
-                while(itr.hasNext()) {
-                    if(itr.next() == x) {
-                        index = i;
-                        break;
-                    }
-                    i++;
-                }
-                dq.remove(index);
-            }
-            dq.push(x);
-            set.add(x);
+            } 
         }
+        else {
+            int index = 0;
+            int i = 0;
+            Iterator<Integer> itr = dq.iterator();
+            while(itr.hasNext()) {
+                if(itr.next() == x) {
+                    index = i;
+                    break;
+                }
+                i++;
+            }
+            dq.remove(index);
+        }
+        dq.push(x);
+        set.add(x);
     }
 
     /* Display the content of cache */
@@ -55,7 +56,7 @@ public class LRUCache {
         LRUCache ca = new LRUCache(4);
         ca.refer(1);
         ca.refer(2);
-        ca.refer(4);
+        ca.refer(3);
         ca.refer(1);
         ca.refer(4);
         ca.refer(5);
