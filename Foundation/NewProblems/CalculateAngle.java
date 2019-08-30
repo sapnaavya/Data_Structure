@@ -31,7 +31,7 @@ public class CalculateAngle {
     }
     //main method
     public static void main(String args[]) {
-        int angle = calculateAngle(12, 60);
+        int angle = calculateAngle(9, 60);
         System.out.println(angle);
     }
 }
