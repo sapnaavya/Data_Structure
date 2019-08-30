@@ -13,6 +13,7 @@
 */
 
 import java.util.Scanner;
+
 public class CountAnagrams {
 
     // This function creates every substring of pattern's length from text and check if its an anagram and increment the counter
@@ -30,14 +31,10 @@ public class CountAnagrams {
         return count;
     }
 
-    // Optimize code to count anagram of a pettern in a string
+    //Optimize code to count anagram of a pettern in a string
     public static int countAnagramOptimize(String text, String word) {
         int textLen = text.length();
         int wordLen = word.length();
-        if(textLen < wordLen) {
-            return 0;
-        }
-        
         int[] count = new int[256];
         int res = 0;
         // Check for first window. The idea is to 
@@ -46,7 +43,6 @@ public class CountAnagrams {
             char ch = Character.toLowerCase(word.charAt(i));
             count[ch]++;
         }
-
         for(int i = 0; i < wordLen; i++) {
             char ch1 = Character.toLowerCase(text.charAt(i));
             count[ch1]--;
@@ -69,7 +65,6 @@ public class CountAnagrams {
                 res++;
             }
         }
-        
         return res;
     }  
 
