@@ -6,7 +6,7 @@
 
 public class CountDistinctSubseq {
 
-    //function to count distint occurances of subsequence
+    // function to count distint occurances of subsequence
     public static int findSubsequenceCount(String superStr, String subStr) {
         int m = subStr.length();
         int n = superStr.length();
@@ -14,10 +14,10 @@ public class CountDistinctSubseq {
             return 0;
         }
         
-        int[][] mat = new int[m+1][n+1];
+        int[][] mat = new int[m + 1][n + 1];
 
         // Initializing first column with 
-		// all 0s. An emptystring can't have 
+		// all 0s. An empty string can't have 
 		// another string as subsequence 
         for(int i = 1; i <= m; i++) {
             mat[i][0] = 0;
