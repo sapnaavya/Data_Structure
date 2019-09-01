@@ -1,10 +1,11 @@
 /**
  * This code finds whether s3 is an interleaved string for s1 and s2
  * Reference: https://www.techiedelight.com/check-string-interleaving-two-given-strings/
- */
+*/
+
 public class InterleaveString {
 
-    // function to check whether s3 is an interleave of s1 and s2
+    // Iterative function to check whether s3 is an interleave of s1 and s2
     public static boolean isInterleave(String s1, String s2, String s3) {
         // returns true if we have reached the end of all strings
         if(s1.length() == 0 && s2.length() == 0 && s3.length() == 0) {

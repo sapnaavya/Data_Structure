@@ -6,6 +6,27 @@
 
 public class CountDistinctSubseq {
 
+    // recursive function to count distinct occurances of a subsequence
+    // Caution: It does not work 
+    public static int countDisSubseq(String superStr, int i, String subStr, int j) {
+        // base case 1
+        if(subStr.isEmpty()) {
+            return 1;
+        }
+
+        // base case 2
+        if(superStr.isEmpty()) {
+            return 0;
+        }
+
+        if(superStr.charAt(i - 1) != subStr.charAt(j - 1)) {
+            return countDisSubseq(superStr, i - 1, subStr, j);
+        } else {
+            return countDisSubseq(superStr, i - 1, subStr, j - 1) + 
+            countDisSubseq(superStr, i - 1, subStr, j);
+        }
+    }
+
     // function to count distint occurances of subsequence
     public static int findSubsequenceCount(String superStr, String subStr) {
         int m = subStr.length();
@@ -46,6 +67,9 @@ public class CountDistinctSubseq {
     public static void main(String args[]) {
         String T = "bag"; 
 		String S = "babgbag"; 
-		System.out.println(findSubsequenceCount(S, T)); 
+        System.out.println(findSubsequenceCount(S, T)); 
+        int i = S.length();
+        int j = T.length();
+        System.out.println(countDisSubseq(S, i, T, j));
     }
 }
