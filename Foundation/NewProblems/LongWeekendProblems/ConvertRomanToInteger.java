@@ -1,3 +1,6 @@
+/**
+ * This code converts roman numerals to integer
+ */
 import java.util.HashMap;
 
 public class ConvertRomanToInteger {
