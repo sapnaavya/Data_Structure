@@ -1,10 +1,17 @@
+
+/**
+ * This code implements atoi functiont to convert string to integer
+ * Reference: https://www.programcreek.com/2012/12/leetcode-string-to-integer-atoi/
+ */
 public class ImplementAtoi {
     public static int implementAtoi(String str) {
         if (str == null || str.length() < 1)
             return 0;
+
         // trim white spaces
         str = str.trim();
         char flag = '+';
+
         // check negative or positive
         int i = 0;
         if (str.charAt(0) == '-') {
@@ -13,6 +20,7 @@ public class ImplementAtoi {
         } else if (str.charAt(0) == '+') {
             i++;
         }
+
         // use double to store result
         double result = 0;
         // calculate value
