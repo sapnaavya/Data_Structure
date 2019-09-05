@@ -8,12 +8,12 @@ import java.util.ArrayList;
  * 
  */
 public class ValidIPAddress {
-    
+
     // Array list that returns the list of valid IP address
     public static ArrayList<String> restoreIpAddresses(String s) {
         ArrayList<String> res = new ArrayList<String>();  
         if (s.length() < 4 || s.length() > 12) return res;  
-        dfs(s,"",res,0);  
+        dfs(s, "" , res, 0);  
         return res;  
     }
 
@@ -39,7 +39,7 @@ public class ValidIPAddress {
 
     // main method
     public static void main(String args[]) {
-        String str = "25525511130";
+        String str = "25525511255";
         ArrayList<String> list = restoreIpAddresses(str);
         for(int i = 0; i < list.size(); i++) {
             System.out.println(list.get(i));
