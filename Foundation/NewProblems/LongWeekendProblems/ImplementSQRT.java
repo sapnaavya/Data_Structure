@@ -1,8 +1,10 @@
 /**
  * This code implements square root of an integer number
- */
+*/
+
 public class ImplementSQRT {
     public static long sqrt(int num) {
+
         // base case
         if(num == 0 || num == 1) {
             return num;
@@ -40,7 +42,7 @@ public class ImplementSQRT {
 
     // main method
     public static void main(String args[]) {
-        int val = 12;
+        int val = 30;
         long sqrtVal = sqrt(val);
         System.out.println(sqrtVal);
     }
