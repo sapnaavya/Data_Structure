@@ -4,6 +4,7 @@
 */
 
 public class PrintAllParenthesis {
+    // function to print all combinations of valid parenthesis
     public static void printParenthesis(char str[], int pos, int n, int open, int close) {
         if(close == n) {
             for(int i = 0; i < str.length; i++) {
