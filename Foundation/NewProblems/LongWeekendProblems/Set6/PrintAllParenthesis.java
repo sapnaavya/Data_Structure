@@ -10,6 +10,7 @@ public class PrintAllParenthesis {
             for(int i = 0; i < str.length; i++) {
                 System.out.print(str[i]);
             }
+            
             System.out.println();
             return;
         }
@@ -18,7 +19,7 @@ public class PrintAllParenthesis {
                 str[pos] = '}';
                 printParenthesis(str, pos+1, n, open, close+1);
             }
-            
+
             if(open < n) {
                 str[pos] = '{';
                 printParenthesis(str, pos+1, n, open+1, close);
