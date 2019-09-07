@@ -43,7 +43,7 @@ public class ImplementPowerModD {
             temp = temp * temp;
             temp = temp % d;
             n = n/2;
-
+            
             if(rem > d) {
                 rem = rem % d;
             }
