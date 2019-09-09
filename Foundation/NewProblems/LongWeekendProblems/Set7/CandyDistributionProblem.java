@@ -22,16 +22,18 @@ public class CandyDistributionProblem {
                 candies[i] = Math.max(candies[i+1] + 1, candies[i]);
             }
         }
-        
+
         int count = 0;
         for(int candy:candies) {
+            System.out.println(candy);
             count += candy;
         }
         return count;
     }
+
     // main method
     public static void main(String args[]) {
-       int [] arr = {1, 5, 2, 1};
+       int [] arr = {1, 2, 1, 5};
        int minCandies = candiesDistribution(arr);
        System.out.println(minCandies);
     }

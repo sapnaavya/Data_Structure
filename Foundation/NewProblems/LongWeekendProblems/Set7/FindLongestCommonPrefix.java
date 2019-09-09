@@ -29,6 +29,8 @@ public class FindLongestCommonPrefix {
     public static String longestCommonPrefixSubString(String[] A) {
         StringBuilder sb = new StringBuilder();
         int n = Integer.MAX_VALUE;
+
+        /* Do not forget this if block */
         for (String s : A) {
             n = Math.min(s.length(), n);
         }
