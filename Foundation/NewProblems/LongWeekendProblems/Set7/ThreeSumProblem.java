@@ -39,6 +39,7 @@ public class ThreeSumProblem {
     }
 
     // this code remove duplicates while findind three elements thats is equal to target
+    // have a doubt in that.. Skip for now
     // A brute force solution with working code that removes duplicates is as follows:
     public static boolean threeSumBruteForceSorted(int[] nums) {
         if(nums.length == 0 || nums == null) {
@@ -53,7 +54,7 @@ public class ThreeSumProblem {
                 if (j != i + 1 && nums[j] == nums[j - 1]) continue;
                 for(int k = j + 1; k < n; k++) {
                     if (k != j + 1 && nums[k] == nums[k - 1]) continue;
-                    if(nums[i] + nums[j] + nums[k] == 9) {
+                    if(nums[i] + nums[j] + nums[k] == 0) {
                         llistBruteforceSorted.add(nums[i]);
                         llistBruteforceSorted.add(nums[j]);
                         llistBruteforceSorted.add(nums[k]);
@@ -67,11 +68,12 @@ public class ThreeSumProblem {
     }
 
     // two Pointer Approach to find three sum solution
+    // in two pointer approach, always sort the array
+    
     public static boolean threeSumTwoPointer(int[] arr) {
         int l, r;
-        Arrays.sort(arr);
+        Arrays.sort(arr); // do not forget this step
         int n = arr.length;
-        ArrayList<Integer> list = new ArrayList<>();
         for(int i = 0; i < n - 2; i++) {
             // To find the other two elements, start two index variables 
             // from two corners of the array and move them toward each other 
@@ -79,14 +81,13 @@ public class ThreeSumProblem {
             r = n-1; // index of the last element
             
             while(l < r) {
-                //int sum = arr[i] + arr[l] + arr[r];
-                if(arr[i] + arr[l] + arr[r] == 0) {
-                    //System.out.print("hello");
+                int sum = arr[i] + arr[l] + arr[r];
+                if(sum == 0) {
                     llistOptimize.add(arr[i]);
                     llistOptimize.add(arr[l]);
                     llistOptimize.add(arr[r]);
                     return true;
-                } else if(arr[i] + arr[l] + arr[r] < 0) {
+                } else if(sum < 0) {
                     l++;
                 } else {
                     r--;
@@ -101,6 +102,7 @@ public class ThreeSumProblem {
         int [] arr = {-1, 0, 1, 2, -1, -4};
         // BruteForce test
         boolean foundElemBruteforce = threeSum(arr);
+        System.out.println("bruteforce solution");
         if(foundElemBruteforce) {
             for(int i = 0 ; i < llistBruteforce.size(); i++) {
                 System.out.println(llistBruteforce.get(i));
@@ -109,7 +111,8 @@ public class ThreeSumProblem {
 
         // bruteforce sorted test
         int[] arr1 = {-1,2,3,4};
-        boolean foundElemBruteforcesorted = threeSumBruteForceSorted(arr1);
+        boolean foundElemBruteforcesorted = threeSumBruteForceSorted(arr);
+        System.out.println("bruteforce sorted solution");
         if(foundElemBruteforcesorted) {
             for(int i = 0 ; i < llistBruteforceSorted.size(); i++) {
                 System.out.println(llistBruteforceSorted.get(i));
@@ -118,6 +121,7 @@ public class ThreeSumProblem {
 
         // Optimize test
         boolean foundElemOpt = threeSumTwoPointer(arr);
+        System.out.println("Two pointer approach");
         if(foundElemOpt) {
             for(int i = 0 ; i < llistOptimize.size(); i++) {
                 System.out.println(llistOptimize.get(i));
