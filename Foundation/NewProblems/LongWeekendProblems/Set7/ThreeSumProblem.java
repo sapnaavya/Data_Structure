@@ -1,6 +1,6 @@
 /**
  * Given an array nums of n integers, are there elements a, b, c in nums such that a + b + c = 0? Find all unique triplets in the array which give the sum of zero.
-    Note: The solution set may contain duplicate triplets.
+    Note: The solution set may or may not contain duplicate triplets. Make sure to consider that scenario
     Example: Given array nums = [-1, 0, 1, 2, -1, -4],
     A solution set is: [ [-1, 0, 1], [-1, -1, 2] ]
     Example: {1,2,3,4,5,7}
@@ -15,8 +15,10 @@ import java.util.Arrays;
 public class ThreeSumProblem {
     static ArrayList<Integer> llistOptimize = new ArrayList<>();
     static ArrayList<Integer> llistBruteforce = new ArrayList<>();
+    static ArrayList<Integer> llistBruteforceSorted = new ArrayList<>();
 
-    // brute force solution
+    // brute force solution 
+    // Plese note it assume array does not have duplicates
     public static boolean threeSum(int[] arr) {
         ArrayList<Integer> list = new ArrayList<>();
         int n = arr.length;
@@ -34,6 +36,34 @@ public class ThreeSumProblem {
             }
         }
         return false;
+    }
+
+    // this code remove duplicates while findind three elements thats is equal to target
+    // A brute force solution with working code that removes duplicates is as follows:
+    public static boolean threeSumBruteForceSorted(int[] nums) {
+        if(nums.length == 0 || nums == null) {
+            return false;
+        }
+        int n = nums.length;
+        Arrays.sort(nums);
+
+        for(int i = 0; i < n; i++) {
+            if (i != 0 && nums[i] == nums[i - 1]) continue;
+            for(int j = i + 1; j < n; j++) {
+                if (j != i + 1 && nums[j] == nums[j - 1]) continue;
+                for(int k = j + 1; k < n; k++) {
+                    if (k != j + 1 && nums[k] == nums[k - 1]) continue;
+                    if(nums[i] + nums[j] + nums[k] == 9) {
+                        llistBruteforceSorted.add(nums[i]);
+                        llistBruteforceSorted.add(nums[j]);
+                        llistBruteforceSorted.add(nums[k]);
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+
     }
 
     // two Pointer Approach to find three sum solution
@@ -74,6 +104,15 @@ public class ThreeSumProblem {
         if(foundElemBruteforce) {
             for(int i = 0 ; i < llistBruteforce.size(); i++) {
                 System.out.println(llistBruteforce.get(i));
+            }
+        }
+
+        // bruteforce sorted test
+        int[] arr1 = {-1,2,3,4};
+        boolean foundElemBruteforcesorted = threeSumBruteForceSorted(arr1);
+        if(foundElemBruteforcesorted) {
+            for(int i = 0 ; i < llistBruteforceSorted.size(); i++) {
+                System.out.println(llistBruteforceSorted.get(i));
             }
         }
 
