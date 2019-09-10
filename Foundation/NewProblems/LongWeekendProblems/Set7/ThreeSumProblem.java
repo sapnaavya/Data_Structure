@@ -3,6 +3,7 @@
     Note: The solution set may contain duplicate triplets.
     Example: Given array nums = [-1, 0, 1, 2, -1, -4],
     A solution set is: [ [-1, 0, 1], [-1, -1, 2] ]
+    Example: {1,2,3,4,5,7}
 
     Reference: https://fizzbuzzed.com/top-interview-questions-1/
                https://blog.gainlo.co/index.php/2016/07/19/3sum/
