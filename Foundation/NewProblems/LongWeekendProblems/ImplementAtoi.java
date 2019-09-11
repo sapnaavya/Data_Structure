@@ -26,7 +26,7 @@ public class ImplementAtoi {
         // calculate value
         while (str.length() > i && str.charAt(i) >= '0' && str.charAt(i) <= '9') {
             result = result * 10 + (str.charAt(i) - '0');
-        i++;
+            i++;
         }
         if (flag == '-')
             result = -result;
@@ -39,7 +39,7 @@ public class ImplementAtoi {
     }
     // main method
     public static void main(String args[]) {
-        String str = "9990";
+        String str = "-09";
         int val = implementAtoi(str);
         System.out.println(val);
     }
