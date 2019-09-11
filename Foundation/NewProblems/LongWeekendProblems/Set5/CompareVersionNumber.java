@@ -38,8 +38,8 @@ public class CompareVersionNumber {
 
     // main method
     public static void main(String args[]) {
-        String str2 = "0.1.2.5";
-        String str1 = "0.1.2.3";
+        String str2 = "0.1.2.52";
+        String str1 = "0.1.2.1";
         int result = compareVersion(str1, str2);
         System.out.println(result);
     }
