@@ -43,27 +43,31 @@ public class ArrayRotationAroundPivot {
 
     */
 
-    public static int search(int[] arr, int b) {
-        int i = 0;
-        int j = arr.length - 1;
+    public static int search(int[] arr, int element) {
+        int low = 0;
+        int high = arr.length - 1;
         
-        while(i <= j) {
-            int mid = (i + j)/2;
-            if(arr[mid] == b) {
+        while(low <= high) {
+            int mid = (low + high)/2;
+            if(arr[mid] == element) {
                 return mid;
             }
 
-            else if(arr[mid] >= arr[i]) {
-                if(b >= arr[i] && b < arr[j]) {
-                    j = mid - 1;
+            else if(arr[mid] >= arr[low]) {
+                // means first half is in strictly increasing order
+                if(arr[mid] > element && arr[low] <= element) {
+                    high = mid - 1;
                 } else {
-                    i = mid + 1;
+                    low = mid + 1;
                 }
             } else {
-                if(b > arr[mid] && b <= arr[j]) {
-                    i = mid + 1;
+                // if you are here means array has rotation in the first half
+                // of the array   
+                if(arr[mid] < element && arr[high] >= element) {
+                    // means second half is in strictly increasing order
+                    low = mid + 1;
                 } else {
-                    j = mid - 1;
+                    high = mid - 1;
                 }
             }
         }
