@@ -20,7 +20,8 @@ public class ArrayRotationAroundPivot {
     // recursive function to find pivotted index in rotated array
     public static int findPivot(int[] arr, int start, int end) {
         while(start <= end) {
-            int i = (end - start)/2;
+            int i = (end + start)/2;
+
             if(arr[i] > arr[i+1]) {
                 return arr[i+1];
             } else if(arr[i] < arr[start]) {      // pivot lies in the first half
@@ -71,7 +72,8 @@ public class ArrayRotationAroundPivot {
 
     // main method
     public static void main(String args[]) {
-        int[] arr = {40, 50, 60, 12, 14, 18, 30, 35};
+        int[] arr = {12, 14, 18, 30, 35, 40, 50, 60,1,2,3};
+        //int[] arr = {6,8,10,2,3,4};
         int start = 0;
         int end = arr.length;
         int pivotIndex = findPivot(arr, start, end);
