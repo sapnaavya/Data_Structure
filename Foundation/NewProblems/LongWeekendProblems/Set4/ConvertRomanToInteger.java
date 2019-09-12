@@ -35,7 +35,7 @@ public class ConvertRomanToInteger {
 
     // main method
     public static void main (String args[]) {
-        String str = "MMMDXLIX";
+        String str = "XL";
         int result = convertRomanToInt(str);
         System.out.println(result);
     }
