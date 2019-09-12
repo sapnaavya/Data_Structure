@@ -19,14 +19,17 @@ public class ArrayRotationAroundPivot {
 
     // recursive function to find pivotted index in rotated array
     public static int findPivot(int[] arr, int start, int end) {
-        int i = (end - start)/2;
-        if(arr[i] > arr[i+1]) {
-            return i+1;
-        } else if(arr[i] < arr[i+1]) {
-            return findPivot(arr, start+1, end);
-        } else {
-            return findPivot(arr, i+1, end);
+        while(start <= end) {
+            int i = (end - start)/2;
+            if(arr[i] > arr[i+1]) {
+                return arr[i+1];
+            } else if(arr[i] < arr[start]) {      // pivot lies in the first half
+                return findPivot(arr, start, i);
+            } else {
+                return findPivot(arr, i+1, end); //pivot lies in second half
+            }
         }
+        return 0;
     }
 
     /*
