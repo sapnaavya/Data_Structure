@@ -27,7 +27,7 @@ public class ConvertIntegerToRoman {
 
     // main method
     public static void main(String args[]) {
-        int num = 1904;
+        int num = 57;
         String str = convertIntToRoman(num);
         System.out.println(str);
     }
