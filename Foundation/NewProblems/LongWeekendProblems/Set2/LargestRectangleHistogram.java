@@ -47,7 +47,8 @@ public class LargestRectangleHistogram {
                 max = Math.max(max, h * w);
             }
         }
-
+        // int[] arr = {1,2,4,5,6};
+        // to consider this scenario
         while(!stack.isEmpty()) {
             int p = stack.pop();
             int h = height[p];
@@ -59,7 +60,8 @@ public class LargestRectangleHistogram {
     // main method
     public static void main(String args[]) {
         // int[] arr = {2,1,5,7,8,3};
-        int[] arr = {2,1,4,5,6,2,3,2};
+        // int[] arr = {2,1,4,5,6,2,3,2};
+        int[] arr = {1,2,4,5,6};
         int area = calculateRectangleArea(arr);
         int area1 = calculateRectangleArea(arr);
         System.out.println(area);
