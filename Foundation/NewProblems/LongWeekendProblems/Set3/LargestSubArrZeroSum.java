@@ -5,6 +5,10 @@ import jdk.nashorn.internal.ir.debug.PrintVisitor;
 /**
  * This code finds the largest zero sum subarray
  * References: https://www.geeksforgeeks.org/find-the-largest-subarray-with-0-sum/
+ * Test cases: {-2, 2, -8, +8, 10, -10}
+ *             {0,0,0,0}
+ *             {0}
+ *             { 15, -2, 2, -8, 1, 7, 10, 23 }; 
  */
 public class LargestSubArrZeroSum {
 
