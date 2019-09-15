@@ -6,6 +6,7 @@
     3.	otherwise return 0.
 
     Reference: https://github.com/varunu28/InterviewBit-Java-Solutions/blob/master/Strings/Compare%20Version%20Numbers.java
+               https://www.tutorialspoint.com/java/number_compareto.htm
 
     Example: 0.1 < 1.1 < 1.2 < 1.13 < 1.13.4
              1.30 < 1.351
