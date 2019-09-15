@@ -22,24 +22,27 @@ public class ImplementAtoi {
         }
 
         // use double to store result
-        double result = 0;
+        double result = 0; // do not forget to take this as double
         // calculate value
         while (str.length() > i && str.charAt(i) >= '0' && str.charAt(i) <= '9') {
             result = result * 10 + (str.charAt(i) - '0');
             i++;
         }
+
         if (flag == '-')
             result = -result;
+
         // handle max and min
         if (result > Integer.MAX_VALUE)
             return Integer.MAX_VALUE;
         if (result < Integer.MIN_VALUE)
             return Integer.MIN_VALUE;
+            
         return (int) result;
     }
     // main method
     public static void main(String args[]) {
-        String str = "-09";
+        String str = "-99.9";
         int val = implementAtoi(str);
         System.out.println(val);
     }
