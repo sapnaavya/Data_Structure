@@ -39,7 +39,7 @@ public class GasStationProblem {
             }
             // add a petrol pump to the current tour
             current_Petrol += arr[end].petrol - arr[end].distance;
-            end = (end + 1) % n;
+            end = (end + 1) % n; // do not forget mod n to avoid index out of bound exception
         }
         return start;
     }
@@ -47,8 +47,8 @@ public class GasStationProblem {
     // main method
     public static void main(String args[]) {
         PetrolPump[] arr = {new PetrolPump(4, 6), 
-                            new PetrolPump(6, 3), 
-                            new PetrolPump( 7, 11),
+                            new PetrolPump(6, 5), 
+                            new PetrolPump(7, 3),
                             new PetrolPump(4, 5)}; 
 
         int start = printTour(arr, arr.length); 
