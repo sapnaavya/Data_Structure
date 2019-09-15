@@ -14,6 +14,8 @@ class Range {
 }
 public class SearchRange {
 
+    // Example: Given [5, 7, 7, 8, 8, 10]
+
     // function to find range from a sorted array
     public static Range searchRange(int[] arr, int b) {
         Range range = new Range();

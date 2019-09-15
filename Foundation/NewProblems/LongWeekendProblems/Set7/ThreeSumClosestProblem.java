@@ -15,7 +15,7 @@ public class ThreeSumClosestProblem {
         }
 
         Arrays.sort(nums); // Do not forget this step
-        int closestSum = nums[0] + nums[1] + nums[2];
+        int closestSum = nums[0] + nums[1] + nums[2]; // do not forget this step as well
         for(int i = 0; i < nums.length; i++) {
             int left = i+1;
             int right = nums.length - 1;
