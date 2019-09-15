@@ -10,6 +10,7 @@
     Example: 0.1 < 1.1 < 1.2 < 1.13 < 1.13.4
              1.30 < 1.351
              1.30 < 1.32   
+             10.15 < 12.10
 
     Java – String compareTo() Method example. The method compareTo() is used for comparing two strings lexicographically.
 */
@@ -24,7 +25,7 @@ public class CompareVersionNumber {
 
         int length = Math.max(arrA.length, arrB.length);
         for (int i = 0; i < length; i++) {
-            if (i < arrA.length && i < arrB.length) {
+            if (i < arrA.length && i < arrB.length) {     // do not forget this. very important
                 if (arrA[i].length() > arrB[i].length()) return 1;
                 else if (arrA[i].length() < arrB[i].length()) return -1;
             }
