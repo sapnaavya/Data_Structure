@@ -8,6 +8,8 @@
     Reference: https://github.com/varunu28/InterviewBit-Java-Solutions/blob/master/Strings/Compare%20Version%20Numbers.java
 
     Example: 0.1 < 1.1 < 1.2 < 1.13 < 1.13.4
+             1.30 < 1.351
+             1.30 < 1.32   
 
     Java – String compareTo() Method example. The method compareTo() is used for comparing two strings lexicographically.
 */

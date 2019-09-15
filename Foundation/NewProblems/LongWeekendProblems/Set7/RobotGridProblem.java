@@ -52,7 +52,7 @@ public class RobotGridProblem {
 
     // main method
     public static void main(String args[]) {
-        int uniquePath = uniquePaths(7,3);
+        int uniquePath = uniquePaths(3,4);
         int uniqPath = uniquePathOtherway(7,3);
 
         System.out.println(uniquePath);
