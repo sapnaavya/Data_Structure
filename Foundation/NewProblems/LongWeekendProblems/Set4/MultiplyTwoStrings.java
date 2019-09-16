@@ -31,7 +31,7 @@ public class MultiplyTwoStrings {
 
         // remove front 0's
         while(sb.charAt(0) == '0' && sb.length() > 1) {
-            sb.deleteCharAt(0);
+            sb.deleteCharAt(0); // do not forget this function
         }
 
         return sb.toString();

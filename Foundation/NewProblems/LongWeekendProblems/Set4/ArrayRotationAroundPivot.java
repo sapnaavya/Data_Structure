@@ -18,6 +18,7 @@ public class ArrayRotationAroundPivot {
     */
 
     // recursive function to find pivotted index in rotated array
+    // example: 6,10,12,2,4,8
     public static int findPivot(int[] arr, int start, int end) {
         while(start <= end) {
             int i = (end + start)/2;
