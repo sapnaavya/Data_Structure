@@ -34,6 +34,7 @@ public class CandyDistributionProblem {
     // main method
     public static void main(String args[]) {
        int [] arr = {1,2,1,4};
+       //int [] arr = {1,2,1,1,3,4};
        //int[] arr = {1, 5, 2, 1};
        int minCandies = candiesDistribution(arr);
        System.out.println(minCandies);
