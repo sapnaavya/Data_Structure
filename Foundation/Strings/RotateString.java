@@ -49,7 +49,7 @@ public class RotateString {
         }
 
         StringBuilder sb = new StringBuilder();
-        sb.append(str.substring(k, length)).append(str.substring(0, k));
+        sb.append(str.substring(k)).append(str.substring(0, k));
         return sb.toString();
     }
 

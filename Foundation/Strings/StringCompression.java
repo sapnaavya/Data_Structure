@@ -8,11 +8,13 @@ public class StringCompression{
         if(str == null) {
             return null;
         }
+
         StringBuilder sb = new StringBuilder();
         char[] charArr = str.toCharArray();
         char prev = charArr[0];
         int counter = 1;
-        for(int i=1; i<charArr.length; i++) {
+        
+        for(int i = 1; i<charArr.length; i++) {
             char current = charArr[i];
             if(prev == current) {
                 counter++;
