@@ -1,12 +1,12 @@
 /* this code check if a string contains valid paranthesis or not using Stack
-    Valid parenthesis : {[a+(b - c)]}
-    Invalid parenthsis: {(a + [b - c)]}
+    Valid parenthesis : {[()]}
+    Invalid parenthsis: {([)]}
 
 */
 import java.util.Scanner;
 import java.util.Stack;
 
-public class ValidStrings{
+public class ValidParenthesis{
 
     //function to check if string  containing paranthesis is valid or not
     public static boolean balancedParenthesis(String str) {
@@ -23,7 +23,7 @@ public class ValidStrings{
                 stack.push(charArr1[i]);
             } 
 
-            if (charArr1[i] == '}' || charArr1[i] == ')' || charArr1[i] == ']') {
+            else if (charArr1[i] == '}' || charArr1[i] == ')' || charArr1[i] == ']') {
                 if (stack.isEmpty())
                     return false;
                 char last = stack.peek();

@@ -41,17 +41,16 @@ public class FindPattern {
                     return start;
                 }
                 i++; 
-                continue; //make sure not to miss this continue
             } 
             else if(k != 0) { // In this case, do not increment i as we want to compare with k as 0 with existing i and if they do not match then increment i
                 k = 0;
                 s = i; //make sure to assign s to existing i 
-                continue;// make sure to use this continue as we do not want increment i after resetting k to 0
             }
-            i++;
-            s = i;
+            else {
+                i++;
+                s = i;
+            }
         }
-        //}
         return -1;
     }
 

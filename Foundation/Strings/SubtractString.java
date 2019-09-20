@@ -39,11 +39,9 @@ public class SubtractString {
                 index.endIndex = i;
                 i++;
                 k++;
-                if(k != subStr.length()) {
-                    continue;
-                } else { 
+                if(k == subStr.length()) {
                     return index;
-                }
+                } 
             } else if(k != 0) {
                 k = 0;
                 s = i;
@@ -53,6 +51,7 @@ public class SubtractString {
                 s = i;
             }
         }
+        
         return new Index(-1, -1);
     }
 
