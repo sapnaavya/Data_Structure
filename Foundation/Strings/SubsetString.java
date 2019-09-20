@@ -21,9 +21,7 @@ public class SubsetString {
             if(str1.charAt(i) == str2.charAt(k)) {
                 k++;
                 i++;
-                if(k != str2.length()) {
-                    continue;
-                } else {
+                if(k == str2.length()) {
                     return true;
                 }
             } 
