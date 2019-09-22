@@ -73,12 +73,12 @@ public class MinEditDisToConvertStr {
             }
         }
 
-        if(i != 0) {
+        while(i != 0) {
             System.out.println("Remove " + s1.charAt(i - 1));
             i--; 
         }
 
-        if(j != 0) {
+        while(j != 0) {
             System.out.println("Add " + s2.charAt(j - 1));
             j--;
         }
