@@ -53,7 +53,7 @@ public class MinEditDisToConvertStr {
         int j = s2.length();
 
         //check till the end
-        while(i != 0 || j != 0) {
+        while(i != 0 && j != 0) {
             if(s1.charAt(i - 1) == s2.charAt(j - 1)) {
                 i--;
                 j--;
@@ -72,8 +72,20 @@ public class MinEditDisToConvertStr {
                 j--;
             }
         }
+
+        if(i != 0) {
+            System.out.println("Remove " + s1.charAt(i - 1));
+            i--; 
+        }
+
+        if(j != 0) {
+            System.out.println("Add " + s2.charAt(j - 1));
+            j--;
+        }
+    
     }
 
+   
     // main method
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
