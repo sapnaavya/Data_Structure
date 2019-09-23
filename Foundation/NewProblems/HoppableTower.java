@@ -16,9 +16,9 @@ public class HoppableTower {
         if (limit == 0)
             return false;
         // if hopping upto limit from the current index, can cross the array
-        else if (index + limit >= arr.length)
+        else if (index + limit >= arr.length) // MISTAKE 1 make sure to put else if .. not if
             return true;
-        else
+        else // MISTAKE 2 make sure to put else block 
         {
             // check hopping from next index upto the limit 
             for (int i = index + 1; i <= index + limit; i++)
