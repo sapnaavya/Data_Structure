@@ -19,6 +19,7 @@ This code uses two ways:
     *  becuase with every recursive call, we dont need to start from 0 as we are doing in calculating all possible combinations.
     *  But, we can start from the currentCoin variable as we are only interested in counting unique combinations
 */
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class CoinChange {
@@ -77,6 +78,28 @@ public class CoinChange {
         return ways[amount];
     }
 
+    // // calculate no of ways to calculate coin change using 2D table
+    // // m -> length of coins array
+    // // n -> amount 
+    // public static int countPerm(int[] coins, int m, int n) {
+    //     int[][] table = new int[m+1][n+1];
+
+    //     for(int i = 0; i < m; i++) {
+    //         table[0][i] = 1;
+    //     }
+
+    //     for(int i = 1; i <= m; i++) {
+    //         for(int j = 1; j <= n; j++) {
+    //             if(coins[i-1] > j) {
+    //                 table[i][j] = table[i-1][j];
+    //             } else {
+    //                 table[i][j] = table[i-1][j] + table[i][j-(i-1)];
+    //             }
+    //         }
+    //     }
+    //     return table[m][n];
+    // }
+
     
     //main method
     public static void main(String args[]) {
@@ -97,6 +120,10 @@ public class CoinChange {
         int iter = uniqueCombIterative(coins, amount);
         System.out.println("Total ways using iterative method:" + iter);
         sc.close();
+
+        // // count no of ways to calculate combination using 2d table
+        // int count1 = countPerm(coins, coins.length, amount);
+        // System.out.println(count1);
     }
     
 }

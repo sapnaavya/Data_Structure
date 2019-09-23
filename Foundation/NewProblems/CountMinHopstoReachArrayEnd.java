@@ -55,17 +55,17 @@ public class CountMinHopstoReachArrayEnd {
         }
 
         //assign the starting index as 0.. DO NOT FORGET THIS
-        jumps[0] = 0; 
+        jumps[0] = 0;  // MISTAKE - 1
 
         //find the minimum no of jumps required to reach arr[i] from arr[0],
         //assign this value to jumps[i]
-        for(i = 1; i < n; i++) {
+        for(i = 1; i < n; i++) { // MISTAKE - 2 START FOR LOOP FROM 1
             jumps[i] = Integer.MAX_VALUE;
             for(j = 0; j < i; j++) {
                 //check if i is in the range of j.
                 //In other words, check if we can reach to j from i
                 if(i <= j + arr[j] && jumps[j] != Integer.MAX_VALUE) {
-                    jumps[i] = Math.min(jumps[i], jumps[j] + 1);
+                    jumps[i] = Math.min(jumps[i], jumps[j] + 1); // MISTAKE - 3 jumps[i] not jumps[j]
                 }
             }
         }
