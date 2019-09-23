@@ -27,12 +27,13 @@ public class EggDropProblem {
         //1st floor to kth floor and  
         // return the minimum of these  
         // values plus 1.
-        for(i = 1; i <= k; i++) {
+        for(i = 1; i <= k; i++) { // Mistake 1 : Start for loop from 1 instead of 0
             res = Math.max(eggDrop(n-1, i-1), eggDrop(n, k-i));
             if(res < min) {
                 min = res;
             }
         }
+        
         return min + 1;
     }
 
@@ -75,8 +76,8 @@ public class EggDropProblem {
 
     //main method
     public static void main(String args[]) {
-        int n = 4;
-        int k = 10;
+        int n = 2;
+        int k = 6;
         System.out.println(eggDrop(n, k));
         System.out.println(eggDropDP(n, k));
     }
