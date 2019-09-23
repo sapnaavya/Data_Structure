@@ -33,7 +33,7 @@ public class EggDropProblem {
                 min = res;
             }
         }
-        
+
         return min + 1;
     }
 
@@ -49,7 +49,7 @@ public class EggDropProblem {
         //we need one trial for one floor and 0 trial for 0 floor
         for(i = 1; i <= n; i++) {
             eggFloor[i][1] = 1;
-            eggFloor[i][0] = 0;
+            // eggFloor[i][0] = 0;
         }
 
         //we always need j trials for one egg and j floors
@@ -76,7 +76,7 @@ public class EggDropProblem {
 
     //main method
     public static void main(String args[]) {
-        int n = 2;
+        int n = 3;
         int k = 6;
         System.out.println(eggDrop(n, k));
         System.out.println(eggDropDP(n, k));
