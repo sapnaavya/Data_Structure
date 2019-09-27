@@ -20,6 +20,7 @@ public class BuildTreeInOrderTraversal{
         Node node = new Node(pre[preIndex++]);
 
         //check if sequence has only one element
+        // DO NOT FORGET THAT STEP
         if(startIndex == endIndex) {
             return node;
         }
