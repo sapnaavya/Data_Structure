@@ -1,13 +1,17 @@
+/**
+ * This code rotated N*N 2 D matrix by 90 degree
+ */
 import java.util.*;
 
 public class RotateImage {
     public static int[][] rotateImgOutPlace(int[][] arr) {
-        int len = arr.length;
-        int [][] rotateArray =  new int[len][len];
+        int rowlen = arr.length;
+        int colLen = arr[0].length;
+        int [][] rotateArray =  new int[colLen][rowlen];
         
-        for (int i = 0; i < len; i++) { 
-            for(int j = 0; j < len; j++) {
-                rotateArray[i][j] = arr[len-j-1][i];
+        for (int i = 0; i < rowlen; i++) { 
+            for(int j = 0; j < colLen; j++) {
+                rotateArray[i][j] = arr[rowlen-j-1][i];
             }
         }
         return rotateArray;
@@ -35,12 +39,12 @@ public class RotateImage {
         return arr;
     }
     public static void main(String args[]) {
-        int[][]arr = {{1,2,3,4},{3,6,7,8}, {3,4,5,6},{2,1,4,1}};
+        int[][]arr = {{1,2,3},{3,6,7}, {3,4,5},{2,1,4}};
         System.out.println("Array before Rotating 90 degree");
         System.out.println(Arrays.deepToString(arr));
-        // arr = rotateImgOutPlace(arr);
-        // System.out.println("Array elements after Rotating 90 degree - OutPlace" + Arrays.deepToString(arr));
-        arr = rotateImageInplace(arr);
-        System.out.println("Array elements after Rotating 90 degree - Inplace" + Arrays.deepToString(arr));
+        arr = rotateImgOutPlace(arr);
+        System.out.println("Array elements after Rotating 90 degree - OutPlace" + Arrays.deepToString(arr));
+        // arr = rotateImageInplace(arr);
+        // System.out.println("Array elements after Rotating 90 degree - Inplace" + Arrays.deepToString(arr));
     }
 }
