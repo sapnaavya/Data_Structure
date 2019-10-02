@@ -18,7 +18,7 @@ public class SubsetSumProblem {
     // Iterative method to check whether subset sum exists or not
     public static boolean isSubsetSumIter(int[] arr, int n, int sum) {
         // row -> sum and col -> element
-        boolean [][] T = new boolean[sum + 1][n + 1];
+        boolean [][] T = new boolean[n + 1][sum + 1];
 
         // if sum is zero then n is true
         for(int i = 0; i <= n; i++) {
