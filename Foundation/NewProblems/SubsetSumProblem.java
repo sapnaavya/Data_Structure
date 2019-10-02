@@ -30,7 +30,7 @@ public class SubsetSumProblem {
                 if (j - arr[i - 1] >= 0) {
                     T[i][j] = T[i - 1][j] || T[i - 1][j - arr[i - 1]];
                 } else {
-                    T[i][j] = T[i-1][j];
+                    T[i][j] = T[i - 1][j];
                 }
             }
         }
