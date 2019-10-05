@@ -59,7 +59,7 @@ public class EggDropProblem {
 
         //fill rest of the entries in table using optimal substructure
         for(i = 2; i <= n; i++) {                 //eggs   //n
-            for(j = 2; j <= k; j++) {             //floor  //n
+            for(j = 2; j <= k; j++) {             //floor  //k
                 eggFloor[i][j] = Integer.MAX_VALUE;      
                 for(x = 1; x <= j; x++) {         //e
                     res = 1 + Math.max(eggFloor[i - 1][x - 1], eggFloor[i][j - x]);
@@ -77,7 +77,7 @@ public class EggDropProblem {
     //main method
     public static void main(String args[]) {
         int n = 3;
-        int k = 6;
+        int k = 4;
         System.out.println(eggDrop(n, k));
         System.out.println(eggDropDP(n, k));
     }
