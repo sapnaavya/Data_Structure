@@ -10,6 +10,12 @@
     9 (3+6),
     9 (4+5),
     8 (2+6)
+
+    pq.poll() give us the minimum element
+    Reference of priority queue: https://stackoverflow.com/questions/11003155/change-priorityqueue-to-max-priorityqueue
+        PriorityQueue<Integer> queue = new PriorityQueue<>(10, Collections.reverseOrder());
+        The Collections.reverseOrder() provides a Comparator that would sort the elements in the PriorityQueue in a the oposite order to their natural order in this case.
+
 */
 
 import java.util.ArrayList;
