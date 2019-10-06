@@ -28,6 +28,7 @@ public class CompareVersionNumber {
 
         int length = Math.max(arrA.length, arrB.length);
         for (int i = 0; i < length; i++) {
+            // to cover scenario  1.30 < 1.1.5.1
             if (i < arrA.length && i < arrB.length) {     // do not forget this. very important
                 if (arrA[i].length() > arrB[i].length()) return 1;
                 else if (arrA[i].length() < arrB[i].length()) return -1;
