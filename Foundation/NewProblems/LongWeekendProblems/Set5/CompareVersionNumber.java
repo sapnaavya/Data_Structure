@@ -10,7 +10,8 @@
 
     Example: 0.1 < 1.1 < 1.2 < 1.13 < 1.13.4
              1.30 < 1.351
-             1.30 < 1.32   
+             1.30 < 1.32  
+             1.30 < 1.15.1 
              1.30 < 2.15
              10.15 < 12.10
 
@@ -43,8 +44,8 @@ public class CompareVersionNumber {
 
     // main method
     public static void main(String args[]) {
-        String str2 = "0.1.2.52";
-        String str1 = "0.1.2.1";
+        String str2 = "1.30";
+        String str1 = "1.15.1";
         int result = compareVersion(str1, str2);
         System.out.println(result);
     }
