@@ -69,8 +69,16 @@ public class EvaluateExpression {
             values.push(applyOp(ops.pop(), values.pop(), values.pop()));
         }
 
-        //top of the values contain result, returns it
-        return values.pop();
+        // top of the values contain result, returns it
+        // check for min and max value
+        int result = values.pop();
+        if(result > Integer.MAX_VALUE) {
+            return Integer.MAX_VALUE;
+        } 
+        if( result < Integer.MIN_VALUE) {
+            return Integer.MIN_VALUE;
+        }
+        return result;
     }
 
     // Returns true if 'op2' has higher or same precedence as 'op1', 
