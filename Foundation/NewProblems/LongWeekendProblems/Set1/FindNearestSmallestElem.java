@@ -1,7 +1,12 @@
 /**
  * This code finds the next smallest element in the array
  * Reference: https://www.geeksforgeeks.org/find-the-nearest-smaller-numbers-on-left-side-in-an-array/ 
+   Example:
+    Input:  arr[] = {1, 6, 4, 10, 2, 5}
+    Output:         {_, 1, 1,  4, 1, 2}
+
  */
+
 import java.util.Stack;
 
 public class FindNearestSmallestElem {
