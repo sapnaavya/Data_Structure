@@ -1,6 +1,8 @@
 /**
  * This code finds whether s3 is an interleaved string for s1 and s2
  * Reference: https://www.techiedelight.com/check-string-interleaving-two-given-strings/
+ * Example: ACDB is an interleave of AB and CD
+ *          ACBCD is an interleave of ABC and CD
 */
 
 public class InterleaveString {
