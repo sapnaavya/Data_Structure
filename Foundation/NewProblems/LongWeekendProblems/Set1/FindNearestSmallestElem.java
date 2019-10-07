@@ -33,6 +33,8 @@ public class FindNearestSmallestElem {
     }
 
     // Using Stack: function to find nearest smallest element on the left side of array
+    // Input:  arr[] = {1, 6, 4, 10, 2, 5}
+   //  Output:         {_, 1, 1,  4, 1, 2}
     public static void printPrevSmallUsingStack(int[] arr, int n) {
         // Create an empty stack
         Stack<Integer> stack = new Stack<>();
