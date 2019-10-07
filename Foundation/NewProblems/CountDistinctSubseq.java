@@ -1,6 +1,8 @@
 
 /*
  * This code counts the distinct occurances of a subsequence
+ * In other words: Find number of times a string occurs as a subsequence in given string
+ * Reference: https://www.geeksforgeeks.org/find-number-times-string-occurs-given-string/
  * Reference: https://www.geeksforgeeks.org/count-distinct-occurrences-as-a-subsequence/
  * Example:
  *  Input  : S = banana, T = ban
