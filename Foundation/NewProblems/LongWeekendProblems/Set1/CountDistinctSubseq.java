@@ -2,6 +2,12 @@
 /*
  * This code counts the distinct occurances of a subsequence
  * Reference: https://www.geeksforgeeks.org/count-distinct-occurrences-as-a-subsequence/
+ * Example:
+ *  Input  : S = banana, T = ban
+    Output : 3
+    T appears in S as below three subsequences.
+    [ban], [ba  n], [b   an]
+
 */
 
 public class CountDistinctSubseq {
