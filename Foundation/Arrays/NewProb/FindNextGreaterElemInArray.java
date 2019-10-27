@@ -73,18 +73,16 @@ public class FindNextGreaterElemInArray {
         //iterate over the elements
         for(i = 1; i < n; i++) {
             next = arr[i];
-            if(s.isEmpty() == false) {
+            if(!s.isEmpty()) {
                 element = s.pop();
-                /* If the popped element is smaller than  
-                next, then a) print the pair b) keep  
-                popping while elements are smaller and  
-                stack is not empty */
                 while(element < next) {
                     System.out.println(element + " --> " + next); 
-                    if (s.isEmpty() == true) 
+                    if (s.isEmpty()) {
                         break; 
+                    }
                     element = s.pop(); 
                 }
+                
                 /* If element is greater than next, then  
                    push the element back */
                 if(element > next) {
