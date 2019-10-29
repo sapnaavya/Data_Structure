@@ -41,7 +41,7 @@ public class CountVowelsConsonents {
             char ch = str.charAt(i);
             if(ch >= 'a' && ch <= 'z' || ch >= 'A' && ch <= 'Z') {
                 // To handle upper case letters 
-                ch = Character.toLowerCase(ch);; 
+                ch = Character.toLowerCase(ch);
 
                 if(ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
                     count.vowels++;
