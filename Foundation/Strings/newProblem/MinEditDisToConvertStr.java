@@ -18,7 +18,7 @@ public class MinEditDisToConvertStr {
         }
         int len1 = str1.length();
         int len2 = str2.length();
-        // intialize matirx with +1 to conside null also
+        // intialize matrix with +1 to conside null also
         int[][] DP = new int[len1 + 1][len2 + 1];
 
         // initilize by the maximum edits possible 
