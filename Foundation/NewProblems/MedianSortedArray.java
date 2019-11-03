@@ -2,7 +2,8 @@
  * This code find the median in two sorted arrays
  * Reference: 
  * 1. https://github.com/mission-peace/interview/blob/master/src/com/interview/binarysearch/MedianOfTwoSortedArrayOfDifferentLength.java
- * 
+ * Time complexity is O(log(min(x,y))
+ * Space complexity is O(1)
 */
 
 public class MedianSortedArray {
