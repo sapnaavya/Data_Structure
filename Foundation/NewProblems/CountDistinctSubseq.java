@@ -45,7 +45,7 @@ public class CountDistinctSubseq {
         // Initializing first column with 
 		// all 0s. An empty string can't have 
 		// another string as subsequence 
-        for(int i = 1; i <= m; i++) {
+        for(int i = 0; i <= m; i++) {
             mat[i][0] = 0;
         }
 
@@ -71,7 +71,7 @@ public class CountDistinctSubseq {
 				System.out.print ( mat[i][j] +" "); 
       		System.out.println ();
         }
-        
+
         return mat[m][n];
     }
 
