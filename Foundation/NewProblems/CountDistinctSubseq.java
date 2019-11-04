@@ -9,7 +9,6 @@
     Output : 3
     T appears in S as below three subsequences.
     [ban], [ba  n], [b   an]
-
 */
 
 public class CountDistinctSubseq {
@@ -66,6 +65,13 @@ public class CountDistinctSubseq {
             }
         }
 
+        // uncomment this to print matrix mat 
+		for (int i = 1; i <= m; i++) {
+			for (int j = 1; j <= n; j++) 
+				System.out.print ( mat[i][j] +" "); 
+      		System.out.println ();
+        }
+        
         return mat[m][n];
     }
 
