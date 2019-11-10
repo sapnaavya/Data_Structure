@@ -4,7 +4,7 @@ import java.util.Stack;
  * This code calculates the area of largest rectangle in the histogram
  * Reference:
  * https://buttercola.blogspot.com/2014/09/leetcode-largest-rectangle-in-histogram.html
- * https://www.programcreek.com/2014/05/leetcode-lar gest-rectangle-in-histogram-java/
+ * (Referer code in this) https://www.programcreek.com/2014/05/leetcode-lar gest-rectangle-in-histogram-java/ 
  */
 public class LargestRectangleHistogram {
 
@@ -43,7 +43,7 @@ public class LargestRectangleHistogram {
             } else {
                 int top = stack.pop();
                 int h = height[top];
-                int w = stack.isEmpty() ? 0 : i - stack.peek() - 1;
+                int w = stack.isEmpty() ? i : i - stack.peek() - 1;
                 max = Math.max(max, h * w);
             }
         }

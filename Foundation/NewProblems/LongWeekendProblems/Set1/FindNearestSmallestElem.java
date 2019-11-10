@@ -5,7 +5,7 @@
     Input:  arr[] = {1, 6, 4, 10, 2, 5}
     Output:         {_, 1, 1,  4, 1, 2}
 
- */
+*/
 
 import java.util.Stack;
 
