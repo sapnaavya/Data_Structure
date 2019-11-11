@@ -55,6 +55,7 @@ public class EvaluateExpression {
                 // While top of 'ops' has same or greater precedence to current 
                 // token, which is an operator. Apply operator on top of 'ops' 
                 // to top two elements in values stack 
+                // check if ops.peek() has higher precedence than tokens[i]
                 while(!ops.isEmpty() && hasPrecedence(tokens[i], ops.peek())) {
                     values.push(applyOp(ops.pop(), values.pop(), values.pop()));
                 }
@@ -123,7 +124,7 @@ public class EvaluateExpression {
         System.out.println(evaluate("100 * ( 2 + 12 )")); 
         System.out.println(evaluate("100 * ( 2 + 12 ) / 14"));
         // below one also does not work
-        //System.out.println(evaluate("4 + (3*1-3)")); 
+        //System.out.println(evaluate("4 + ( 3 * 1 - 3)")); 
         //below one wont work
         //System.out.println(evaluate("100(2)"));
     }
