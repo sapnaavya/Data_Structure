@@ -122,6 +122,8 @@ public class EvaluateExpression {
         System.out.println(evaluate("100 * 2 + 12")); 
         System.out.println(evaluate("100 * ( 2 + 12 )")); 
         System.out.println(evaluate("100 * ( 2 + 12 ) / 14"));
+        // below one also does not work
+        //System.out.println(evaluate("4 + (3*1-3)")); 
         //below one wont work
         //System.out.println(evaluate("100(2)"));
     }
