@@ -16,6 +16,7 @@ public class ImplementSQRT {
         long ans = 0;
         
         while(start <= end) {
+            // make sure to take long because we are taking square of a num
             long mid = (start + end) / 2;
             long check = mid*mid;
 
