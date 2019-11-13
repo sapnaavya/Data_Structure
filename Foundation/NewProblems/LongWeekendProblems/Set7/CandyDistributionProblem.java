@@ -19,7 +19,7 @@ public class CandyDistributionProblem {
     
         for(int i = n-2; i >= 0; i--) {
             if(ratings[i] > ratings[i+1]) {
-                candies[i] += 1;
+                candies[i] = Math.max(candies[i], candies[i+1]+1);
             }
         }
 
@@ -33,7 +33,7 @@ public class CandyDistributionProblem {
 
     // main method
     public static void main(String args[]) {
-       int [] arr = {1,2,1,4};
+       int [] arr = {9, 2, 3, 4, 4, 4, 2, 1, 3, 4};
        //int [] arr = {1,2,1,1,3,4};
        //int[] arr = {1, 5, 2, 1};
        int minCandies = candiesDistribution(arr);
