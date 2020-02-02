@@ -86,17 +86,17 @@ public class DeleteDoublyLinkedList {
         //Travere to that postion
         while(i < position) {
             prevNode =  currentNode;
-            currentNode = currentNode.next;
             if(currentNode == null) {
                 System.out.print("Reached end of the list");
                 return;
             }
             i++;
+            currentNode = currentNode.next;
         }
         
         // check if posistion to delete is not the last position. if yes, then simply mark the last node as null
         if(currentNode.next != null) {
-            prevNode.next = currentNode.next.next;
+            prevNode.next = currentNode.next;
             currentNode.next.prev = prevNode;
         }
         else{
@@ -115,13 +115,15 @@ public class DeleteDoublyLinkedList {
         llist.InsertFront(45);
         llist.printList(head);
 
-        llist.deleteAtFront(head);
-        llist.printList(head);
+        // llist.deleteAtFront(head);
+        // llist.printList(head);
 
-        llist.deleteAtEnd(head);
-        llist.printList(head);
+        // llist.deleteAtEnd(head);
+        // llist.printList(head);
 
-        llist.deleteAfterPosition(head, 1);
+        llist.deleteAfterPosition(head, 3);
+        System.out.println();
+        System.out.print("Elements after deleting at the specific position:");
         llist.printList(head);
     }
 }
