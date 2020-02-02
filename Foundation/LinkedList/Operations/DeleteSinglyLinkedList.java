@@ -20,9 +20,10 @@ public class DeleteSinglyLinkedList {
         Node node = head;
         while(node != null) {
             
-            System.out.println(node.data + " ");
+            System.out.print(node.data + " ");
             node = node.next;
         }
+        System.out.println();
     }
 
     //Delete at specific position in the list
