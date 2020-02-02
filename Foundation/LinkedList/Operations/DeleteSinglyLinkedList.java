@@ -73,6 +73,7 @@ public class DeleteSinglyLinkedList {
         llist.insertFront(10);
         llist.print();
 
+        // delete at specific position
        deleteAtPosition(llist, 2);
        llist.print();
     }
