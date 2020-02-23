@@ -142,7 +142,7 @@ public class TreeTraversal {
         int hd = 0;
         getVerticalOrder(root, map, hd);
         for(Entry<Integer, Vector<Integer>> entry: map.entrySet()) {
-            System.out.println(entry.getValue()); 
+            System.out.println("key:" + entry.getKey() +" "+ "Values: " + entry.getValue()); 
         }
 
     }
