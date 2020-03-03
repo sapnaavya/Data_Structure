@@ -18,7 +18,6 @@ namespace Foundation {
         public Node root;
         public bool isBST() {
             if(root == null) {
-                Console.WriteLine("null");
                 return true;
             }
 
@@ -26,13 +25,8 @@ namespace Foundation {
             BNode bnode = new BNode(root, int.MinValue, int.MaxValue);
             queue.Enqueue(bnode);
             while(queue.Count != 0) {
-                Console.WriteLine(queue.Count);
                 BNode tmp = queue.Dequeue();
-                Console.WriteLine("data"+ tmp.node.data);
-                Console.WriteLine("min"+ tmp.min);
-                Console.WriteLine("max" + tmp.max);
                 if(tmp.node.data <= tmp.min || tmp.node.data >= tmp.max) {
-                    Console.WriteLine("no");
                     return false;
                 }
                 if(tmp.node.left != null) {
