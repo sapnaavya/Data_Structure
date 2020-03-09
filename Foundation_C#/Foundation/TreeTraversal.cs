@@ -72,5 +72,31 @@ namespace Foundation {
                 }
             }
         }
+
+        // Print top level view of the tree
+        public void PrintTopLevel(Node root) {
+            if(root == null) {
+                return;
+            }
+
+            Stack<Node> stack = new Stack<Node>();
+            Node current = root;
+            while(current != null) {
+                stack.Push(current);
+                current = current.left;
+            }
+            // traverse left side first - bottom to top
+            while(stack.Count != 0) {
+                Node temp = stack.Pop();
+                System.Console.Write(temp.data + " ");
+            }
+
+            // traverse right side - top to bottom
+            current = root.right;
+            while(current != null) {
+                System.Console.Write(current.data + " ");
+                current = current.right;
+            }
+        }
     }
 }
