@@ -26,18 +26,29 @@ namespace Foundation
             
             // Tree Traversal 
             // TreeTraversal tree = new TreeTraversal();
+            // tree.PrintTopLevel(root);
             // tree.Inorder(root);
             // tree.PreOrder(root);
             // tree.PostOrder(root);
+
+            // convert binary tree to circular DLL
+            // using recursion
+            ConvertBinaryTreeToCircularDLL tree = new ConvertBinaryTreeToCircularDLL();
+            Node node = tree.BTreeToClistRecur(root);
+            tree.DisplayList(node);
+
+            // using list
+            // Node node1 = tree.ConvertBinaryTreetoCListUsingList(root);
+            // tree.DisplayList(node1);
 
             //Print number in a given range - BST
             // PrintNumRangeBST tree = new PrintNumRangeBST();
             // tree.PrintNum(root, 5, 17);
 
             // get closet element to number -  BST
-            ClosestElemBST tree = new ClosestElemBST();
-            Node closestNode = tree.GetClosesElemBST(root, 22);
-            System.Console.WriteLine(closestNode.data);
+            // ClosestElemBST tree = new ClosestElemBST();
+            // Node closestNode = tree.GetClosesElemBST(root, 22);
+            // System.Console.WriteLine(closestNode.data);
 
 
             // count no of bsts in a tree
