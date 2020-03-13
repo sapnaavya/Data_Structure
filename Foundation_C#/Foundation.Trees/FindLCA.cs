@@ -1,4 +1,4 @@
-namespace Foundation {
+namespace Foundation.Trees {
     public class FindLCA {
         public Node FindLCABinaryTree(Node root, Node node1, Node node2) {
             if(root == null) {

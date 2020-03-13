@@ -1,6 +1,6 @@
 using System;
 
-namespace Foundation {
+namespace Foundation.Trees {
     public class CheckBSTInorder {
         public Node root;
         public Node prev;

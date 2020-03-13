@@ -1,6 +1,6 @@
 using System;
 
-namespace Foundation{
+namespace Foundation.Trees {
     public class CountBST {
         Node root;
         public BSTInfo countBST(Node root) {

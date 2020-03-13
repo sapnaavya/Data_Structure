@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Foundation {
+namespace Foundation.Trees {
     public class TreeHeight {
 
         public int CalculateHeightRecursice(Node root) {

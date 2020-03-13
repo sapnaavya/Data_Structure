@@ -1,7 +1,7 @@
 // level of root node is 1
 using System.Collections.Generic;
 
-namespace Foundation {
+namespace Foundation.Trees {
     public class NodeLevel {
         Node root;
 

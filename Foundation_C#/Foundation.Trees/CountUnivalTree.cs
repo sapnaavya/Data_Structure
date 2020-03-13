@@ -1,4 +1,4 @@
-namespace Foundation {
+namespace Foundation.Trees {
     public class CountUnivalTree {
         static  int count = 0;
         public bool UnivalTreeCheck(Node root) {

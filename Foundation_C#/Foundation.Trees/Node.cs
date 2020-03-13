@@ -1,4 +1,4 @@
-namespace Foundation {
+namespace Foundation.Trees {
      public class Node {
         public int data;
         public Node left, right;

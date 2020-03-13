@@ -1,6 +1,6 @@
 using System;
 
-namespace Foundation {
+namespace Foundation.Trees {
     public class PrintAnccessatorNode {
         public bool PrintAncessator(Node root, Node node1) {
             if(root == null) {

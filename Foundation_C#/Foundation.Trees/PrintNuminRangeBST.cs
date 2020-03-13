@@ -1,5 +1,5 @@
 using System;
-namespace Foundation {
+namespace Foundation.Trees {
     public class PrintNumRangeBST {
         Node root;
 

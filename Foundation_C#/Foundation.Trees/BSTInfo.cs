@@ -1,5 +1,5 @@
 using System;
-namespace Foundation {
+namespace Foundation.Trees {
     public class BSTInfo {
         public int num_bst;
         public int min;

@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 
 
-namespace Foundation {
+namespace Foundation.Trees {
     public class BNode {
         public Node node;
         public int min, max;

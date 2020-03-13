@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Foundation
+namespace Foundation.Trees
 {
     public class Program { 
         static void Main(string[] args)
@@ -16,12 +16,12 @@ namespace Foundation
             // Calculate level of a node
             //NodeLevel nodeLevel = new NodeLevel();
 
-            Node root = new Node(10);
+            Node root = new Node(16);
             root.left = new Node(5);
             root.right = new Node(15);
             root.left.left = new Node(7);
-            root.left.right = new Node(9);
-            root.right.left = new Node(12);
+            root.left.right = new Node(0);
+            root.right.left = new Node(9);
             root.right.right = new Node(17);
             
             // Tree Traversal 
@@ -33,9 +33,13 @@ namespace Foundation
 
             // convert binary tree to circular DLL
             // using recursion
-            ConvertBinaryTreeToCircularDLL tree = new ConvertBinaryTreeToCircularDLL();
-            Node node = tree.BTreeToClistRecur(root);
-            tree.DisplayList(node);
+            // ConvertBinaryTreeToCircularDLL tree = new ConvertBinaryTreeToCircularDLL();
+            // Node node = tree.BTreeToClistRecur(root);
+            // tree.DisplayList(node);
+
+            // Create a bst from Binary tree
+            ConvertBinaryTreeToBST tree = new ConvertBinaryTreeToBST();
+            tree.ChangeTreetoBST(root);
 
             // using list
             // Node node1 = tree.ConvertBinaryTreetoCListUsingList(root);

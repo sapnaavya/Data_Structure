@@ -1,6 +1,6 @@
 using System;
 
-namespace Foundation {
+namespace Foundation.Trees {
     public class ConvertBinaryTreeToBST {
         Node root;
         static int i;

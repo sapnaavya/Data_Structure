@@ -1,4 +1,4 @@
-namespace Foundation {
+namespace Foundation.Trees {
     class CheckBSTRecursive {
         public Node root;
 
