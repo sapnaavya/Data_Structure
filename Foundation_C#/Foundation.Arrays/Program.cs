@@ -94,7 +94,17 @@ namespace Foundation.Arrays
             //remDup.removeDupUnsortedArray(dupUnsortedArr);
             remDup.removeDupUnsortedWithoutPreservingOrder(dupUnsortedArr);
 
+            // Maximum sum sub array
+            System.Console.WriteLine();
+            System.Console.Write("Maximum Sum sub array: ");
+            MaximumSumSubArray maxSumObj = new MaximumSumSubArray();
+            int[] maxSumArr = new int[]{2,3,4,-9,-6,-5,7,8,3,4};
+            maxSumObj.Maximum_Sum_SubArray(maxSumArr);
 
+            //Print K max in an array
+            System.Console.WriteLine();
+            PrintKMax printKMaxObj = new PrintKMax();
+            printKMaxObj.PrintK_MaxBruteForce(maxSumArr, 3);
         }
     }
 }
