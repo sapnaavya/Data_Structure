@@ -8,7 +8,7 @@ public class TernarySearch {
     //this function searches for the key usinh ternary search using recursive manner
     static int ternarySearchRecur(int [] arr, int start, int end, int key) {
         if(end >= start) {
-            int mid1 = (end - start) / 3;
+            int mid1 = start + (end - start) / 3;
             int mid2 = mid1 + (end - start) / 3;
 
             System.out.println("mid1: " + mid1);
