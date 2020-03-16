@@ -156,14 +156,53 @@ namespace Foundation.Arrays
             // int[][] array2D = new int[4][] {new int[4] { 1, 2, 5, 6 },new int[4]{ 3, 4, 7, 8 },new int[4]{ 5, 6, 9, 10 }, new int[4]{ 7, 8, 3, 2 } };
             // image.RotateImageOutPlace(array2D); 
 
-            //Ternary search
-            TernarySearch ts = new TernarySearch();
-            int [] ts_arr = new int[]{1,2,3,4,5,7,8,10};
-            int elem = ts.Ternary_Search_Iter(ts_arr, 0, 8, 10); 
-            System.Console.WriteLine(elem);
-            int elemRecur = ts.TernarySearch_Recursive(ts_arr, 0, 8, 10);
-            System.Console.WriteLine(elemRecur);
+            // //Ternary search
+            // TernarySearch ts = new TernarySearch();
+            // int [] ts_arr = new int[]{1,2,3,4,5,7,8,10};
+            // int elem = ts.Ternary_Search_Iter(ts_arr, 0, 8, 10); 
+            // System.Console.WriteLine(elem);
+            // int elemRecur = ts.TernarySearch_Recursive(ts_arr, 0, 8, 10);
+            // System.Console.WriteLine(elemRecur);
 
+            // //merge K sorted array using Min Heap
+            // int[][] array2D = new int[4][] {new int[4] { 1, 2, 5, 6 },new int[4]{ 3, 4, 7, 8 },new int[4]{ 5, 6, 9, 10 }, new int[4]{ 7, 8, 9, 10}};
+            // MergeKSortedArray mer_obj = new MergeKSortedArray();
+            // int[] result = mer_obj.MergeKSortedArrUsingMinHeap(array2D, 4);
+            // foreach(int i in result) {
+            //     System.Console.Write(i + " ");
+            // }
+            
+            // System.Console.WriteLine();
+            // MergeKSortedArrayPQ pq_obj = new MergeKSortedArrayPQ();
+            // int[] pq_result = pq_obj.Merge_kSorted_UsingPQ(array2D);
+            // foreach(int i in pq_result) {
+            //     System.Console.Write(i + " ");
+            // }
+
+            // // Sort elements by Frequency - BST
+            // int[] input = new int[]{5, 3, 7, 7, 7, 5, 4, 8, 6, 6};
+            // CreateBST bst = new CreateBST();
+
+            // //create a bst tree with number and its frequency
+            // Node added = bst.Add(input);
+
+            // //inorder traversal to flatten into array
+            // List<Data> flattened = new List<Data>();
+            // bst.InorderToFlattenList(added, flattened);
+
+            // //sort by frequency
+            // flattened.Sort((e1, e2) => e2.Frequency.CompareTo(e1.Frequency));
+            // foreach(Data data in flattened) {
+            //     int freq = data.Frequency;
+            //     for(int i = 0; i < freq; i++) {
+            //         System.Console.Write(data.Number + " ");
+            //     }
+            // }
+
+            //Sort elements by frequency using Dictionary
+            int[] input = new int[]{5, 3, 7, 7, 7, 5, 4, 8, 6, 6};
+            SortElemDictionary sort_obj = new SortElemDictionary();
+            sort_obj.SortElemByFreqDict(input, input.Length);
         }
     }
 }
