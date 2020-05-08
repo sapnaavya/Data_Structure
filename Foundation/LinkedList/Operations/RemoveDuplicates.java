@@ -59,7 +59,7 @@ public class RemoveDuplicates {
         while(current != null) {
             Node runner = current;
             while(runner.next != null) {
-                if(current.data == runner.data) {
+                if(current.data == runner.next.data) {
                     runner.next = runner.next.next;
                 }
                 else {
@@ -83,7 +83,7 @@ public class RemoveDuplicates {
         //removeDuplicatesUsingBuffer(head);
         //llist.printList(head);
 
-        llist.insertFront(15);
+        //llist.insertFront(15);
         deleteDupsBruteForce(head);
         llist.printList(head);
     }
