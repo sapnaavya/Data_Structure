@@ -75,8 +75,7 @@ public class SubSetList {
 
                 if(list1.next != null &&  list2.next != null) {
                     list1 = list1.next;
-                    list2 = list2.next;   
-                    continue;        
+                    list2 = list2.next;          
                 }
                 else {
                     return new ResultantPointer(startPointer,endPointer);
@@ -89,15 +88,10 @@ public class SubSetList {
             else if(list2 != resetList2 && list1.next != null) {
                 list2 = resetList2;
                 s = list1;
-                continue;
-            }
-            if(list1.next != null) { 
+            } else if(list1.next != null) { 
                 list1 = list1.next; 
                 s = list1;
-            }
-            else{
-               return new ResultantPointer(null, null);
-            }   
+            }  
         }
         return new ResultantPointer(null, null);
     }
