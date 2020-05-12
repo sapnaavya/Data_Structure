@@ -2,7 +2,7 @@
 import java.util.Queue;
 import java.util.LinkedList;
 
-class Node{
+class Node {
     int data;
     Node left;
     Node right;
@@ -20,16 +20,8 @@ public class IdenticalTrees {
         if(root1 == null && root2 == null) {
             return true;
         }
-
-        // else if(root1 != null && root2 != null) {
-        //     return (root1.data == root2.data && isIdentical(root1.left, root2.left) 
-        //         && isIdentical(root1.right, root2.right));
-        // }
-
-        else if(root1 != null && root2 != null) {
-            if(root1.data == root2.data){
-                return isIdenticalRecursive(root1.left, root2.left ) && isIdenticalRecursive(root1.right, root2.right);
-            }
+        if(root1.data == root2.data){
+            return isIdenticalRecursive(root1.left, root2.left ) && isIdenticalRecursive(root1.right, root2.right);
         }
         return false;  
     }
@@ -39,12 +31,11 @@ public class IdenticalTrees {
         
        // Return true if both trees are empty  
        if (root1 == null && root2 == null){
-        //System.out.println("in the loop1");
-        return true; 
-       }   
+            return true; 
+        }   
   
         // Return false if one is empty and other is not  
-        if (root1 == null || root2 == null) 
+        if(root1 == null || root2 == null) 
         { 
             return false; 
         }
@@ -60,12 +51,8 @@ public class IdenticalTrees {
             Node top2 = queue2.poll();
 
             if(top1.data != top2.data) {
-                System.out.println("in if block");
                 return false;
             }
-
-            //queue1.remove();
-            //queue2.remove();
             
             //check left subtree
             if(top1.left != null && top2.left != null) {  
@@ -73,7 +60,6 @@ public class IdenticalTrees {
                 queue2.add(top2.left);
             } 
             else if(top1.left != null || top2.left != null) {
-                System.out.println("in if block");
                 return false;
             }
 
