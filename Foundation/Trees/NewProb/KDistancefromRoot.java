@@ -20,10 +20,10 @@ public class KDistancefromRoot {
         if(k == 0) {
             System.out.println(root.data);
             return;
-        } else {
-            printKDistant(root.left, k - 1);
-            printKDistant(root.right, k - 1);
-        }
+        } 
+        printKDistant(root.left, k - 1);
+        printKDistant(root.right, k - 1);
+        
     }
 
     // Iterative functiont to print k distance node from the root
