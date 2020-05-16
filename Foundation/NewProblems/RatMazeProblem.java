@@ -21,6 +21,8 @@ public class RatMazeProblem{
         }
     }
 
+    // 1 represents safe
+    // 0 represents unsafe
     boolean isSafe(int[][] maze, int x, int y, int n) {
         if(x >= 0 && x < n && y >= 0 && y < n && maze[x][y] == 1) {
             return true;
