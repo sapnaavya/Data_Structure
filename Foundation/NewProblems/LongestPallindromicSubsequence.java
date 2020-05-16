@@ -22,9 +22,10 @@ public class LongestPallindromicSubsequence {
         for(int l = 2; l <= n; l++) {
             for(int i = 0; i < n - l + 1; i++) {
                 int j = i + l - 1;
-                if(l == 2 && str[i] == str[j]) {
-                    T[i][j] = 2;
-                } else if(str[i] == str[j]) {
+                // if(l == 2 && str[i] == str[j]) {
+                //     T[i][j] = 2;
+                // } else 
+                if(str[i] == str[j]) {
                     T[i][j] = T[i + 1][j - 1] + 2;
                 } else {
                     T[i][j] = Math.max(T[i + 1][j], T[i][j - 1]);
