@@ -35,7 +35,7 @@ class Cqueue {
     public int dequeue() {
         if(isEmpty()) {
             System.out.println("Empty queue");
-            return -2;
+            return -1;
         }
         int elem = arr[front];
 
