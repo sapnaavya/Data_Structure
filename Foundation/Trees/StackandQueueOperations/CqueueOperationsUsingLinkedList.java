@@ -1,81 +1,84 @@
-public class CqueueOperationsUsingLinkedList {
-    // Structure of a node 
-    static class Node {
-        int data;
-        Node next;
-    }
+// Structure of a node 
+class Node {
+    int data;
+    Node next;
+}
 
-    static class Cqueue {
-        Node front, rear;
+class Cqueue {
+    Node front, rear;
+    public Cqueue() {
+        front = null;
+        rear = null;
     }
 
     // function to create a circular queue
-    static void enQueue(Cqueue q, int val) {
+    void enQueue(int val) {
         Node temp = new Node();
         temp.data = val;
-        if(q.front == null) {
-            q.front = temp;
+        if(front == null) {
+            front = temp;
         } else {
-            q.rear.next = temp;
+            rear.next = temp;
         }
-        q.rear = temp;
-        q.rear.next = q.front;
+        rear = temp;
+        rear.next = front;
     }
 
     // function to dequeue from a queue
-    static int deQueue(Cqueue q) {
-        if(q.front == null) {
+    int deQueue() {
+        if(front == null) {
             return Integer.MIN_VALUE;
         }
 
         int val;
-        if(q.front == q.rear) {
-            val = q.front.data;
-            q.front = null;
-            q.rear = null;
+        if(front == rear) {
+            val = front.data;
+            front = null;
+            rear = null;
         } else {
-            Node temp = q.front;
+            Node temp = front;
             val = temp.data;
-            q.front = q.front.next;
-            q.rear.next = q.front;
+            front = front.next;
+            rear.next = front;
         }  
         return val;  
     }
 
     // Display queue
-    static void displayQueue(Cqueue q) {
-        Node temp = q.front;
+    void displayQueue() {
+        Node temp = front;
         do{
             System.out.println(temp.data);
             temp = temp.next;  
-        } while(temp != q.front);
+        } while(temp != front);
     }
+}
 
+public class CqueueOperationsUsingLinkedList {
     /*  Driver of the program  */
     public static void main(String args[]) 
     {  
         // Create a queue and initialize front and rear  
         Cqueue  q = new Cqueue();  
-        q .front = q .rear =  null;  
+        //q .front = q .rear =  null;  
         
         // Inserting elements in Circular Queue  
-        enQueue(q, 14);  
-        enQueue(q, 22);  
-        enQueue(q, 6);  
+        q.enQueue(14);  
+        q.enQueue(22);  
+        q.enQueue(6);  
         
         // Display elements present in Circular Queue  
-        displayQueue(q);  
+        q.displayQueue();  
         
         // Deleting elements from Circular Queue  
-        System.out.printf("\nDeleted value = %d", deQueue(q));  
-        System.out.printf("\nDeleted value = %d", deQueue(q));  
-        
+        System.out.printf("\nDeleted value = %d", q.deQueue());  
+        System.out.printf("\nDeleted value = %d", q.deQueue());  
+        System.out.println();
         // Remaining elements in Circular Queue  
-        displayQueue(q);  
-        
-        enQueue(q, 9);  
-        enQueue(q, 20);  
-        displayQueue(q);  
-        
+        q.displayQueue();  
+        System.out.println();
+        q.enQueue(9);  
+        q.enQueue(20);  
+        q.displayQueue();    
     } 
 }
