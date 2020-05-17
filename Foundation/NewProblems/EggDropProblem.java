@@ -3,8 +3,8 @@
     *  This code calculates minimum no of trials to findout from which floor the egg will break with n eggs and k floor.
     *  what is the least number of egg dropping that is guaranteed to find the highest floor from which egg wont break at all
     *  References: 
-    *      1. https://www.bing.com/videos/search?q=egg+drop+problem&&view=detail&mid=82F4C1A42C8902B4619B82F4C1A42C8902B4619B&&FORM=VRDGAR
-    *      2. https://www.bing.com/videos/search?q=egg+drop+problem&&view=detail&mid=9FB332667D1E339D56949FB332667D1E339D5694&&FORM=VRDGAR  
+    *      1. (Formula): https://www.bing.com/videos/search?q=egg+drop+problem&&view=detail&mid=82F4C1A42C8902B4619B82F4C1A42C8902B4619B&&FORM=VRDGAR
+    *      2. (Problem): https://www.bing.com/videos/search?q=egg+drop+problem&&view=detail&mid=9FB332667D1E339D56949FB332667D1E339D5694&&FORM=VRDGAR  
     *      3. https://www.geeksforgeeks.org/egg-dropping-puzzle-dp-11/
 */
 
