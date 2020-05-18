@@ -48,7 +48,7 @@ public class NStairsGeneralize {
         bottomUp[0] = 1;
         bottomUp[1] = 1;
         for(int i = 2; i <= stairs; i++) {
-            for(int j = 1; j <= stairs && j <= hops; j++) {
+            for(int j = 1; j <= i && j <= hops; j++) {
                 bottomUp[i] += bottomUp[i - j];
             }
         }
