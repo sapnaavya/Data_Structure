@@ -32,7 +32,7 @@ public class LongestPallindromicSubsequence {
                 }
             }
         }
-        return T[0][str.length - 1];
+        return T[0][str.length - 1]; // remember this [str.length - 1] .. it is not [str.length]
     }
 
     //function to calculate longest pallindromic subsequence using recursion
@@ -59,7 +59,7 @@ public class LongestPallindromicSubsequence {
         LongestPallindromicSubsequence lps = new LongestPallindromicSubsequence();
         String str1 = "BBABCBCAB";
         int longestSubseqCount = lps.countLongestPalSubseq(str1.toCharArray());
-        int n = str1.length() - 1;
+        int n = str1.length() - 1; // remmber this -1
         int longestSubseqCountRecur = lps.countLongestSubSequence(str1.toCharArray(), 0, n);
         System.out.println(longestSubseqCountRecur);
         System.out.println(longestSubseqCount);
