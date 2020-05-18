@@ -15,10 +15,9 @@ public class LongestCommonSubstring {
         
         if(str1.charAt(i - 1) == str2.charAt(j - 1)) {
             count = longestCommonSubstring(str1, str2, i-1, j-1, count+1);
-        } else {
-            count = Math.max(count, Math.max(longestCommonSubstring(str1, str2, i-1, j, 0), longestCommonSubstring(str1, str2, i, j-1, 0)));
-        }
-
+        } 
+        count = Math.max(count, Math.max(longestCommonSubstring(str1, str2, i-1, j, 0), longestCommonSubstring(str1, str2, i, j-1, 0)));
+        
         return count;
     }
 
