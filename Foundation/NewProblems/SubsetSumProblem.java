@@ -1,6 +1,7 @@
 /*
   This code return whether the array contains the subset that combines to a certain sum 
   Reference: https://github.com/mission-peace/interview/blob/master/src/com/interview/dynamic/SubsetSum.java
+  example: https://www.youtube.com/watch?v=s6FhG--P7z0
 */
 public class SubsetSumProblem {
 
